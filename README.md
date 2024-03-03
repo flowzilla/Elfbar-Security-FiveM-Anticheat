@@ -8,11 +8,11 @@ Why did we decide to do this?
 One of our former team members claims to have the source code and wants to leak and resell it, so you can download the source code here, officially from the owner of the code.
 But note the licence below
 ## Screenshots of the old Skid Team Member
-Cool
+
 ![Skid](https://cdn.discordapp.com/attachments/1113208749973307392/1213650005198639114/image.png?ex=65f63ea5&is=65e3c9a5&hm=5d371a501493d5527ee47033300c67c2dcf5dac818d4d19f7bff6815e88b7876&)
-Cool
+
 ![Skid](https://cdn.discordapp.com/attachments/1113208749973307392/1213650328545927198/image.png?ex=65f63ef2&is=65e3c9f2&hm=4339d9def30aa05b869e8bb920e3ad1d76f89409e94be519d1af0af77d7489e2&)
-Learn to code your own Panel retard
+
 ![Skid](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/33wqns5e.png)
 
 I will add more skid Screenshots soon hehe
