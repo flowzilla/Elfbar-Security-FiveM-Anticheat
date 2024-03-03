@@ -122,6 +122,7 @@ if (isset($_POST['btnRegister'])) {
   } else {
     $username = $_POST['username'];
     $key = $_POST['license'];
+    // Dont ask about (very secure)
     $password = base64_encode($_POST['password']);
     if (!empty($username) && !empty($key) && !empty($email) && !empty($password)) {
       $result = mysqli_query($conn, "SELECT * FROM `keys` WHERE license = '$key'");
