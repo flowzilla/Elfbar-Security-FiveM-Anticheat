@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elfbar-Security</title>
+
+    <!-- NEEDED SCRIPTS -->
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/3.0.3/tesseract.min.js'></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <script src="index.js" type="text/javascript"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="dist/output.css">
+
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white">
+    <div id="container">
+        
+        <div class="mb-4">
+            <div class="flex items-center -mt-5">
+                <img class="rounded-full" src="img/logo.png" width="32px" height="32px">
+                <span id="adminname" class="ml-2">Welcome, admin</span>
+            </div>
+            <br>
+            <input type="text" id="playerSearch" placeholder="Search by Player ID, Name or Steam ID..." class="text-sm p-3 border rounded-lg bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-none active:outline-none focus:outline-none ">
+        </div>
+
+        <div id="playerList" class="w-full mx-auto mb-8 overflow-x-auto rounded-lg bg-white dark:bg-gray-800">
+            <h1 class="text-2xl font-bold text-center py-2">Online Players</h1>
+
+
+            <table id="dataTable" class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg">
+                <thead class="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                ID
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Player
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Steam ID
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="onlineplayers">
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+        </div>
+        
+        <div id="main" class="bg-white dark:bg-gray-800 p-8 rounded-lg mb-8">
+            
+            <h1 class="text-2xl font-bold mb-4 text-center">Admin Powers</h1>
+            <div class="flex space-x-4">
+                <label class="inline-flex items-center">
+                    <input id="boxes" type="checkbox" class="h-5 w-5 text-blue-600 appearance-none border border-blue-600 rounded-md checked:bg-blue-600 checked:border-transparent">
+                    <span class="ml-2 text-white">ESP</span>
+                </label>
+              
+                <label class="inline-flex items-center">
+                    <input id="names" type="checkbox" class="h-5 w-5 text-blue-600 appearance-none border border-blue-600 rounded-md checked:bg-blue-600 checked:border-transparent">
+                    <span class="ml-2 text-white">Names</span>
+                </label>
+              
+                <label class="inline-flex items-center">
+                    <input id="tracers" type="checkbox" class="h-5 w-5 text-blue-600 appearance-none border border-blue-600 rounded-md checked:bg-blue-600 checked:border-transparent">
+                    <span class="ml-2 text-white">Tracers</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input id="skeletons" type="checkbox" class="h-5 w-5 text-blue-600 appearance-none border border-blue-600 rounded-md checked:bg-blue-600 checked:border-transparent">
+                    <span class="ml-2 text-white">Skeletons</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input id="objects" type="checkbox" class="h-5 w-5 text-blue-600 appearance-none border border-blue-600 rounded-md checked:bg-blue-600 checked:border-transparent">
+                    <span class="ml-2 text-white">Scanner</span>
+                </label>
+              </div>
+              <br>
+            <h1 class="text-2xl font-bold mb-4 text-center">Client Options</h1>
+                <div class="grid grid-cols-2 gap-4 py-2">
+                    <button id="spawnVeh" type="button" class="px-9 py-3 bg-violet-600 rounded-md text-white outline-none focus:none shadow-lg transform active:scale-75 rounded-lg transition-transform">Spawn Vehicle</button>
+                    <button id="max" type="button" class="px-9 py-3 bg-violet-600 rounded-md text-white outline-none focus:none shadow-lg transform active:scale-75 rounded-lg transition-transform">Max Health + Armor</button>
+                </div>
+                <br>
+                <h1 class="text-2xl font-bold mb-4 text-center">Server Options</h1>
+
+                <div class="grid grid-cols-2 gap-4 py-2">
+                    <button id="veh" type="button" class="px-9 py-3 bg-violet-600 rounded-md text-white outline-none focus:none shadow-lg transform active:scale-75 rounded-lg transition-transform">Delete Vehicles</button>
+                    <button id="obj" type="button" class="px-9 py-3 bg-violet-600 rounded-md text-white outline-none focus:none shadow-lg transform active:scale-75 rounded-lg transition-transform">Delete Objects</button>
+                    <button id="ped" type="button" class="px-9 py-3 bg-violet-600 rounded-md text-white outline-none focus:none shadow-lg transform active:scale-75 rounded-lg transition-transform">Delete Peds</button>
+                    <button id="all" type="button" class="px-9 py-3 bg-red-600 rounded-md text-white outline-none focus:none shadow-lg transform active:scale-75 rounded-lg transition-transform">Delete Everything</button>
+                </div>
+                <br>
+                <h1 class="text-2xl font-bold mb-4 text-center">AntiCheat Options</h1>
+
+                <div class="grid py-2 align-center">
+                    <button id="unban" type="button" class="px-9 py-3 bg-violet-600 rounded-md text-white outline-none focus:none shadow-lg transform active:scale-75 rounded-lg transition-transform">Unban Player</button>
+                </div>
+                
+    </div>
+    
+        </div>
+</body>
+</html>
