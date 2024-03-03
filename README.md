@@ -26,12 +26,28 @@ I will add more skid Screenshots soon hehe
 - Discord Webhook Logs
 - Live Counter
 - Admin Options ( Key, News and User Management, Logs and more)
-- and more!
+- and much more!
 
 ## Anticheat Features
 For the Anticheat Features you can check our Config-Panel by [Clicking here](https://config.elfbar-security.eu)
+If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://config.elfbar-security.eu) into Config.lua, otherwise you will not be able to use the anticheat
 
+## Some Customer Bot Features
+- Clear Props / Vehicles / Peds / All Command
+- Ban & Kick Command for the Anticheat
+- Checkban Command to check ban IDs
+- Reload Anticheat config Command
+- Admin bypass via Discord Roles
+- Restart FiveM Server Command
+- Help Command with all Commands
+- Unban Command to unban users from the Anticheat
+- Logs System via Discord Channels
+- and more!
 
+## Info
+You have to write your own backend so that everything works properly. ( Panel: Banlist, Auth, Logs | Ac: Ban System, API and more )
+We have not made our backend open source, because we dont want every skid Anticheat to have a panel & bot etc soon
+If you are interested write to us, we might sell it on occasionally
 
 ## Screenshots of our Project
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
@@ -45,7 +61,7 @@ For the Anticheat Features you can check our Config-Panel by [Clicking here](htt
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/gvms0r0g.png)
 ## Support / need help with the Source code?
 
-For support and help, join our [Discord Server](https://discord.gg/aCyAJnPFQq)
+For support and help, join our [Discord Server](https://discord.gg/aCyAJnPFQq) or write ricoo1812 a DM, we will help you to Setup something if you want...
 
 
 ## License
@@ -71,7 +87,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Authors
+## Authors / Creator
 
 - [@ricoo1812 / V01D](https://www.github.com/flowzilla)
 - [@remoteshell / H04X](https://www.github.com/H04X-Hoax)
