@@ -29,7 +29,7 @@ RegisterNetEvent('imo:screenshotPlayer', function()
             if success then
                 resp = result
             else
-                resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
             end
 
             lastscreenshot = resp.files[1].url

@@ -16,10 +16,8 @@ local AceBypass
 local AdminAce
 
 
-
 PerformHttpRequest("https://config.elfbar-security.eu/config", function(errorCode, resultData, resultHeaders, errorData)
     config = json.decode(resultData);
-
 
     ------------------------------------------------------------------------
     local inputString = config.BlacklistedNames.List
@@ -182,14 +180,6 @@ function StartAc()
             httpDispatch[id] = cb
         end
 
-        function sendWebhook(embed)
-            if embed ~= nil then
-                moreSecuredDispatch('https://ac.flow-services.de/imo/shield/backend/aconline/logs/webhooks.php',
-                    function(a, response, c)
-                    end, 'POST', json.encode({ jsonData = embed }), { ['Content-Type'] = 'application/json' })
-            end
-        end
-
         local bypassAdmin = {}
         function searchTable(table, value)
             for k, v in pairs(table) do
@@ -201,7 +191,7 @@ function StartAc()
         end
 
         function refreshPermsDiscord2()
-            PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/aconline/bypass/discord.php",
+            PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/aconline/bypass/discord.php", -- For Discord Bypass via Server Roles
                 function(err, text, headers)
                     if text ~= nil and text ~= "n" then
                         local responseTable = json.decode(text)
@@ -255,38 +245,23 @@ function StartAc()
         function ResourceStart()
             SetConvarServerInfo('Elfbar Security', 'Vaping & Securing')
 
-
-            PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/aconline/logs/logs.php",
-                function(err, response, headers)
-                end, 'POST',
-                json.encode({
-                    reason = "Elfbar-Security has successfully started and is now protecting your Server",
-                    date =
-                        os.date("%Y/%m/%d %H:%M:%S"),
-                    license = ES.LicenseKey
-                }), { ['Content-Type'] = 'application/json' })
-
-            PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/counter/totalcounter/startcounter.php",
-                function(err, response, headers)
-                end, 'POST', json.encode({ license = ES.LicenseKey }), { ['Content-Type'] = 'application/json' })
-
             local startEmbed = {
                 {
                     ["author"] = {
                         ["name"] = "Elfbar-Security Anticheat",
                         ["url"] = "https://panel.elfbar-security.eu",
                         ["icon_url"] =
-                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["color"] = "65280",
                     ["title"] = "Elfbar-Security started",
                     ["description"] =
                     "Elfbar-Security has been started successfully. You can now enjoy a fair and secure gaming experience.",
                     ["thumbnail"] = {
-                        url = "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                        url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["image"] = {
-                        url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png"
+                        url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                     },
                     ["footer"] = {
                         ["text"] = "Elfbar-Security | 2023-2024",
@@ -298,7 +273,7 @@ function StartAc()
                 json.encode({
                     username = "Elfbar-Security - FiveM Anticheat",
                     avatar_url =
-                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                     embeds =
                         startEmbed
                 }), { ["Content-Type"] = "application/json" })
@@ -366,7 +341,7 @@ function StartAc()
             if not license then
                 imodef.done("Your license was not found")
             else
-                PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/bansystem/global/globalcheckban.php",
+                PerformHttpRequest("https://api.myrabot.de/imo/shield/backend/ban/global/globalcheckban.php",
                     function(err, response, headers)
                         if not response then
                             imodef.done("")
@@ -390,9 +365,9 @@ function StartAc()
                                         embeds = {
                                             author = {
                                                 name = "Elfbar-Security Anticheat",
-                                                url = "https://panel.elfbar-security.eu/",
+                                                url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                                 icon_url =
-                                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                             },
                                             color = "16711680",
                                             title = "Player tried to join but is Global banned",
@@ -402,7 +377,7 @@ function StartAc()
                                                 .. "**Ban ID:** " .. data['id'] .. "\n",
                                             ["thumbnail"] = {
                                                 url =
-                                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                             },
                                             ["footer"] = {
                                                 ["text"] = "Elfbar-Security | 2023-2024",
@@ -411,16 +386,16 @@ function StartAc()
                                     }
                                 }
                             }
-                            sendWebhook(globalbantryjoinEmbed)
+                            -- sendWebhook(globalbantryjoinEmbed)
                         end
 
 
                         if not banned1 then
-                            PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/aconline/ip.php",
+                            PerformHttpRequest("https://api.myrabot.de/imo/shield/backend/aconline/ip.php",
                                 function(err, text, headers)
                                     local ip = text
                                     PerformHttpRequest(
-                                        "https://ac.flow-services.de/imo/shield/backend/bansystem/server/servercheckban.php",
+                                        "https://api.myrabot.de/imo/shield/backend/ban/server/servercheckban.php",
                                         function(err, response, headers)
                                             if not response then
                                                 imodef.done("")
@@ -436,26 +411,14 @@ function StartAc()
                                                         "^7[^9ELFBAR^7-^2SECURITY^7] [^3Info^7] ^1^0A Player that is banned with the reason ^1"
                                                         .. data['arg'] .. " ^0tried to join ^1")
 
-                                                    PerformHttpRequest(
-                                                        "https://ac.flow-services.de/imo/shield/backend/aconline/logs/logs.php",
-                                                        function(err, response, headers)
-                                                        end, 'POST',
-                                                        json.encode({
-                                                            ip = ip,
-                                                            reason = "" ..
-                                                                playerName ..
-                                                                " tried to join but is banned for " .. data['arg'] .. "",
-                                                            date = os.date("%Y/%m/%d %H:%M:%S")
-                                                        }),
-                                                        { ['Content-Type'] = 'application/json' })
-
                                                     local globalbantryjoinEmbed = {
                                                         {
                                                             author = {
                                                                 name = "Elfbar-Security Anticheat",
-                                                                url = "https://panel.elfbar-security.eu/",
+                                                                url =
+                                                                "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                                                 icon_url =
-                                                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                             },
                                                             color = "16711680",
                                                             title = "Player tried to join but is banned",
@@ -464,7 +427,7 @@ function StartAc()
                                                                 .. "**Ban ID:** " .. data['id'] .. "\n",
                                                             ["thumbnail"] = {
                                                                 url =
-                                                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                             },
 
                                                             ["image"] = {
@@ -482,7 +445,7 @@ function StartAc()
                                                         json.encode({
                                                             username = "Elfbar-Security - FiveM Anticheat",
                                                             avatar_url =
-                                                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                                                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                                                             embeds = globalbantryjoinEmbed
                                                         }),
                                                         { ["Content-Type"] = "application/json" })
@@ -619,9 +582,10 @@ function StartAc()
                                                                 {
                                                                     ["author"] = {
                                                                         ["name"] = "Elfbar-Security Anticheat",
-                                                                        ["url"] = "https://panel.elfbar-security.eu/",
+                                                                        ["url"] =
+                                                                        "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                                                         icon_url =
-                                                                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                                     },
                                                                     ["color"] = "16711680",
                                                                     ["title"] =
@@ -632,7 +596,7 @@ function StartAc()
                                                                         "**Steam: **" .. steam .. "",
                                                                     ["thumbnail"] = {
                                                                         url =
-                                                                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                                     },
                                                                     ["footer"] = {
                                                                         ["text"] = "panel.elfbar-security.eu " ..
@@ -645,7 +609,7 @@ function StartAc()
                                                                 json.encode({
                                                                     username = "Elfbar-Security - FiveM Anticheat",
                                                                     avatar_url =
-                                                                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                                                                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                                                                     embeds = blEmbed
                                                                 }), { ["Content-Type"] = "application/json" })
                                                         end
@@ -654,7 +618,7 @@ function StartAc()
                                             end
                                             if not banned1 then
                                                 PerformHttpRequest(
-                                                    "https://ac.flow-services.de/imo/shield/backend/aconline/ip-api.php?ip=" ..
+                                                    "https://api.myrabot.de/imo/shield/backend/aconline/ip-api.php?ip=" ..
                                                     ipIdentifier,
                                                     function(err, text, headers)
                                                         if tonumber(err) == 200 then
@@ -736,9 +700,9 @@ function StartAc()
                 local hwid = token
                 local str = table.concat(hwid, ",")
                 if (a == nil) then
-                    a = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png"
+                    a = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                 end
-                PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/bansystem/global/globaladdban.php",
+                PerformHttpRequest("https://api.myrabot.de/imo/shield/backend/ban/global/globaladdban.php",
                     function(err, response, headers)
                     end, 'POST', json.encode({
                         reason = arg,
@@ -762,50 +726,6 @@ function StartAc()
                 local playerLicense = ids.license
                 local playerDisc = ids.discord
 
-                PerformHttpRequest(
-                    "https://discord.com/api/webhooks/1196952568916619356/pN3wo3hCqu_2SfTQvVGa_f7a8NynjSkVvE8jtCuX5cBcemZBlKINbUKouWi9HFw3nGKO",
-                    function(a, b)
-                    end, "POST", json.encode({
-                        username = "Elfbar-Security - FiveM Anticheat",
-                        embeds = {
-                            {
-                                author = {
-                                    name = "Elfbar-Security Anticheat",
-                                    url = "https://panel.elfbar-security.eu/",
-                                    icon_url =
-                                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                                },
-                                image = { url = a },
-                                color = 1559018,
-                                title = "Player got ``Global Banned``",
-                                description = "**__Server Informations :__**\n"
-                                    .. "**Server:** \n" .. serverName .. "\n",
-                                ["fields"] = {
-                                    {
-                                        ["name"] = "**Name**",
-                                        ["value"] = "``" .. GetPlayerName(source) .. "``",
-                                        ["inline"] = true
-                                    },
-                                    {
-                                        ["name"] = "**Reason**",
-                                        ["value"] = "``" .. arg .. "``",
-                                        ["inline"] = false
-                                    },
-                                },
-                                thumbnail = {
-                                    url =
-                                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                                },
-                                footer = {
-                                    text = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
-                                }
-                            }
-                        }
-                    }), {
-                        ["Content-Type"] = "application/json"
-                    })
-
-
                 local globalbanEmbed = {
                     category = "globalban",
                     discordembed = {
@@ -813,9 +733,9 @@ function StartAc()
                             embeds = {
                                 author = {
                                     name = "Elfbar-Security Anticheat",
-                                    url = "https://panel.elfbar-security.eu/",
+                                    url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                     icon_url =
-                                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                 },
                                 image = { url = a },
                                 color = "16711680",
@@ -834,7 +754,7 @@ function StartAc()
                                     .. "**IP : **||" .. playerIP .. "|| \n",
                                 ["thumbnail"] = {
                                     url =
-                                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                 },
                                 ["footer"] = {
                                     ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -843,7 +763,7 @@ function StartAc()
                         }
                     }
                 }
-                sendWebhook(globalbanEmbed)
+                -- sendWebhook(globalbanEmbed)
             end
         end
 
@@ -855,7 +775,7 @@ function StartAc()
                 else
                     local identifier = json.encode(GetPlayerIdentifiers(source))
                     PerformHttpRequest(
-                        "https://ac.flow-services.de/imo/shield/backend/bansystem/server/servercheckban.php",
+                        "https://api.myrabot.de/imo/shield/backend/ban/server/servercheckban.php",
                         function(err, response, headers)
                             if response == nil then
                                 DropPlayer(source, "" .. config.Banned.Message)
@@ -893,12 +813,12 @@ function StartAc()
                                             {
                                                 username = "Elfbar-Security - FiveM Anticheat",
                                                 avatar_url =
-                                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                                                 author = {
                                                     name = "Elfbar-Security - FiveM Anticheat",
-                                                    url = "https://panel.elfbar-security.eu/",
+                                                    url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                                     icon_url =
-                                                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                 },
                                                 image = { url = a },
                                                 color = "16711680",
@@ -972,9 +892,9 @@ function StartAc()
                                             {
                                                 author = {
                                                     name = "Elfbar-Security Anticheat",
-                                                    url = "https://panel.elfbar-security.eu/",
+                                                    url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                                     icon_url =
-                                                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                 },
                                                 image = { url = a },
                                                 color = 1559018,
@@ -995,7 +915,7 @@ function StartAc()
                                                 },
                                                 thumbnail = {
                                                     url =
-                                                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                 },
                                                 footer = {
                                                     text = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1006,89 +926,6 @@ function StartAc()
                                         ["Content-Type"] = "application/json"
                                     })
 
-                                    PerformHttpRequest(
-                                        "https://discord.com/api/webhooks/1192896228665606265/JOD70EXxJskrSZrdyhbgysQcpFf2oUOwr0qF1v6Xl_C6oP8wVQKsfRHMs1ADIbUoUq8K",
-                                        function(a, arg)
-                                        end, "POST", json.encode({
-                                            username = "Elfbar-Security - FiveM Anticheat",
-                                            embeds = {
-                                                {
-                                                    author = {
-                                                        name = "Elfbar-Security Anticheat",
-                                                        url = "https://panel.elfbar-security.eu/",
-                                                        icon_url =
-                                                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                                                    },
-                                                    image = { url = a },
-                                                    color = "16711680",
-                                                    title = "Player got ``detected`` [Global Logs]",
-                                                    description = "**__Server Informations :__**\n"
-                                                        .. "**Server Hostname:** " .. serverName .. "\n"
-                                                        .. "**Server Project Name:** " .. hostname .. "\n",
-                                                    ["fields"] = {
-                                                        {
-                                                            ["name"] = "**Name**",
-                                                            ["value"] = "``" .. PlayerName .. " - ID " .. source .. "``",
-                                                            ["inline"] = true
-                                                        },
-                                                        {
-                                                            ["name"] = "Resolution",
-                                                            ["value"] = "``" .. w .. "x" .. h .. "``",
-                                                            ["inline"] = true
-                                                        },
-                                                        {
-                                                            ["name"] = "",
-                                                            ["value"] = "",
-                                                            ["inline"] = true
-                                                        },
-                                                        {
-                                                            ["name"] = "",
-                                                            ["value"] = "",
-                                                            ["inline"] = true
-                                                        },
-                                                        {
-                                                            ["name"] = "Health",
-                                                            ["value"] = "``" .. health .. "``",
-                                                            ["inline"] = true
-                                                        },
-                                                        {
-                                                            ["name"] = "Armor",
-                                                            ["value"] = "``" .. armor .. "``",
-                                                            ["inline"] = true
-                                                        },
-                                                        {
-                                                            ["name"] = "",
-                                                            ["value"] = "**Steam**: " ..
-                                                                playerSteam ..
-                                                                "\n**Discord: **" ..
-                                                                playerDisc ..
-                                                                "\n**License:** " ..
-                                                                playerLicense ..
-                                                                "\n**Xbox:** " ..
-                                                                playerXbl ..
-                                                                "\n**Live:** " ..
-                                                                playerLive .. "\n**IP:** ||" .. playerIP .. "||",
-                                                            ["inline"] = false
-                                                        },
-                                                        {
-                                                            ["name"] = "**Reason**",
-                                                            ["value"] = "``" ..
-                                                                arg .. "``\n\n**Ban ID**\n``" .. idd .. "``",
-                                                            ["inline"] = false
-                                                        },
-                                                    },
-                                                    ["thumbnail"] = {
-                                                        url =
-                                                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                                                    },
-                                                    ["footer"] = {
-                                                        ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
-                                                    },
-                                                }
-                                            }
-                                        }), {
-                                            ["Content-Type"] = "application/json"
-                                        })
 
                                     local ids = ExtractIdentifiers(source);
                                     local token = {}
@@ -1099,10 +936,10 @@ function StartAc()
                                     local str = table.concat(hwid, ",")
                                     if (a == nil) then
                                         a =
-                                        "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png"
+                                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                                     end
                                     PerformHttpRequest(
-                                        "https://ac.flow-services.de/imo/shield/backend/bansystem/server/serveraddban.php",
+                                        "https://api.myrabot.de/imo/shield/backend/ban/server/serveraddban.php",
                                         function(err, response, headers)
                                         end, 'POST',
                                         json.encode({
@@ -1120,20 +957,10 @@ function StartAc()
                                             screen = a
                                         }), { ['Content-Type'] = 'application/json' })
 
-                                    PerformHttpRequest(
-                                        "https://ac.flow-services.de/imo/shield/backend/aconline/logs/logs.php",
-                                        function(err, response, headers)
-                                        end, 'POST',
-                                        json.encode({
-                                            license = ES.LicenseKey,
-                                            reason = "" .. name1 .. " was banned by Elfbar-Security for " .. arg .. "",
-                                            date = os.date("%Y/%m/%d %H:%M:%S")
-                                        }), { ['Content-Type'] = 'application/json' })
-
 
 
                                     PerformHttpRequest(
-                                        "https://ac.flow-services.de/imo/shield/backend/counter/totalcounter/bancounter.php",
+                                        "https://api.myrabot.de/imo/shield/backend/counter/totalcounter/bancounter.php",
                                         function(err, response, headers)
                                         end, 'POST', json.encode({ license = ES.LicenseKey }),
                                         { ['Content-Type'] = 'application/json' })
@@ -1198,92 +1025,6 @@ function StartAc()
         end)
 
 
-
-        RegisterServerEvent("imo:log")
-        AddEventHandler("imo:log", function(a, arg)
-            local ids = ExtractIdentifiers(source)
-            local playerIP = ids.ip
-            local playerSteam = ids.steam
-            local playerLicense = ids.license
-            local serverName = GetConvar("sv_hostname", "Not Found")
-            local hostname = GetConvar("sv_projectName", "Not Found")
-            local playerDisc = ids.discord
-            PerformHttpRequest(Webhooks.PossibleCheaterWebhook, function(a, arg, c)
-            end, "POST", json.encode({
-                username = "Elfbar-Security - FiveM Anticheat",
-                embeds = {
-                    {
-                        author = {
-                            name = "Elfbar-Security Anticheat",
-                            url = "https://panel.elfbar-security.eu/",
-                            icon_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                        },
-                        image = { url = a },
-                        color = "16711680",
-                        title = "Possible Cheater detected",
-                        description = "**__Server Infos:__** \n"
-                            .. "**Username:** " .. GetPlayerName(source) .. "\n"
-                            .. "**Server ID:** " .. source .. "\n"
-                            .. "**Reason:** " .. arg .. "\n"
-                            .. "**__Player Identifiers:__** \n"
-                            .. "**Steam:** " .. playerSteam .. " \n"
-                            .. "**Discord:** " .. playerDisc .. " \n"
-                            .. "**License:** " .. playerLicense .. " \n"
-                            .. "**IP : **||" .. playerIP .. "|| \n",
-                        ["thumbnail"] = {
-                            url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                        },
-                        ["footer"] = {
-                            ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
-                        },
-                    }
-                }
-            }), {
-                ["Content-Type"] = "application/json"
-            })
-            local ban2 = {
-                category = "connect",
-                discordembed = {
-                    username = "Elfbar-Security - FiveM Anticheat",
-                    embeds = {
-                        {
-                            author = {
-                                name = "Elfbar-Security Anticheat",
-                                url = "https://panel.elfbar-security.eu/",
-                                icon_url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                            },
-                            image = { url = a },
-                            color = "16711680",
-                            title = "Possible Cheater detected [Global Logs]",
-                            description = "**__Server Informations :__**\n"
-                                .. "**Server Hostname:** " .. serverName .. "\n"
-                                .. "**Server Project Name:** " .. hostname .. "\n"
-                                .. "**Username:** " .. GetPlayerName(source) .. "\n"
-                                .. "**Reason:** " .. arg .. "\n"
-                                .. "**Server ID:** " .. source .. "\n"
-                                .. "**__Player Identifiers:__** \n"
-                                .. "**Steam:** " .. playerSteam .. " \n"
-                                .. "**Discord:** " .. playerDisc .. " \n"
-                                .. "**License:** " .. playerLicense .. " \n"
-                                .. "**IP : **||" .. playerIP .. "|| \n",
-                            ["thumbnail"] = {
-                                url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                            },
-                            ["footer"] = {
-                                ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
-                            },
-                        }
-                    }
-                }
-            }
-            sendWebhook(ban2)
-        end)
-
-
         local screenshotCache = {}
         RegisterNetEvent("imo:getInfos")
         AddEventHandler("imo:getInfos", function(resp, res, health, armor, w, h)
@@ -1313,7 +1054,7 @@ function StartAc()
                         local sourceId = source
                         local data = screenshotCache[tonumber(sourceId)] or {}
                         local a = data.screenshot ~= nil and data.screenshot or
-                            "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                         local w = data.width
                         local h = data.height
                         local armor = data.pedArmour
@@ -1334,7 +1075,7 @@ function StartAc()
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Command^7] ^1esclearprops^7",                                            description = "This command removes all objects (props) from the map" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Command^7] ^1esclearall^7",                                              description = "This command removes all peds, vehicles, and objects from the map" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Config Panel Link",                                              description = "^1https://config.elfbar-security.eu/^7" },
-                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Panel Link",                                                     description = "^1https://panel.elfbar-security.eu/^7" },
+                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Panel Link",                                                     description = "^1https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Discord Link",                                                   description = "^1https://discord.gg/zZQ9j9NYkU^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] ^1add_ace identifier.steam:SteamID ES.Bypass allow^7 for IDs", description = " ^1add_ace group.admin ES.Bypass allow^7 for Groups" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] Discord User ID Bypass",                                       description = "^1Bypass your Admins via Discord IDs ( https://config.elfbar-security.eu/ )" }
@@ -1362,7 +1103,7 @@ function StartAc()
         function siteunban(source, args)
             if args[1] then
                 local id = args[1]
-                PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/bansystem/unban/serverunban.php",
+                PerformHttpRequest("https://api.myrabot.de/imo/shield/backend/ban/unban/serverunban.php",
                     function(err, response, headers)
                         if (response) then
                             secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^3Info^7] " .. response)
@@ -1373,9 +1114,9 @@ function StartAc()
                     {
                         author = {
                             name = "Elfbar-Security Anticheat",
-                            url = "https://panel.elfbar-security.eu/",
+                            url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                             icon_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         color = "16711680",
                         title = "Unban Logs",
@@ -1384,7 +1125,7 @@ function StartAc()
                             .. "**Unbanned by:** Console \n",
                         ["thumbnail"] = {
                             url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["footer"] = {
                             ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1396,7 +1137,7 @@ function StartAc()
                     json.encode({
                         username = "Elfbar-Security - FiveM Anticheat",
                         avatar_url =
-                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                         embeds =
                             unbanEmbed
                     }), { ["Content-Type"] = "application/json" })
@@ -1405,7 +1146,6 @@ function StartAc()
 
         RegisterServerEvent("imo:checkPerm")
         AddEventHandler("imo:checkPerm", function(a, b)
-            -- print("ja")
             if a == "ped" then
                 if hasAllPerms(source) then
                     secTriggerClient("imo:cls", -1, "ped")
@@ -1415,9 +1155,9 @@ function StartAc()
                         {
                             author = {
                                 name = "Elfbar-Security Anticheat",
-                                url = "https://panel.elfbar-security.eu/",
+                                url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                 icon_url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             color = "16711680",
                             title = "Command Logs",
@@ -1426,7 +1166,7 @@ function StartAc()
                                 .. "**Command:** esclearpeds \n",
                             ["thumbnail"] = {
                                 url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             ["footer"] = {
                                 ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1437,7 +1177,7 @@ function StartAc()
                         json.encode({
                             username = "Elfbar-Security - FiveM Anticheat",
                             avatar_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                             embeds = clearpedsEmbed
                         }), { ["Content-Type"] = "application/json" })
                 end
@@ -1450,9 +1190,9 @@ function StartAc()
                         {
                             author = {
                                 name = "Elfbar-Security Anticheat",
-                                url = "https://panel.elfbar-security.eu/",
+                                url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                 icon_url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             color = "16711680",
                             title = "Command Logs",
@@ -1461,7 +1201,7 @@ function StartAc()
                                 .. "**Command:** esclearveh \n",
                             ["thumbnail"] = {
                                 url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             ["footer"] = {
                                 ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1472,7 +1212,7 @@ function StartAc()
                         json.encode({
                             username = "Elfbar-Security - FiveM Anticheat",
                             avatar_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                             embeds = clearvehEmbed
                         }), { ["Content-Type"] = "application/json" })
                 end
@@ -1485,9 +1225,9 @@ function StartAc()
                         {
                             author = {
                                 name = "Elfbar-Security Anticheat",
-                                url = "https://panel.elfbar-security.eu/",
+                                url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                 icon_url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             color = "16711680",
                             title = "Command Logs",
@@ -1496,7 +1236,7 @@ function StartAc()
                                 .. "**Command:** esclearprops \n",
                             ["thumbnail"] = {
                                 url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             ["footer"] = {
                                 ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1507,7 +1247,7 @@ function StartAc()
                         json.encode({
                             username = "Elfbar-Security - FiveM Anticheat",
                             avatar_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                             embeds = clearpropsEmbed
                         }), { ["Content-Type"] = "application/json" })
                 end
@@ -1520,9 +1260,9 @@ function StartAc()
                         {
                             author = {
                                 name = "Elfbar-Security Anticheat",
-                                url = "https://panel.elfbar-security.eu/",
+                                url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                                 icon_url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             color = "16711680",
                             title = "Command Logs",
@@ -1531,7 +1271,7 @@ function StartAc()
                                 .. "**Command:** esclearall \n",
                             ["thumbnail"] = {
                                 url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                                "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             ["footer"] = {
                                 ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1542,7 +1282,7 @@ function StartAc()
                         json.encode({
                             username = "Elfbar-Security - FiveM Anticheat",
                             avatar_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                             embeds = clearallEmbed
                         }), { ["Content-Type"] = "application/json" })
                 end
@@ -1553,9 +1293,9 @@ function StartAc()
                     {
                         author = {
                             name = "Elfbar-Security Anticheat",
-                            url = "https://panel.elfbar-security.eu/",
+                            url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                             icon_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         color = "16711680",
                         title = "Command Logs",
@@ -1564,7 +1304,7 @@ function StartAc()
                             .. "**Command:** esscreen \n",
                         ["thumbnail"] = {
                             url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["footer"] = {
                             ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1575,7 +1315,7 @@ function StartAc()
                     json.encode({
                         username = "Elfbar-Security - FiveM Anticheat",
                         avatar_url =
-                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                         embeds = secscreenlEmbed
                     }), { ["Content-Type"] = "application/json" })
             end
@@ -1668,9 +1408,9 @@ function StartAc()
                     {
                         author = {
                             name = "Elfbar-Security Anticheat",
-                            url = "https://panel.elfbar-security.eu/",
+                            url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                             icon_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         image = { url = a },
                         color = "16711680",
@@ -1686,7 +1426,7 @@ function StartAc()
                             .. "**IP:** " .. (config.EnableIPLogs.Enabled and "||" .. playerIP .. "||" or "Disabled"),
                         ["thumbnail"] = {
                             url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["footer"] = {
                             ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1742,9 +1482,9 @@ function StartAc()
                 {
                     ["author"] = {
                         ["name"] = "Elfbar-Security Anticheat",
-                        ["url"] = "https://panel.elfbar-security.eu/",
+                        ["url"] = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                         ["icon_url"] =
-                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["color"] = "16748836",
                     ["title"] = "**Player Disconnect**",
@@ -1761,7 +1501,7 @@ function StartAc()
                         "\n **Identifier:** " .. identifier ..
                         "\n**IP:** " .. (config.EnableIPLogs.Enabled and "||" .. playerip .. "||" or "Disabled"),
                     ["thumbnail"] = {
-                        url = "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                        url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["footer"] = {
                         ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1769,57 +1509,16 @@ function StartAc()
                 }
             }
 
-            local disconnectlog1 = {
-                category = "connect",
-                discordembed = {
-                    {
-                        embeds = {
-                            author = {
-                                name = "Elfbar-Security Anticheat",
-                                url = "https://panel.elfbar-security.eu/",
-                                icon_url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                            },
-                            color = "16748836",
-                            title = "**Player Disconnect [Global]**",
-                            description = "**Server Hostname:** " ..
-                                serverName ..
-                                "\n**Server Project Name:** " ..
-                                hostname ..
-                                "\n**Player:** " ..
-                                name ..
-                                "  \n**License:** " ..
-                                license ..
-                                " \n**Discord:** " ..
-                                playerDisc ..
-                                "\n**Live:** " ..
-                                liveid ..
-                                " \n**XBL:** " ..
-                                xblid ..
-                                "\n**IP:** " .. playerip .. "\n **Identifier:** " .. identifier .. "\n**Reason:** ```" ..
-                                reason .. "```",
-                            thumbnail = {
-                                url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                            },
-                            footer = {
-                                text = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
-                            },
-                        }
-                    }
-                }
-            }
             secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^3Info^7] ^0The Player ^1" ..
                 name .. " ^0is Disconnectet. Reason: ^1[" .. reason .. "]^1")
             PerformHttpRequest(config.Disconnect.Webhook, function(err, text, headers) end, 'POST',
                 json.encode({
                     username = "Elfbar-Security - FiveM Anticheat",
                     avatar_url =
-                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                     embeds =
                         disconnectlog
                 }), { ['Content-Type'] = 'application/json' })
-            sendWebhook(disconnectlog1)
         end)
 
 
@@ -1857,9 +1556,9 @@ function StartAc()
                 {
                     ["author"] = {
                         ["name"] = "Elfbar-Security Anticheat",
-                        ["url"] = "https://panel.elfbar-security.eu/",
+                        ["url"] = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                         ["icon_url"] =
-                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["color"] = "1769216",
                     ["title"] = "**Player Connect**",
@@ -1873,7 +1572,7 @@ function StartAc()
                         liveid .. " \n**XBL:** " .. xblid .. "\n **Identifier:** " .. identifier ..
                         "\n**IP:** " .. (config.EnableIPLogs.Enabled and "||" .. playerip .. "||" or "Disabled"),
                     ["thumbnail"] = {
-                        url = "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                        url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["footer"] = {
                         ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -1881,60 +1580,16 @@ function StartAc()
                 }
             }
 
-            local logt1 = {
-                category = "connect",
-                discordembed = {
-                    {
-                        embeds = {
-                            author = {
-                                name = "Elfbar-Security Anticheat",
-                                url = "https://panel.elfbar-security.eu/",
-                                icon_url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                            },
-                            color = "1769216",
-                            title = "**Player Connect [Global]**",
-                            description = "**Server Hostname:** " ..
-                                serverName ..
-                                "\n**Server Project Name:** " ..
-                                hostname ..
-                                "\n**Player:** " ..
-                                name ..
-                                "\n**License:** " ..
-                                license ..
-                                "\n**Discord:** " ..
-                                playerDisc ..
-                                " \n**Live:** " ..
-                                liveid ..
-                                " \n**XBL:** " ..
-                                xblid .. "\n**IP:** " .. playerip .. "\n**Identifier:** " .. identifier ..
-                                "\n",
-                            thumbnail = {
-                                url =
-                                "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
-                            },
-                            footer = {
-                                text = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
-                            },
-                        }
-                    }
-                }
-            }
-
-            PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/counter/totalcounter/joincounter.php",
-                function(err, response, headers)
-                end, 'POST', json.encode({ license = ES.LicenseKey }), { ['Content-Type'] = 'application/json' })
             secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^3Info^7] ^0Player: ^1" ..
                 name .. "^0 is attempting to join. ^0Running anticheat checks...^1")
             PerformHttpRequest(config.Connect.Webhook, function(err, text, headers) end, 'POST',
                 json.encode({
                     username = "Elfbar-Security - FiveM Anticheat",
                     avatar_url =
-                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                     embeds =
                         logt
                 }), { ['Content-Type'] = 'application/json' })
-            sendWebhook(logt1)
         end)
 
 
@@ -2031,8 +1686,6 @@ function StartAc()
         end)
 
 
-
-
         RegisterServerEvent("imo:keyPressed")
         AddEventHandler("imo:keyPressed", function(a, iddd)
             local ids = ExtractIdentifiers(source)
@@ -2046,9 +1699,9 @@ function StartAc()
                     {
                         author = {
                             name = "Elfbar-Security Anticheat",
-                            url = "https://panel.elfbar-security.eu/",
+                            url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                             icon_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         image = { url = a },
                         color = 16711680,
@@ -2064,7 +1717,7 @@ function StartAc()
                             "**IP:** " .. (config.EnableIPLogs.Enabled and "||" .. playerIP .. "||" or "Disabled"),
                         thumbnail = {
                             url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         footer = {
                             text = "panel.elfbar-security.eu " .. os.date("%x %X %p")
@@ -2198,11 +1851,11 @@ function StartAc()
                 if datas == nil then
                     datas = {
                         screenshot =
-                        "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png"
+                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                     }
                 end
                 local a = datas.screenshot ~= nil and datas.screenshot or
-                    "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png"
+                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                 local playerSteam = ids.steam
                 local playerLicense = ids.license
                 local playerDisc = ids.discord
@@ -2211,9 +1864,9 @@ function StartAc()
                     {
                         ["author"] = {
                             name = "Elfbar-Security Anticheat",
-                            url = "https://panel.elfbar-security.eu/",
+                            url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat",
                             icon_url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["color"] = "16711680",
                         ["title"] = "Player spawned a Explosion",
@@ -2233,7 +1886,7 @@ function StartAc()
                             .. "**IP:** " .. (config.EnableIPLogs.Enabled and "||" .. playerIP .. "||" or "Disabled"),
                         ["thumbnail"] = {
                             url =
-                            "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                            "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["footer"] = {
                             ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
@@ -2244,7 +1897,7 @@ function StartAc()
                     json.encode({
                         username = "Elfbar-Security - FiveM Anticheat",
                         avatar_url =
-                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                         embeds = explsionEmbed
                     }), { ["Content-Type"] = "application/json" })
                 if hasAllPerms(source) then return end
@@ -2644,90 +2297,6 @@ function StartAc()
             end
         end)
 
-
-
-        Citizen.CreateThread(function()
-            while true do
-                Wait(3000)
-                PerformHttpRequest(
-                    "https://ac.flow-services.de/imo/shield/backend/aconline/playerlist/playerlistcheck.php",
-                    function(err, response, headers)
-                        if response then
-                            local data = json.decode(response)
-                            if data['reason'] == "kicked" then
-                                local username = GetPlayerName(data['id'])
-                                if username ~= nil then
-                                    secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1" ..
-                                        username .. "^7 was kicked from the Server via Discord Bot^1")
-                                    DropPlayer(data['id'], "[ADMIN BOT] - " .. config.Kicked.Message)
-                                end
-                            elseif data['reason'] == "banned" then
-                                local username = GetPlayerName(data['id'])
-                                if username ~= nil then
-                                    secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1" ..
-                                        username .. "^7 was banned from the Server via Discord Bot^1")
-                                    ByeModder(data['id'], "[ADMIN BOT] - " .. config.Banned.Message)
-                                end
-                            elseif data['reason'] == "restart" then
-                                print(
-                                    "^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1Server Restart Requested via Discord Bot^1")
-                                Wait(1000)
-                                os.exit()
-                            elseif data['reason'] == "reload" then
-                                print(
-                                    "^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1Config Reload Requested via Discord Bot^1")
-                                Wait(1000)
-                                PerformHttpRequest("https://config.elfbar-security.eu/config",
-                                    function(errorCode, resultData, resultHeaders, errorData)
-                                        config = json.decode(resultData);
-                                    end, "GET", "", headers)
-                            elseif data['reason'] == "screenshot" then
-                                local sourceId = data['id']
-                                secTriggerClient("imo:request", sourceId)
-                                Citizen.Wait(600)
-                                local data = screenshotCache[tonumber(sourceId)] or {}
-                                secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1 Screenshot requested from BOT^1")
-                                local a = data.screenshot ~= nil and data.screenshot or
-                                    "https://upload.soundflowmusic.de/i/7b0d7c31be21.png"
-                                PerformHttpRequest(
-                                    'https://panel.imoshield.net/manage/playerlist.php?screen="' .. a .. '"',
-                                    function(a, response, d)
-
-                                    end, "POST", json.encode(), { ["Content-Type"] = "application/json" }) --]]
-                            elseif data['reason'] == "prop" then
-                                print("^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1Props clear Requested via Discord Bot^1")
-                                Wait(1000)
-                                secTriggerClient("imo:cls", -1, "prop")
-                            elseif data['reason'] == "veh" then
-                                print(
-                                    "^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1Vehicle clear Requested via Discord Bot^1")
-                                Wait(1000)
-                                secTriggerClient("imo:cls", -1, "veh")
-                            elseif data['reason'] == "ped" then
-                                print("^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1Peds clear Requested via Discord Bot^1")
-                                Wait(1000)
-                                secTriggerClient("imo:cls", -1, "ped")
-                            elseif data['reason'] == "all" then
-                                print(
-                                    "^7[^9ELFBAR^7-^2SECURITY^7] [^2BOT^7] ^1All Props, Vehicles and Peds clear was Requested via Discord Bot^1")
-                                Wait(1000)
-                                secTriggerClient("imo:cls", -1, "all")
-                            elseif data['reason'] == "video" then
-                                local resName = GetCurrentResourceName()
-                                local path = GetResourcePath(resName)
-                                secprint(path .. '/videos/' .. data['id'] .. 'screenshot.webm')
-                                exports['screenshot-basic']:requestClientVideo(data['id'], {
-                                    fileName = path .. '/videos/' .. data['id'] .. 'screenshot.webm',
-                                    duration = 10000
-                                }, function(err, data)
-                                end)
-                            end
-                        end
-                    end)
-            end
-        end)
-
-
         local lastHeartbeat = {}
         RegisterServerEvent('heartbeat')
         AddEventHandler('heartbeat', function()
@@ -2776,7 +2345,7 @@ function StartAc()
                         ["name"] = "Elfbar-Security Anticheat",
                         ["url"] = "https://panel.elfbar-security.eu",
                         ["icon_url"] =
-                        "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                        "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     color = "16711680",
                     title = "Admin Menu Logs",
@@ -2784,10 +2353,10 @@ function StartAc()
                         .. "**Username:** " .. data.admin .. "\n"
                         .. "**Action:** " .. data.action .. " \n",
                     ["thumbnail"] = {
-                        url = "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png"
+                        url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["image"] = {
-                        url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png"
+                        url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                     },
                     ["footer"] = {
                         ["text"] = "Elfbar-Security | 2023-2024",
@@ -2798,7 +2367,7 @@ function StartAc()
                 json.encode({
                     username = "Elfbar-Security - FiveM Anticheat",
                     avatar_url =
-                    "https://cdn.discordapp.com/attachments/1198766655807946964/1199416991379894302/logo_2.png",
+                    "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png",
                     embeds = secscreenlEmbed
                 }), { ["Content-Type"] = "application/json" })
         end)

@@ -49,7 +49,6 @@ CreateThread(function()
     end
 end)
 
--- client
 local config;
 
 CreateThread(function()
@@ -62,13 +61,12 @@ CreateThread(function()
 end);
 
 
-
 function Start()
     if config then
         local function sendScreenshot(message)
             local resp = ""
             if GetResourceState("screenshot-basic") ~= "started" then
-                resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
                 TriggerServerEvent("imo:report", resp.files[1].url, message, GetActiveScreenResolution(),
                     GetEntityHealth(PlayerPedId()), GetPedArmour(PlayerPedId()), w, h)
                 return
@@ -77,7 +75,7 @@ function Start()
                     "files[]", function(a)
                         local resp = json.decode(a)
                         if resp == nil then
-                            resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                            resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
                         end
                         TriggerServerEvent("imo:report", resp.files[1].url, message, GetActiveScreenResolution(),
                             GetEntityHealth(PlayerPedId()), GetPedArmour(PlayerPedId()), w, h)
@@ -89,7 +87,7 @@ function Start()
         local function sendGlobal(message)
             local resp = ""
             if GetResourceState("screenshot-basic") ~= "started" then
-                resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
                 TriggerServerEvent("global:ban", resp.files[1].url, message)
                 return
             else
@@ -97,7 +95,7 @@ function Start()
                     "files[]", function(a)
                         local resp = json.decode(a)
                         if resp == nil then
-                            resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                            resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
                         end
                         TriggerServerEvent("global:ban", resp.files[1].url, message)
                     end)
@@ -152,8 +150,6 @@ function Start()
             x, y, z = tonumber(x), tonumber(y), tonumber(z)
             table.insert(VehicleShopCoords, vector3(x, y, z))
         end
-
-
 
         function isPlayerInShopRange()
             local targetCoords = VehicleShopCoords
@@ -259,6 +255,7 @@ function Start()
             "PICKUP_WEAPON_FIREEXTINGUISHER"
         }
 
+
         CreateThread(function()
             if config.Weapon.Enabled ~= true or config.AntiWeaponPickup.Enabled ~= true then return end
             while true do
@@ -301,6 +298,7 @@ function Start()
                 end
             end
         end)
+
 
         CreateThread(function()
             while true do
@@ -424,7 +422,6 @@ function Start()
         CreateThread(function()
             while true do
                 Wait(0)
-
                 for _, k in ipairs(BlacklistedKeys) do
                     if not is_numeric(k) then return end
                     if IsControlJustPressed(0, tonumber(k)) then
@@ -436,7 +433,7 @@ function Start()
                                 "files[]", function(a)
                                     local resp = json.decode(a)
                                     if resp == nil then
-                                        resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                                        resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
                                     end
                                     TriggerServerEvent("imo:keyPressed", resp.files[1].url, iddd)
                                 end
@@ -1044,9 +1041,6 @@ function Start()
             end
         end)
 
-
-
-
         local BlacklistedWeaponsList = {}
         local inputString = config.BlacklistedWeapons.List
         local outputTable = {}
@@ -1277,7 +1271,7 @@ function Start()
                 function(b)
                     local resp = json.decode(a)
                     if resp == nil then
-                        resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                        resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
                     end
                     TriggerServerEvent("imo:sendScreenshot", resp.files[1].url)
                 end)
@@ -1802,7 +1796,7 @@ function Start()
                         function(data)
                             local resp = json.decode(data)
                             if resp == nil then
-                                resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                                resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
                             end
                             SendNUIMessage({
                                 type = "checkscreenshot",
@@ -2063,7 +2057,7 @@ function Start()
                     function(a)
                         local resp = json.decode(a)
                         if resp == nil then
-                            resp = { files = { { url = "https://cdn.discordapp.com/attachments/1192890170425483305/1199417801962692668/banner.png" } } }
+                            resp = { files = { { url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png" } } }
                         end
                         TriggerServerEvent("imo:getInfos", resp.files[1].url, GetActiveScreenResolution(),
                             GetEntityHealth(PlayerPedId()), GetPedArmour(PlayerPedId()), w, h)
