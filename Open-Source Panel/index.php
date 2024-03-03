@@ -15,7 +15,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 
   $url = "http://" . $ip . ":" . $port . "/info.json";
-  
+
   $curl = curl_init();
   curl_setopt($curl, CURLOPT_URL, $url);
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -88,7 +88,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.js"></script>
   <link id="color" rel="stylesheet" href="assets/css/color-1.css" media="screen">
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
   <style>
@@ -121,8 +121,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 
 
-<?php
-if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip']) && !empty($_POST['ip'])) {
+  <?php
+  if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip']) && !empty($_POST['ip'])) {
     $id = $_POST['license'];
     $ip = $_POST['ip'];
     include 'database.php';
@@ -133,61 +133,61 @@ if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip'])
     mysqli_stmt_bind_param($stmt, "s", $id);
 
     if (mysqli_stmt_execute($stmt)) {
-        $result = mysqli_stmt_get_result($stmt);
-        $row = mysqli_fetch_assoc($result);
-        $dbDate = $row['lastreset'];
+      $result = mysqli_stmt_get_result($stmt);
+      $row = mysqli_fetch_assoc($result);
+      $dbDate = $row['lastreset'];
 
-        $tage = date('Y-m-d', strtotime('-30 days'));
+      $tage = date('Y-m-d', strtotime('-30 days'));
 
-        if ($dbDate < $tage) {
-            $updateSql = "UPDATE redem_license SET lastreset = NOW() WHERE license = ?";
-            $updateStmt = mysqli_prepare($link, $updateSql);
-            mysqli_stmt_bind_param($updateStmt, "s", $id);
+      if ($dbDate < $tage) {
+        $updateSql = "UPDATE redem_license SET lastreset = NOW() WHERE license = ?";
+        $updateStmt = mysqli_prepare($link, $updateSql);
+        mysqli_stmt_bind_param($updateStmt, "s", $id);
 
-            if (mysqli_stmt_execute($updateStmt)) {
-              $sql2 = 'DELETE FROM server WHERE serverip = "'. $ip .'"';
-              $stmt2 = mysqli_prepare($link, $sql2);
-              
-              if(mysqli_stmt_execute($stmt2)) {
-                echo "<script>
+        if (mysqli_stmt_execute($updateStmt)) {
+          $sql2 = 'DELETE FROM server WHERE serverip = "' . $ip . '"';
+          $stmt2 = mysqli_prepare($link, $sql2);
+
+          if (mysqli_stmt_execute($stmt2)) {
+            echo "<script>
                 Swal.fire({
                   title: 'Panel System',
                   text: 'IP has been reset successfully. You can now restart ImoShield',
                   icon: 'success'
                 });
               </script>";
-              } else {
-                echo "<script>
+          } else {
+            echo "<script>
                 Swal.fire({
                   title: 'Panel System',
                   text: 'ERROR [691]',
                   icon: 'success'
                 });
               </script>";
-              }
-               
-            } else {
-                echo "<script>
+          }
+
+        } else {
+          echo "<script>
                   Swal.fire({
                     title: 'Panel System',
                     text: 'Error [692]', 
                     icon: 'error'
                   });
                 </script>";
-            }
+        }
 
-            mysqli_stmt_close($updateStmt);
-        } else {
-            echo "<script>
+        mysqli_stmt_close($updateStmt);
+      } else {
+        echo "<script>
               Swal.fire({
                 title: 'Panel System',
                 text: 'IP reset COOLDOWN',
                 icon: 'error'
               });
             </script>";
-        }
+      }
     } else {
-        echo "<script>
+      echo "<script>
           Swal.fire({
             title: 'Panel System',
             text: 'Error [694]',
@@ -197,8 +197,8 @@ if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip'])
     }
 
     mysqli_stmt_close($stmt);
-}
-?>
+  }
+  ?>
 
   <script>
 
@@ -215,7 +215,7 @@ if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip'])
 </head>
 
 <body class="dark-only">
-  
+
   <div class="page-wrapper compact-wrapper" id="pageWrapper">
     <div class="page-header">
       <div class="header-wrapper row m-0">
@@ -224,7 +224,8 @@ if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip'])
           <ul class="nav-menus">
             <li class="profile-nav onhover-dropdown p-0 me-0">
 
-              <div class="media profile-media"><img class="b-r-10" src="<?php echo $avatar ?>" alt="" style="width: 35px; height: 35px;">
+              <div class="media profile-media"><img class="b-r-10" src="<?php echo $avatar ?>" alt=""
+                  style="width: 35px; height: 35px;">
                 <div class="media-body"><span>
                     <?php
                     echo $_SESSION["username"];
@@ -239,12 +240,14 @@ if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip'])
                 </div>
               </div>
               <ul class="profile-dropdown onhover-show-div">
-                <li><a href="https://panel.elfbar-security.eu/account/"><i data-feather="user"></i><span>Account</span></a>
+                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/"><i
+                      data-feather="user"></i><span>Account</span></a>
                 </li>
 
-                <li><a href="https://panel.elfbar-security.eu/account/"><i
+                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/"><i
                       data-feather="settings"></i><span>Settings</span></a></li>
-                <li><a href="https://panel.elfbar-security.eu/logout.php"> <i data-feather="log-in"> </i><span>Log
+                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogout.php"> <i
+                      data-feather="log-in"> </i><span>Log
                       out</span></a></li>
               </ul>
             </li>
@@ -291,43 +294,47 @@ if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip'])
                   </div>
                 </li>
                 <li class="sidebar-list">
-  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/api/download" download="newest.zip">
-    <i data-feather="download"></i>
-    <span>Download Anticheat</span>
-  </a>
-</li>
+                  <a class="sidebar-link sidebar-title link-nav"
+                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatapi/download"
+                    download="newest.zip">
+                    <i data-feather="download"></i>
+                    <span>Download Anticheat</span>
+                  </a>
+                </li>
                 <li class="sidebar-main-title">
                   <div>
                     <h6 class="lan-8">Information</h6>
                   </div>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/tos/"
-                    data-bs-original-title="" title="">
+                  <a class="sidebar-link sidebar-title link-nav"
+                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos/" data-bs-original-title=""
+                    title="">
                     <i data-feather="file-text"></i>
                     <span>T.O.S</span>
                   </a>
                 </li>
-                
+
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/refund/"
-                    data-bs-original-title="" title="">
-                <i data-feather="credit-card"></i>
-                <span>Refund</span>
+                  <a class="sidebar-link sidebar-title link-nav"
+                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund/" data-bs-original-title=""
+                    title="">
+                    <i data-feather="credit-card"></i>
+                    <span>Refund</span>
                   </a>
                 </li>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href=""
-                    data-bs-original-title="" title="">
+                  <a class="sidebar-link sidebar-title link-nav" href="" data-bs-original-title="" title="">
                     <i data-feather="bookmark"></i>
                     <span>Docs</span>
                   </a>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/discord"
-                    data-bs-original-title="" title="">
+                  <a class="sidebar-link sidebar-title link-nav"
+                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatdiscord" data-bs-original-title=""
+                    title="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                       class="feather feather-link">
@@ -351,24 +358,24 @@ if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip'])
                   echo '</li>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="server"></i><span>Server</span></a>';
                   echo '<ul class="sidebar-submenu">';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/server/overview/">Overview</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/server/overview/">Overview</a></li>';
                   echo '<li><a href="">Server Table</a></li>';
                   echo '</ul>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="terminal"></i><span>Logs</span></a>';
                   echo '<ul class="sidebar-submenu">';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/logs/authlogs/">Auth Logs</a></li>';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/logs/serverlogs/">Server Logs</a></li>';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/logs/panellogs/">Panel Logs</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/authlogs/">Auth Logs</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/serverlogs/">Server Logs</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/panellogs/">Panel Logs</a></li>';
                   echo '</ul>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="cloud"></i><span>Auth</span></a>';
                   echo '<ul class="sidebar-submenu">';
                   echo '<li><a href="#">Key Overview</a></li>';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/auth/keygenerator">Key Creator</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/auth/keygenerator">Key Creator</a></li>';
                   echo '<li><a href="#">IP Bans</a></li>';
                   echo '</ul>';
-                  echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="https://panel.elfbar-security.eu/admin/website"><i data-feather="folder"></i><span>Website</span></a>';
+                  echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/website"><i data-feather="folder"></i><span>Website</span></a>';
                   echo '<ul class="sidebar-submenu">';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/website/">Settings</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/website/">Settings</a></li>';
                   echo '</ul>';
                   echo '</li>';
                 }
@@ -390,13 +397,14 @@ if (isset($_POST['license']) && !empty($_POST['license']) && isset($_POST['ip'])
 
               <div class="col-6">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="https://panel.elfbar-security.eu"> <i data-feather="home"></i></a>
+                  <li class="breadcrumb-item"><a href="https://panel.elfbar-security.eu"> <i
+                        data-feather="home"></i></a>
                   </li>
                   <li class="breadcrumb-item">Home</li>
                 </ol>
 
               </div>
-              
+
               <div class="col-xl-9 xl-100 chart_data_left box-col-12">
                 <div class="card">
                   <div class="card-body p-0">
@@ -790,7 +798,7 @@ JOIN server ON users_server.serverid = server.serverid
 JOIN redem_license ON redem_license.serverid = server.serverid
 WHERE users_server.userid = '" . $_SESSION["id"] . "'";
                           $result = $link->query($query);
-                          
+
                           while ($row = $result->fetch_array()) {
                             $online = "offline";
                             if ($row["status"] == 1) {
@@ -809,7 +817,7 @@ WHERE users_server.userid = '" . $_SESSION["id"] . "'";
                               echo '<td>' . $row["expires"] . '</td>';
                               echo '<td class="text-danger">true</td>';
                               $encrypted12 = encrypt_string($row['serverip']);
-                              echo '<td class="text-end"><a href="https://panel.elfbar-security.eu/manage"> <button class="btn btn-primary" onclick="setSessionIP(\'' . $encrypted12 . '\')">Manage License</button></a>';
+                              echo '<td class="text-end"><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage"> <button class="btn btn-primary" onclick="setSessionIP(\'' . $encrypted12 . '\')">Manage License</button></a>';
                               echo '<td class="text-info">';
                               echo '<form name="ipreset" method="POST" action="index.php">';
                               echo '<input type="hidden" name="license" value="' . $row["license"] . '">';
@@ -827,7 +835,7 @@ WHERE users_server.userid = '" . $_SESSION["id"] . "'";
                               echo '<td>' . $row["expires"] . '</td>';
                               echo '<td class="text-' . $color . '">false</td>';
                               $encrypted123 = encrypt_string($row['serverip']);
-                              echo '<td class="text-end"><a href="https://panel.elfbar-security.eu/manage"> <button class="btn btn-primary" onclick="setSessionIP(\'' . $encrypted123 . '\')">Manage</button></a><td>';
+                              echo '<td class="text-end"><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage"> <button class="btn btn-primary" onclick="setSessionIP(\'' . $encrypted123 . '\')">Manage</button></a><td>';
                               echo '</tr>';
                               echo '</form> ';
                             }
@@ -849,7 +857,11 @@ WHERE users_server.userid = '" . $_SESSION["id"] . "'";
             <div class="col-md-12 footer-copyright text-center">
               <p class="mb-0">2022 -
                 <script>document.write(new Date().getFullYear())</script> ©V01D & H04X
-                <a href="//www.dmca.com/Protection/Status.aspx?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-11.png?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                <a href="//www.dmca.com/Protection/Status.aspx?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a"
+                  title="DMCA.com Protection Status" class="dmca-badge"> <img
+                    src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-11.png?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a"
+                    alt="DMCA.com Protection Status" /></a>
+                <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
               </p>
             </div>
           </div>

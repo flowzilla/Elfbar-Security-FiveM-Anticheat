@@ -2,6 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
+
 require 'src/Exception.php';
 require 'src/PHPMailer.php';
 require 'src/SMTP.php';
@@ -117,7 +118,7 @@ if (isset($_POST['btnRegister'])) {
         text: 'Email already registered'
       })
     </script>
-  <?php
+    <?php
 
   } else {
     $username = $_POST['username'];
@@ -137,7 +138,7 @@ if (isset($_POST['btnRegister'])) {
               text: 'Username already exists'
             })
           </script>
-        <?php
+          <?php
 
         } else {
 
@@ -156,76 +157,76 @@ if (isset($_POST['btnRegister'])) {
             $tp = new DateTime();
             $tp->modify('+1 month');
             $tp = $tp->format('d.m.y');
-        } else if ($expire == "3 month") {
+          } else if ($expire == "3 month") {
             $tp = new DateTime();
             $tp->modify('+3 months');
             $tp = $tp->format('d.m.y');
-        } else {
-          $tp = "31.12.3000";
-        }
+          } else {
+            $tp = "31.12.3000";
+          }
 
           $result3 = mysqli_query($link, "SELECT * FROM `users` WHERE `email`= '$email'");
           $lc1 = mysqli_fetch_array($result3);
           $id = $lc1['userid'];
           $sql2 = "INSERT INTO `redem_license` (`licenseid`,`license`,`expires`,`userid`) VALUES ('$licenseid','$key','$tp','$id')";
           mysqli_query($conn, $sql2);
-          $date2 = date('d.m.y | H:i'); 
+          $date2 = date('d.m.y | H:i');
           $sql1 = "DELETE FROM `keys` WHERE license = '$key'";
           mysqli_query($conn, $sql1);
           $text = "Your account has been successfully activated with a license. Please download the anticheat, upload it to your Server and start the anticheat. After that you should see the server in the table below. There you can press Manage and set everything. If you encounter any problems or have any questions, please contact our Discord support.";
           $sql = "INSERT INTO `notifications` (`text`, `date`,`userid`) VALUES ('$text','$date','$id')";
           mysqli_query($conn, $sql);
 
-// Discord webhook
-$discord_webhook_url = "";
-$webhook_data = array(
-  'username' => 'ImoShield - FiveM Anticheat',
-  'avatar_url' => 'https://cdn.discordapp.com/attachments/1093499150567485492/1093499232675172354/IMOSHIELD2.png',
-  'embeds' => array(
-      array(
-          'title' => 'User Register',
-          'description' => 'User ' . $username . ' with email ' . $email . ' has successfully activated their account with license ' . $key. '' . date('Y-m-d H:i:s'),
-          'color' => hexdec('00ff00'),
-          'footer' => array(
-              'text' => 'Register Alert'
-          ),
-          'timestamp' => date('Y-m-d\TH:i:s\Z')
-      )
-  )
-);
-$curl = curl_init($discord_webhook_url);
-curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
-curl_setopt($curl, CURLOPT_POST, 1);
-curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($webhook_data));
-curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-curl_exec($curl);
-curl_close($curl);
+          // Discord webhook
+          $discord_webhook_url = "";
+          $webhook_data = array(
+            'username' => 'ImoShield - FiveM Anticheat',
+            'avatar_url' => 'https://cdn.discordapp.com/attachments/1093499150567485492/1093499232675172354/IMOSHIELD2.png',
+            'embeds' => array(
+              array(
+                'title' => 'User Register',
+                'description' => 'User ' . $username . ' with email ' . $email . ' has successfully activated their account with license ' . $key . '' . date('Y-m-d H:i:s'),
+                'color' => hexdec('00ff00'),
+                'footer' => array(
+                  'text' => 'Register Alert'
+                ),
+                'timestamp' => date('Y-m-d\TH:i:s\Z')
+              )
+            )
+          );
+          $curl = curl_init($discord_webhook_url);
+          curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+          curl_setopt($curl, CURLOPT_POST, 1);
+          curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($webhook_data));
+          curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+          curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+          curl_exec($curl);
+          curl_close($curl);
 
-          
 
-$confirmation_code = bin2hex(random_bytes(16));
-$sql = "UPDATE users SET emailcode = '$confirmation_code' WHERE email='$email'";
+
+          $confirmation_code = bin2hex(random_bytes(16));
+          $sql = "UPDATE users SET emailcode = '$confirmation_code' WHERE email='$email'";
           mysqli_query($conn, $sql);
 
-$mail = new PHPMailer(true);
-$mail->isSMTP();
-$mail->CharSet = 'UTF-8';
-$mail->Host       = '';
-$mail->Port       = 587;
-$mail->SMTPSecure = 'tls';
-$mail->SMTPAuth   = true;
-$mail->Username   = '';
-$mail->Password   = '';
+          $mail = new PHPMailer(true);
+          $mail->isSMTP();
+          $mail->CharSet = 'UTF-8';
+          $mail->Host = '';
+          $mail->Port = 587;
+          $mail->SMTPSecure = 'tls';
+          $mail->SMTPAuth = true;
+          $mail->Username = '';
+          $mail->Password = '';
 
-$mail->setFrom('noreply@imoshield.net', 'ImoShield - FiveM Anticheat');
+          $mail->setFrom('noreply@imoshield.net', 'ImoShield - FiveM Anticheat');
 
-$mail->addAddress($email, $username);
+          $mail->addAddress($email, $username);
 
-$mail->Subject = 'Confirm your email address - ImoShield';
+          $mail->Subject = 'Confirm your email address - ImoShield';
 
-$mail->isHTML(true);
-$mail->Body = '
+          $mail->isHTML(true);
+          $mail->Body = '
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -294,7 +295,7 @@ $mail->Body = '
                               <p>Thank you for choosing ImoShield</p>
                               <p>Please confirm your email address to help us ensure your account is always protected</p>
                               <p style="text-align: center">
-  <a href="https://panel.elfbar-security.eu/confirm.php?code='.$confirmation_code.'" style="padding: 10px; background-color: #7366ff; color: #fff; display: inline-block; border-radius: 4px">
+  <a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatconfirm.php?code=' . $confirmation_code . '" style="padding: 10px; background-color: #7366ff; color: #fff; display: inline-block; border-radius: 4px">
     Verify your email
   </a>
 </p>
@@ -309,7 +310,7 @@ $mail->Body = '
                       <tr>
                           <td>
                               <div class="footer">
-                                  <a href="https://panel.elfbar-security.eu/tos/">Terms</a> | <a href="https://panel.elfbar-security.eu/refund/">Refund</a> | <a href="https://panel.elfbar-security.eu/policy/">Policy</a><br>
+                                  <a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos/">Terms</a> | <a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund/">Refund</a> | <a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatpolicy/">Policy</a><br>
                                   This email was automatically generated. &copy; 2023 ImoShield - FiveM Anticheat.
                               </div>
                           </td>
@@ -325,29 +326,29 @@ $mail->Body = '
     
 ';
 
-// Send the email
-if ($mail->send()) {
-  ?>
-  <script>
-    Swal.fire({
-      icon: 'success',
-      title: 'Information',
-      text: 'Please check your email to confirm your account. If you dont see the email in your inbox, please check your spam folder.'
-    })
-  </script>
-<?php
-} else {
-  ?>
-  <script>
-    Swal.fire({
-      icon: 'error',
-      title: 'Information',
-      text: 'Something went wrong, please try again later.'
-    })
-  </script>
-<?php
-}
-          echo "<script>window.location.href='https://panel.elfbar-security.eu/login'</script>";
+          // Send the email
+          if ($mail->send()) {
+            ?>
+            <script>
+              Swal.fire({
+                icon: 'success',
+                title: 'Information',
+                text: 'Please check your email to confirm your account. If you dont see the email in your inbox, please check your spam folder.'
+              })
+            </script>
+            <?php
+          } else {
+            ?>
+            <script>
+              Swal.fire({
+                icon: 'error',
+                title: 'Information',
+                text: 'Something went wrong, please try again later.'
+              })
+            </script>
+            <?php
+          }
+          echo "<script>window.location.href='https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin'</script>";
           exit;
         }
       } else {
@@ -359,7 +360,7 @@ if ($mail->send()) {
             text: 'License Key not found'
           })
         </script>
-      <?php
+        <?php
       }
     } else {
       ?>
@@ -369,7 +370,8 @@ if ($mail->send()) {
           title: 'Invalid',
           text: 'Input Fields cant be empty'
         })
-      </script><?php
+      </script>
+      <?php
 
     }
   }
@@ -377,6 +379,7 @@ if ($mail->send()) {
 ?>
 
 <!DOCTYPE html>
+
 <body>
   <div class="container-fluid p-0">
     <div class="row m-0">
@@ -401,7 +404,8 @@ if ($mail->send()) {
                   <div class="form-group">
                     <label class="col-form-label">Email Address</label>
                     <input type="email" class="form-control" name="email" id="email" value=""
-                      placeholder="test@gmail.com" required data-bs-original-title="" title=""><small class="form-text text-muted" id="emailHelp">You need to verify your email address.</small>
+                      placeholder="test@gmail.com" required data-bs-original-title="" title=""><small
+                      class="form-text text-muted" id="emailHelp">You need to verify your email address.</small>
                   </div>
 
                   <div class="form-group">
@@ -419,22 +423,32 @@ if ($mail->send()) {
 
                   </div>
                   <div class="form-group mb-0">
-                  <p class="mt-4 mb-0 text-center">
-  <input type="checkbox" id="terms-checkbox">
-  <label for="terms-checkbox" class="ms-2">I accept the <a href="https://panel.elfbar-security.eu/tos">Terms</a>, <a href="https://panel.elfbar-security.eu/privacy">Policy</a> and <a href="https://panel.elfbar-security.eu/refund">Refund</a></label>
-</p>
+                    <p class="mt-4 mb-0 text-center">
+                      <input type="checkbox" id="terms-checkbox">
+                      <label for="terms-checkbox" class="ms-2">I accept the <a
+                          href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos">Terms</a>, <a
+                          href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatprivacy">Policy</a> and <a
+                          href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund">Refund</a></label>
+                    </p>
                     <button class="btn btn-primary btn-block w-100" name="btnRegister" type="submit">Create
                       Account</button>
                   </div>
                   <p class="mt-4 mb-0 text-center">Already have an account?<a class="ms-2"
-                      href="https://panel.elfbar-security.eu/login">Sign in</a></p>
-                      <p class="mt-4 mb-0 text-center"><a class="ms-2" href="https://panel.elfbar-security.eu/tos">Terms</a> • <a class="ms-2" href="https://panel.elfbar-security.eu/privacy">Policy</a> • <a class="ms-2" href="https://panel.elfbar-security.eu/refund">Refund</a></p>
-<div class="dmca">
-  <a href="//www.dmca.com/Protection/Status.aspx?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a" title="DMCA.com Protection Status" class="dmca-badge">
-    <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-11.png?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a"  alt="DMCA.com Protection Status" />
-  </a>
-  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
-                </div>
+                      href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin">Sign in</a></p>
+                  <p class="mt-4 mb-0 text-center"><a class="ms-2"
+                      href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos">Terms</a> • <a class="ms-2"
+                      href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatprivacy">Policy</a> • <a
+                      class="ms-2" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund">Refund</a>
+                  </p>
+                  <div class="dmca">
+                    <a href="//www.dmca.com/Protection/Status.aspx?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a"
+                      title="DMCA.com Protection Status" class="dmca-badge">
+                      <img
+                        src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-11.png?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a"
+                        alt="DMCA.com Protection Status" />
+                    </a>
+                    <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+                  </div>
               </form>
             </div>
           </div>
@@ -471,4 +485,5 @@ if ($mail->send()) {
       }
     </script>
 </body>
+
 </html>

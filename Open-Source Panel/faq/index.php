@@ -85,11 +85,12 @@ include('../func.php');
                 </div>
               </div>
               <ul class="profile-dropdown onhover-show-div">
-                <li><a href="https://panel.elfbar-security.eu/account"><i
+                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount"><i
                       data-feather="user"></i><span>Account</span></a></li>
-                <li><a href="https://panel.elfbar-security.eu/account/"><i
+                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/"><i
                       data-feather="settings"></i><span>Settings</span></a></li>
-                <li><a href="https://panel.elfbar-security.eu/logout.php"> <i data-feather="log-in"> </i><span>Log
+                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogout.php"> <i
+                      data-feather="log-in"> </i><span>Log
                       out</span></a></li>
               </ul>
             </li>
@@ -134,7 +135,7 @@ include('../func.php');
                 </li>
                 <script>
                   function openCloseWindow() {
-                    var newWindow = window.open('https://panel.elfbar-security.eu/api/download');
+                    var newWindow = window.open('https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatapi/download');
                     setTimeout(function () {
                       newWindow.close();
                     }, 2000);
@@ -153,23 +154,26 @@ include('../func.php');
                   </div>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/tos/"
-                    data-bs-original-title="" title="">
+                  <a class="sidebar-link sidebar-title link-nav"
+                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos/" data-bs-original-title=""
+                    title="">
                     <i data-feather="file-text"></i>
                     <span>T.O.S</span>
                   </a>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/faq/"
-                    data-bs-original-title="" title="">
+                  <a class="sidebar-link sidebar-title link-nav"
+                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatfaq/" data-bs-original-title=""
+                    title="">
                     <i data-feather="help-circle"></i>
                     <span>FAQ</span>
                   </a>
                 </li>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/refund/"
-                    data-bs-original-title="" title="">
+                  <a class="sidebar-link sidebar-title link-nav"
+                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund/" data-bs-original-title=""
+                    title="">
                     <i data-feather="credit-card"></i>
                     <span>Refund</span>
                   </a>
@@ -183,8 +187,9 @@ include('../func.php');
                   </a>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/discord"
-                    data-bs-original-title="" title="">
+                  <a class="sidebar-link sidebar-title link-nav"
+                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatdiscord" data-bs-original-title=""
+                    title="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                       class="feather feather-link">
@@ -206,19 +211,19 @@ include('../func.php');
                   echo '</li>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="server"></i><span>Server</span></a>';
                   echo '<ul class="sidebar-submenu">';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/server/overview/">Overview</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/server/overview/">Overview</a></li>';
                   echo '<li><a href="">Server Table</a></li>';
                   echo '</ul>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="terminal"></i><span>Logs</span></a>';
                   echo '<ul class="sidebar-submenu">';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/logs/authlogs/">Auth Logs</a></li>';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/logs/serverlogs/">Server Logs</a></li>';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/logs/panellogs/">Panel Logs</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/authlogs/">Auth Logs</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/serverlogs/">Server Logs</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/panellogs/">Panel Logs</a></li>';
                   echo '</ul>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="cloud"></i><span>Auth</span></a>';
                   echo '<ul class="sidebar-submenu">';
                   echo '<li><a href="#">Key Overview</a></li>';
-                  echo '<li><a href="https://panel.elfbar-security.eu/admin/auth/keygenerator">Key Creator</a></li>';
+                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/auth/keygenerator">Key Creator</a></li>';
                   echo '<li><a href="#">IP Change Requests</a></li>';
                   echo '<li><a href="#">IP Bans</a></li>';
                   echo '</ul>';
@@ -402,7 +407,8 @@ include('../func.php');
                       <div class="collapse" id="collapseicon9" aria-labelledby="collapseicon9"
                         data-bs-parent="#accordionoc">
                         <div class="card-body">You can change your email and password via the <a
-                            href="https://panel.elfbar-security.eu/account/">settings</a> page</div>
+                            href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/">settings</a>
+                          page</div>
                       </div>
                     </div>
                     <div class="card">

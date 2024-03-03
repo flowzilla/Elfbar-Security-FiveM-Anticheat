@@ -4,7 +4,7 @@ include('../func.php');
 
 if(empty($_SESSION['ip'])) {
   session_destroy();
-  header("Location: https://panel.elfbar-security.eu/login");
+  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin");
   }
   $result = $conn->query("SELECT server.serverip,users.userid FROM server JOIN users_server ON users_server.serverid = server.serverid JOIN users ON users.userid = users_server.userid");
   $match_found = false;
@@ -17,7 +17,7 @@ if(empty($_SESSION['ip'])) {
   
   if ($match_found) {
   } else {
-    header("Location: https://panel.elfbar-security.eu/");
+    header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat");
   }
 
   if (isset($_POST['unban']) && !empty($_POST['banid'])) {
@@ -208,10 +208,10 @@ if(empty($_SESSION['ip'])) {
                   </div>
                 </div>
                 <ul class="profile-dropdown onhover-show-div">
-                  <li><a href="https://panel.elfbar-security.eu/account"><i data-feather="user"></i><span>Account</span></a></li>
+                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount"><i data-feather="user"></i><span>Account</span></a></li>
                 
-                  <li><a href="https://panel.elfbar-security.eu/account/"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="https://panel.elfbar-security.eu/logout.php"> <i data-feather="log-in"> </i><span>Log out</span></a></li>
+                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/"><i data-feather="settings"></i><span>Settings</span></a></li>
+                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogout.php"> <i data-feather="log-in"> </i><span>Log out</span></a></li>
                 </ul>
               </li>
             </ul>
@@ -235,30 +235,30 @@ if(empty($_SESSION['ip'])) {
                     </a>
                   </li>
                   <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/manage/" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/" data-bs-original-title="" title="">
                     <i class="fa fa-desktop"></i>
                     <span>Overview</span>
                     </a>
                     </li><li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/manage/banlist.php" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/banlist.php" data-bs-original-title="" title="">
                     <i class="fa fa-ban"></i>                      
                     <span>Banlist</span>
                     </a>
                     </li>
                     </li><li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/manage/playerlist.php" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/playerlist.php" data-bs-original-title="" title="">
                     <i class="fa fa-group"></i>
                     <span>Playerlist</span>
                     </a>
                     </li>
                     <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/manage/config.php" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/config.php" data-bs-original-title="" title="">
                     <i class="fa fa-edit"></i>                     
                     <span>Config</span>
                     </a>
                     </li>
                     </li><li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/manage/aclogs.php" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/aclogs.php" data-bs-original-title="" title="">
                     <i class="fa fa-list-alt"></i>
                     <span>Anticheat Logs</span>
                     </a>
@@ -274,7 +274,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     if (!empty($serverId)) {
         echo '</li>';
         echo '</li><li class="sidebar-list">';
-        echo '<a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu/manage/botlogs.php" data-bs-original-title="" title="">';
+        echo '<a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/botlogs.php" data-bs-original-title="" title="">';
         echo '<i class="fa fa-file-text"></i>';
         echo '<span>Bot Logs</span>';
         echo '</a>';

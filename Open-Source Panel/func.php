@@ -8,7 +8,7 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['group'])) {
   error_log($_SESSION['id']);
   error_log($_SESSION["group"]);
   session_destroy();
-  header("Location: https://panel.elfbar-security.eu/login");
+  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin");
   exit;
 }
 
@@ -17,12 +17,12 @@ function is_maintenance(): bool
 {
   global $link;
   $result = mysqli_query($link, "SELECT maintenance FROM `system` WHERE maintenance = 1 LIMIT 1");
-  return (mysqli_num_rows($result) > 0);
+  return(mysqli_num_rows($result) > 0);
 }
 
 // Maintenance Check
 if (is_maintenance() && !($_SESSION["group"] == "admin")) {
-  header('Location: https://panel.elfbar-security.eu/maintenance.php');
+  header('Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmaintenance.php');
 }
 
 // Ban Function
@@ -30,12 +30,12 @@ function is_banned(int $user_id): bool
 {
   global $link;
   $result = mysqli_query($link, "SELECT userid FROM panelbans WHERE userid = $user_id");
-  return (mysqli_num_rows($result) > 0);
+  return(mysqli_num_rows($result) > 0);
 }
 
 // Ban Check
 if (is_banned($_SESSION["id"])) {
-  header('Location: https://panel.elfbar-security.eu/banned.php');
+  header('Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatbanned.php');
 }
 
 // Avatar 

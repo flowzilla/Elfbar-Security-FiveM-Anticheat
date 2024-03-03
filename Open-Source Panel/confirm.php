@@ -11,9 +11,8 @@ $user = $statement->fetch();
 if ($user) {
   $statement = $pdo->prepare("UPDATE users SET is_emailConfirmed = 1, emailcode = NULL WHERE userid = ?");
   $statement->execute([$user['userid']]);
-  header("Location: https://panel.elfbar-security.eu/login?success=1");
+  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin?success=1");
 } else {
-    header("Location: https://panel.elfbar-security.eu/login?success=0");
+  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin?success=0");
 }
 ?>
-

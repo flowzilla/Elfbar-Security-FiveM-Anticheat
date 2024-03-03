@@ -1,0 +1,20 @@
+{
+  "name": "Elfbar-Security",
+  "version": "1.0.0",
+  "description": "Customer Bot for Elfbar-Security daddy",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "ricoo1812",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/collection": "^1.5.1",
+    "@discordjs/rest": "^1.7.1",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.4",
+    "node-fetch": "^3.3.1"
+  }
+}
