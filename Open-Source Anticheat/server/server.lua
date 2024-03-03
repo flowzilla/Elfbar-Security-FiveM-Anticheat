@@ -145,14 +145,37 @@ end)
 
 function StartAc()
     if config then
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Anitcheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+
         secprint = print
         secTriggerClient = TriggerClientEvent
         imoTriggerEvent = TriggerEvent
 
 
         local httpDispatch = {}
-        local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-        local base32Alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'
 
         AddEventHandler('__cfx_internal:httpResponse', function(token, status, body, headers)
             if httpDispatch[token] then
@@ -192,7 +215,7 @@ function StartAc()
 
         function refreshPermsDiscord2()
             PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/aconline/bypass/discord.php", -- For Discord Bypass via Server Roles
-                function(err, text, headers)
+                function(err, text, headers)                                                                 -- You need to write your own api for that
                     if text ~= nil and text ~= "n" then
                         local responseTable = json.decode(text)
                         for _, value in ipairs(responseTable) do
@@ -618,7 +641,7 @@ function StartAc()
                                             end
                                             if not banned1 then
                                                 PerformHttpRequest(
-                                                    "https://api.myrabot.de/imo/shield/backend/aconline/ip-api.php?ip=" ..
+                                                    "https://api.myrabot.de/imo/shield/backend/aconline/ip-api.php?ip=" .. -- You need to write your own api for that
                                                     ipIdentifier,
                                                     function(err, text, headers)
                                                         if tonumber(err) == 200 then
@@ -1912,9 +1935,6 @@ function StartAc()
                 end
             end
         end)
-
-
-
 
         AddEventHandler("clearPedTasksEvent", function(source, data)
             if config.ClearPedTask.Enabled ~= true then return end
