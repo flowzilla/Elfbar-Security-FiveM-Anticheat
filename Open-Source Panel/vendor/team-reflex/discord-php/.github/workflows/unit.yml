@@ -1,0 +1,34 @@
+name: Unit Tests
+on: [ push ]
+
+env:
+  DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+  TEST_CHANNEL: ${{ secrets.TEST_CHANNEL }}
+  TEST_CHANNEL_NAME: ${{ secrets.TEST_CHANNEL_NAME }}
+
+jobs:
+  unit-lint:
+    name: PHPUnit and Lint
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'no test')"
+    concurrency: phpunit
+    strategy:
+      matrix:
+        php:
+          - '8.0'
+          - '7.4'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: uv, zlib, mbstring
+          tools: phpunit, phplint
+      - name: Install dependencies
+        run: composer install
+      - name: Run PHPUnit
+        run: phpunit
+      - name: Run PHPLint
+        run: phplint

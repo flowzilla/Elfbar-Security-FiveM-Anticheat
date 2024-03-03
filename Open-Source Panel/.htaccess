@@ -1,0 +1,4 @@
+Options -Indexes
+
+ErrorDocument 404 https://panel.elfbar-security.eu/
+ErrorDocument 403 https://panel.elfbar-security.eu/
