@@ -1,4 +1,3 @@
-local new        = false
 local w, h       = GetActiveScreenResolution()
 local adbypass   = false
 local lastCoords = nil
@@ -82,7 +81,6 @@ function Start()
                     end)
             end
         end
-
 
         local function sendGlobal(message)
             local resp = ""

@@ -1,3 +1,36 @@
+secprint = print
+secTriggerClient = TriggerClientEvent
+imoTriggerEvent = TriggerEvent
+
+
+local httpDispatch = {}
+
+AddEventHandler('__cfx_internal:httpResponse', function(token, status, body, headers)
+    if httpDispatch[token] then
+        local userCallback = httpDispatch[token]
+        httpDispatch[token] = nil
+        userCallback(status, body, headers)
+    end
+end)
+
+function moreSecuredDispatch(url, cb, method, data, headers, options)
+    local followLocation = true
+    if options and options.followLocation ~= nil then
+        followLocation = options.followLocation
+    end
+
+    local t = {
+        url = url,
+        method = method or 'GET',
+        data = data or '',
+        headers = headers or {},
+        followLocation = followLocation
+    }
+    local d = json.encode(t)
+    local id = PerformHttpRequestInternal(d, d:len())
+    httpDispatch[id] = cb
+end
+
 local headers = {
     Authorization = "Bearer " .. ES.ConfigSecret,
 }
@@ -16,7 +49,7 @@ local AceBypass
 local AdminAce
 
 
-PerformHttpRequest("https://config.elfbar-security.eu/config", function(errorCode, resultData, resultHeaders, errorData)
+moreSecuredDispatch("https://config.elfbar-security.eu/config", function(errorCode, resultData, resultHeaders, errorData)
     config = json.decode(resultData);
 
     ------------------------------------------------------------------------
@@ -25,6 +58,7 @@ PerformHttpRequest("https://config.elfbar-security.eu/config", function(errorCod
     for word in inputString:gmatch("%w+") do
         table.insert(outputTable, word)
     end
+
     BlacklistedNames = outputTable
     -------------------------------------------------------------------------
     local inputString = config.BlackListedMessage.List
@@ -32,6 +66,7 @@ PerformHttpRequest("https://config.elfbar-security.eu/config", function(errorCod
     for word in inputString:gmatch("%w+") do
         table.insert(outputTable, word)
     end
+
     BlacklistedMessages = outputTable
     --------------------------------------------------------------------------
     local inputString = config.BlacklistedVehicles.List
@@ -39,6 +74,7 @@ PerformHttpRequest("https://config.elfbar-security.eu/config", function(errorCod
     for word in inputString:gmatch("%w+") do
         table.insert(outputTable, word)
     end
+
     BlacklistedVehicles = outputTable
     --------------------------------------------------------------------------
     local inputString = config.BlacklistedPeds.List
@@ -46,6 +82,7 @@ PerformHttpRequest("https://config.elfbar-security.eu/config", function(errorCod
     for word in inputString:gmatch("%w+") do
         table.insert(outputTable, word)
     end
+
     BlacklistedPeds = outputTable
     --------------------------------------------------------------------------
     local inputString = config.BlacklistedEvent.List
@@ -142,7 +179,6 @@ AddEventHandler("loadCode", function()
     TriggerClientEvent("sendCodew", src, receivedConfig)
 end)
 
-
 function StartAc()
     if config then
         print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
@@ -170,39 +206,6 @@ function StartAc()
         print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
         print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
 
-        secprint = print
-        secTriggerClient = TriggerClientEvent
-        imoTriggerEvent = TriggerEvent
-
-
-        local httpDispatch = {}
-
-        AddEventHandler('__cfx_internal:httpResponse', function(token, status, body, headers)
-            if httpDispatch[token] then
-                local userCallback = httpDispatch[token]
-                httpDispatch[token] = nil
-                userCallback(status, body, headers)
-            end
-        end)
-
-        function moreSecuredDispatch(url, cb, method, data, headers, options)
-            local followLocation = true
-            if options and options.followLocation ~= nil then
-                followLocation = options.followLocation
-            end
-
-            local t = {
-                url = url,
-                method = method or 'GET',
-                data = data or '',
-                headers = headers or {},
-                followLocation = followLocation
-            }
-            local d = json.encode(t)
-            local id = PerformHttpRequestInternal(d, d:len())
-            httpDispatch[id] = cb
-        end
-
         local bypassAdmin = {}
         function searchTable(table, value)
             for k, v in pairs(table) do
@@ -214,8 +217,8 @@ function StartAc()
         end
 
         function refreshPermsDiscord2()
-            PerformHttpRequest("https://ac.flow-services.de/imo/shield/backend/aconline/bypass/discord.php", -- For Discord Bypass via Server Roles
-                function(err, text, headers)                                                                 -- You need to write your own api for that
+            moreSecuredDispatch("https://ac.flow-services.de/imo/shield/backend/aconline/bypass/discord.php", -- For Discord Bypass via Server Roles
+                function(err, text, headers)                                                                  -- You need to write your own api for that
                     if text ~= nil and text ~= "n" then
                         local responseTable = json.decode(text)
                         for _, value in ipairs(responseTable) do
@@ -264,10 +267,8 @@ function StartAc()
             end
         end)
 
-
         function ResourceStart()
             SetConvarServerInfo('Elfbar Security', 'Vaping & Securing')
-
             local startEmbed = {
                 {
                     ["author"] = {
@@ -292,7 +293,7 @@ function StartAc()
                 }
             }
 
-            PerformHttpRequest(config.Main.Webhook, function(error, texto, cabeceras) end, "POST",
+            moreSecuredDispatch(config.Main.Webhook, function(error, texto, cabeceras) end, "POST",
                 json.encode({
                     username = "Elfbar-Security - FiveM Anticheat",
                     avatar_url =
@@ -364,7 +365,7 @@ function StartAc()
             if not license then
                 imodef.done("Your license was not found")
             else
-                PerformHttpRequest("https://api.myrabot.de/imo/shield/backend/ban/global/globalcheckban.php",
+                moreSecuredDispatch("https://api.myrabot.de/imo/shield/backend/ban/global/globalcheckban.php",
                     function(err, response, headers)
                         if not response then
                             imodef.done("")
@@ -412,12 +413,11 @@ function StartAc()
                             -- sendWebhook(globalbantryjoinEmbed)
                         end
 
-
                         if not banned1 then
-                            PerformHttpRequest("https://api.myrabot.de/imo/shield/backend/aconline/ip.php",
+                            moreSecuredDispatch("https://api.myrabot.de/imo/shield/backend/aconline/ip.php",
                                 function(err, text, headers)
                                     local ip = text
-                                    PerformHttpRequest(
+                                    moreSecuredDispatch(
                                         "https://api.myrabot.de/imo/shield/backend/ban/server/servercheckban.php",
                                         function(err, response, headers)
                                             if not response then
@@ -463,7 +463,7 @@ function StartAc()
                                                             },
                                                         }
                                                     }
-                                                    PerformHttpRequest(config.Main.Webhook,
+                                                    moreSecuredDispatch(config.Main.Webhook,
                                                         function(error, texto, cabeceras) end, "POST",
                                                         json.encode({
                                                             username = "Elfbar-Security - FiveM Anticheat",
@@ -627,7 +627,7 @@ function StartAc()
                                                                     },
                                                                 }
                                                             }
-                                                            PerformHttpRequest(config.Connect.Webhook,
+                                                            moreSecuredDispatch(config.Connect.Webhook,
                                                                 function(error, texto, cabeceras) end, "POST",
                                                                 json.encode({
                                                                     username = "Elfbar-Security - FiveM Anticheat",
@@ -640,7 +640,7 @@ function StartAc()
                                                 end
                                             end
                                             if not banned1 then
-                                                PerformHttpRequest(
+                                                moreSecuredDispatch(
                                                     "https://api.myrabot.de/imo/shield/backend/aconline/ip-api.php?ip=" .. -- You need to write your own api for that
                                                     ipIdentifier,
                                                     function(err, text, headers)
@@ -662,7 +662,6 @@ function StartAc()
                     end, 'POST', json.encode({ identifier = identifier }), { ['Content-Type'] = 'application/json' })
             end
         end)
-
 
         function hasScreenshotPerms(player)
             local i = 0
@@ -709,7 +708,6 @@ function StartAc()
             Globalban(id, arg, idd, a)
         end)
 
-
         function Globalban(source, arg, idd, a)
             if config.Debug.Enabled ~= false then return end
             if source ~= nil and arg ~= nil and GetPlayerName(source) ~= nil then
@@ -725,7 +723,7 @@ function StartAc()
                 if (a == nil) then
                     a = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                 end
-                PerformHttpRequest("https://api.myrabot.de/imo/shield/backend/ban/global/globaladdban.php",
+                moreSecuredDispatch("https://api.myrabot.de/imo/shield/backend/ban/global/globaladdban.php",
                     function(err, response, headers)
                     end, 'POST', json.encode({
                         reason = arg,
@@ -797,7 +795,7 @@ function StartAc()
                 if config.Debug.Enabled then
                 else
                     local identifier = json.encode(GetPlayerIdentifiers(source))
-                    PerformHttpRequest(
+                    moreSecuredDispatch(
                         "https://api.myrabot.de/imo/shield/backend/ban/server/servercheckban.php",
                         function(err, response, headers)
                             if response == nil then
@@ -821,8 +819,6 @@ function StartAc()
                                     local playerLicense = ids.license
                                     local playerXbl = ids.xbl
                                     local playerLive = ids.live
-                                    local serverName = GetConvar("sv_hostname", "Not Found")
-                                    local hostname = GetConvar("sv_projectName", "Not Found")
                                     local playerDisc = ids.discord
                                     local w = w or 0
                                     local h = h or 0
@@ -830,7 +826,7 @@ function StartAc()
                                     local PlayerName = PlayerName or ""
                                     local armor = armor or 0
                                     if (PlayerName == nil or PlayerName == "" or PlayerName == '') then return end
-                                    PerformHttpRequest(config.Ban.Webhook, function(a, arg)
+                                    moreSecuredDispatch(config.Ban.Webhook, function(a, arg)
                                     end, "POST", json.encode({
                                         embeds = {
                                             {
@@ -908,7 +904,7 @@ function StartAc()
                                         ["Content-Type"] = "application/json"
                                     })
 
-                                    PerformHttpRequest(config.PublicBan.Webhook, function(a, b)
+                                    moreSecuredDispatch(config.PublicBan.Webhook, function(a, b)
                                     end, "POST", json.encode({
                                         username = "Elfbar-Security - FiveM Anticheat",
                                         embeds = {
@@ -949,7 +945,6 @@ function StartAc()
                                         ["Content-Type"] = "application/json"
                                     })
 
-
                                     local ids = ExtractIdentifiers(source);
                                     local token = {}
                                     for i = 0, GetNumPlayerTokens(source) do
@@ -961,7 +956,7 @@ function StartAc()
                                         a =
                                         "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                                     end
-                                    PerformHttpRequest(
+                                    moreSecuredDispatch(
                                         "https://api.myrabot.de/imo/shield/backend/ban/server/serveraddban.php",
                                         function(err, response, headers)
                                         end, 'POST',
@@ -980,9 +975,7 @@ function StartAc()
                                             screen = a
                                         }), { ['Content-Type'] = 'application/json' })
 
-
-
-                                    PerformHttpRequest(
+                                    moreSecuredDispatch(
                                         "https://api.myrabot.de/imo/shield/backend/counter/totalcounter/bancounter.php",
                                         function(err, response, headers)
                                         end, 'POST', json.encode({ license = ES.LicenseKey }),
@@ -1024,7 +1017,6 @@ function StartAc()
             end
         end)
 
-
         RegisterCommand("esban", function(source, args, raw)
             local src = source
             if not args[1] then
@@ -1047,7 +1039,6 @@ function StartAc()
             end
         end)
 
-
         local screenshotCache = {}
         RegisterNetEvent("imo:getInfos")
         AddEventHandler("imo:getInfos", function(resp, res, health, armor, w, h)
@@ -1062,7 +1053,6 @@ function StartAc()
             }
             screenshotCache[sourceId] = data
         end)
-
 
         function ByeModder(source, arg)
             if source ~= nil and arg ~= nil and GetPlayerName(source) ~= nil then
@@ -1110,7 +1100,6 @@ function StartAc()
             end
         end)
 
-
         RegisterCommand("esunban", function(source, args, raw)
             local src = source
             if (src <= 0) then
@@ -1122,11 +1111,10 @@ function StartAc()
             end
         end)
 
-
         function siteunban(source, args)
             if args[1] then
                 local id = args[1]
-                PerformHttpRequest("https://api.myrabot.de/imo/shield/backend/ban/unban/serverunban.php",
+                moreSecuredDispatch("https://api.myrabot.de/imo/shield/backend/ban/unban/serverunban.php",
                     function(err, response, headers)
                         if (response) then
                             secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^3Info^7] " .. response)
@@ -1155,7 +1143,7 @@ function StartAc()
                         },
                     }
                 }
-                PerformHttpRequest(config.Main.Webhook, function(error, texto, cabeceras)
+                moreSecuredDispatch(config.Main.Webhook, function(error, texto, cabeceras)
                     end, "POST",
                     json.encode({
                         username = "Elfbar-Security - FiveM Anticheat",
@@ -1196,7 +1184,7 @@ function StartAc()
                             },
                         }
                     }
-                    PerformHttpRequest(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
+                    moreSecuredDispatch(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
                         json.encode({
                             username = "Elfbar-Security - FiveM Anticheat",
                             avatar_url =
@@ -1231,7 +1219,7 @@ function StartAc()
                             },
                         }
                     }
-                    PerformHttpRequest(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
+                    moreSecuredDispatch(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
                         json.encode({
                             username = "Elfbar-Security - FiveM Anticheat",
                             avatar_url =
@@ -1266,7 +1254,7 @@ function StartAc()
                             },
                         }
                     }
-                    PerformHttpRequest(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
+                    moreSecuredDispatch(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
                         json.encode({
                             username = "Elfbar-Security - FiveM Anticheat",
                             avatar_url =
@@ -1301,7 +1289,7 @@ function StartAc()
                             },
                         }
                     }
-                    PerformHttpRequest(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
+                    moreSecuredDispatch(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
                         json.encode({
                             username = "Elfbar-Security - FiveM Anticheat",
                             avatar_url =
@@ -1334,7 +1322,7 @@ function StartAc()
                         },
                     }
                 }
-                PerformHttpRequest(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
+                moreSecuredDispatch(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
                     json.encode({
                         username = "Elfbar-Security - FiveM Anticheat",
                         avatar_url =
@@ -1343,7 +1331,6 @@ function StartAc()
                     }), { ["Content-Type"] = "application/json" })
             end
         end)
-
 
         local modderevents = {
             "ServerEmoteRequest",
@@ -1371,7 +1358,6 @@ function StartAc()
             end)
         end
 
-
         AddEventHandler("db:updateUser", function(data)
             if config.AntiExploit.Enabled then
                 if not data.playerName or not data.dateofbirth then
@@ -1381,7 +1367,6 @@ function StartAc()
             end
         end)
 
-
         RegisterServerEvent("DiscordBot:playerDied")
         AddEventHandler("DiscordBot:playerDied", function(name, reason)
             if config.AntiExploit.Enabled ~= true then return end
@@ -1390,7 +1375,6 @@ function StartAc()
             end
         end)
 
-
         RegisterServerEvent("esx:onPickup")
         AddEventHandler("esx:onPickup", function(pickup)
             if config.AntiExploit.Enabled ~= true then return end
@@ -1398,7 +1382,6 @@ function StartAc()
                 ByeModder(source, "Player tried to exploit")
             end
         end)
-
 
         RegisterServerEvent("kashactersS:DeleteCharacter")
         AddEventHandler("kashactersS:DeleteCharacter", function(query)
@@ -1410,7 +1393,6 @@ function StartAc()
             end
         end)
 
-
         RegisterServerEvent("anticheese:SetComponentStatus")
         AddEventHandler("anticheese:SetComponentStatus", function()
             if config.AntiExploit.Enabled ~= true then return end
@@ -1418,13 +1400,12 @@ function StartAc()
             CancelEvent()
         end)
 
-
         RegisterServerEvent("imo:sendScreenshot")
         AddEventHandler("imo:sendScreenshot", function(a, b)
             local ids = ExtractIdentifiers(source)
             local playerIP = ids.ip
             local playerDisc = ids.discord
-            PerformHttpRequest(config.Screenshot.Webhook, function(a, b)
+            moreSecuredDispatch(config.Screenshot.Webhook, function(a, b)
             end, "POST", json.encode({
                 username = "Elfbar-Security - FiveM Anticheat",
                 embeds = {
@@ -1461,7 +1442,6 @@ function StartAc()
             })
         end)
 
-
         RegisterNetEvent("sendResourceList")
         AddEventHandler("sendResourceList", function()
             local resources = {}
@@ -1472,15 +1452,12 @@ function StartAc()
             secTriggerClient("request_resources", srcid, resources)
         end)
 
-
         AddEventHandler('playerDropped', function(reason)
             local identifier = "not found"
             local license    = "not found"
             local liveid     = "not found"
             local xblid      = "not found"
             local playerip   = "not found"
-            local serverName = GetConvar("sv_hostname", "Not Found")
-            local hostname   = GetConvar("sv_projectName", "Not Found")
             local name       = GetPlayerName(source)
             local ids        = ExtractIdentifiers(source)
             local playerDisc = ids.discord
@@ -1534,7 +1511,7 @@ function StartAc()
 
             secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^3Info^7] ^0The Player ^1" ..
                 name .. " ^0is Disconnectet. Reason: ^1[" .. reason .. "]^1")
-            PerformHttpRequest(config.Disconnect.Webhook, function(err, text, headers) end, 'POST',
+            moreSecuredDispatch(config.Disconnect.Webhook, function(err, text, headers) end, 'POST',
                 json.encode({
                     username = "Elfbar-Security - FiveM Anticheat",
                     avatar_url =
@@ -1544,20 +1521,15 @@ function StartAc()
                 }), { ['Content-Type'] = 'application/json' })
         end)
 
-
         AddEventHandler('playerConnecting', function()
             local identifier = "not found"
             local license    = "not found"
             local liveid     = "not found"
-            local serverName = GetConvar("sv_hostname", "Not Found")
-            local hostname   = GetConvar("sv_projectName", "Not Found")
             local xblid      = "not found"
             local playerip   = "not found"
-            local discord    = "not found"
             local name       = GetPlayerName(source)
             local ids        = ExtractIdentifiers(source)
             local playerDisc = ids.discord
-
 
             for k, v in ipairs(GetPlayerIdentifiers(source)) do
                 if string.sub(v, 1, string.len("steam:")) == "steam:" then
@@ -1605,7 +1577,7 @@ function StartAc()
 
             secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^3Info^7] ^0Player: ^1" ..
                 name .. "^0 is attempting to join. ^0Running anticheat checks...^1")
-            PerformHttpRequest(config.Connect.Webhook, function(err, text, headers) end, 'POST',
+            moreSecuredDispatch(config.Connect.Webhook, function(err, text, headers) end, 'POST',
                 json.encode({
                     username = "Elfbar-Security - FiveM Anticheat",
                     avatar_url =
@@ -1615,14 +1587,12 @@ function StartAc()
                 }), { ['Content-Type'] = 'application/json' })
         end)
 
-
         RegisterServerEvent("imo:checkJump")
         AddEventHandler("imo:checkJump", function()
             if IsPlayerUsingSuperJump(source) then
                 ByeModder(source, "Superjump Detected")
             end
         end)
-
 
         particlesSpawned = {}
         AddEventHandler('ptFxEvent', function(source, data)
@@ -1636,14 +1606,12 @@ function StartAc()
             end
         end)
 
-
         AddEventHandler('d-phone:server:twitter:writetweet', function(source, message, twitteraccount, image)
             if config.AntiExploit.Enabled ~= true then return end
             if string.find(twitteraccount.username, '<') then
                 ByeModder(source, 'Player tried to exploit d-phone')
             end
         end)
-
 
         Citizen.CreateThread(function()
             if config.MaxValuedEvents.Enabled ~= true then return end
@@ -1715,7 +1683,7 @@ function StartAc()
             local playerIP = ids.ip
             local playerDisc = ids.discord
             local playerSteam = ids.steam
-            PerformHttpRequest(config.Screenshot.Webhook, function(a, iddd)
+            moreSecuredDispatch(config.Screenshot.Webhook, function(a, iddd)
             end, "POST", json.encode({
                 username = "Elfbar-Security - FiveM Anticheat",
                 embeds = {
@@ -1916,7 +1884,7 @@ function StartAc()
                         },
                     }
                 }
-                PerformHttpRequest(config.Explosions.Webhook, function(a, text) end, "POST",
+                moreSecuredDispatch(config.Explosions.Webhook, function(a, text) end, "POST",
                     json.encode({
                         username = "Elfbar-Security - FiveM Anticheat",
                         avatar_url =
@@ -1949,7 +1917,6 @@ function StartAc()
             end
         end)
 
-
         AddEventHandler('removeAllWeaponsEvent', function(source, data)
             if config.Weapon.Enabled then
                 if config.AntiRemoveWeapon.Enabled ~= true then return end
@@ -1960,7 +1927,6 @@ function StartAc()
             end
         end)
 
-
         AddEventHandler('removeWeaponEvent', function(source, data)
             if config.Weapon.Enabled then
                 if config.AntiRemoveWeapon.Enabled ~= true then return end
@@ -1970,7 +1936,6 @@ function StartAc()
                 Globalban(source, "Player tried to remove Weapon")
             end
         end)
-
 
         AddEventHandler('giveWeaponEvent', function(source, data)
             if config.Weapon.Enabled then
@@ -1983,7 +1948,6 @@ function StartAc()
                 end
             end
         end)
-
 
         local resourceList = {}
         local allResources = GetNumResources()
@@ -2027,7 +1991,6 @@ function StartAc()
             end
         end)
 
-
         AddEventHandler('onResourceStart', function(resourceName)
             Citizen.Wait(1000)
             if GetCurrentResourceName() == resourceName then
@@ -2062,7 +2025,6 @@ function StartAc()
             end
         end)
 
-
         RegisterNetEvent("imo:checkEventStopped")
         AddEventHandler("imo:checkEventStopped", function(resourceName)
             local sourceID = source
@@ -2084,8 +2046,6 @@ function StartAc()
             end
         end)
 
-
-
         Citizen.CreateThread(function()
             chatBeforeBlock = {}
             while true do
@@ -2093,7 +2053,6 @@ function StartAc()
                 chatBeforeBlock = {}
             end
         end)
-
 
         AddEventHandler("chatMessage", function(source, q, a5)
             if config.System.Enabled then
@@ -2119,7 +2078,6 @@ function StartAc()
             end
         end)
 
-
         function GetEntityOwner(entity)
             if (not DoesEntityExist(entity)) then
                 return nil
@@ -2144,8 +2102,8 @@ function StartAc()
                 particlesSpawned = {}
             end
         end)
-        local BlacklistedPropList = {}
 
+        local BlacklistedPropList = {}
         AddEventHandler('onResourceStart', function(resourceName)
             Citizen.Wait(1000)
             if GetCurrentResourceName() == resourceName then
@@ -2155,14 +2113,12 @@ function StartAc()
             end
         end)
 
-
         inTable = function(table, item)
             for k, v in pairs(table) do
                 if GetHashKey(k) == item then return true end
             end
             return false
         end
-
 
         function GetVehicleModelName(model)
             for _, name in ipairs(BlacklistedVehicles) do
@@ -2263,8 +2219,6 @@ function StartAc()
         end)
 
         ESX = nil
-
-
         if config.UseESXLegacy.Enabled then
             ESX = exports["es_extended"]:getSharedObject()
         else
@@ -2304,7 +2258,6 @@ function StartAc()
             end
         end)
 
-
         AddEventHandler('weaponDamageEvent', function(sender, data)
             if data.weaponType == 133987706 then
                 CancelEvent()
@@ -2337,7 +2290,6 @@ function StartAc()
             end
         end)
 
-
         function BanPlayer(id, reason)
             ByeModder(source, id, reason)
         end
@@ -2349,8 +2301,6 @@ function StartAc()
                 TriggerClientEvent("imo:allowToOpen", source)
             end
         end)
-
-
 
         RegisterNetEvent('imo:logAdminMenu', function(action)
             local data = {
@@ -2383,7 +2333,7 @@ function StartAc()
                     },
                 }
             }
-            PerformHttpRequest(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
+            moreSecuredDispatch(config.Admin.Webhook, function(error, texto, cabeceras) end, "POST",
                 json.encode({
                     username = "Elfbar-Security - FiveM Anticheat",
                     avatar_url =
@@ -2414,7 +2364,6 @@ function StartAc()
         RegisterNetEvent('imo:requestPlayerScreenshot', function(id)
             TriggerClientEvent('imo:screenshotPlayer', id)
         end)
-
 
         RegisterNetEvent('imo:deletePeds', function()
             for i, ped in pairs(GetAllPeds()) do
