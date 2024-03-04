@@ -4,11 +4,11 @@ session_start();
 // DB 
 include('database.php');
 // Login check
-if (!isset($_SESSION['id']) || !isset($_SESSION['group'])) {
+if (!isset($_SESSION['id']) || !isset($_SESSION['group']) || empty($_SESSION['id'] || empty($_SESSION['group']) {
   error_log($_SESSION['id']);
   error_log($_SESSION["group"]);
   session_destroy();
-  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin");
+  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat/login");
   exit;
 }
 
@@ -22,7 +22,7 @@ function is_maintenance(): bool
 
 // Maintenance Check
 if (is_maintenance() && !($_SESSION["group"] == "admin")) {
-  header('Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmaintenance.php');
+  header('Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat/maintenance.php');
 }
 
 // Ban Function
@@ -35,7 +35,7 @@ function is_banned(int $user_id): bool
 
 // Ban Check
 if (is_banned($_SESSION["id"])) {
-  header('Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatbanned.php');
+  header('Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat/banned.php');
 }
 
 // Avatar 
@@ -54,7 +54,7 @@ function isAdmin()
   return $_SESSION["group"] == "admin";
 }
 
-
+$secretKey = 'imosec4343';
 /**
  * Encrypts the given data using OpenSSL and the specified encryption method and key.
  *
@@ -66,7 +66,7 @@ function isAdmin()
  */
 function encrypt_string($data)
 {
-  return openssl_encrypt('' . $data . '', 'aes-256-cbc', 'imosec54');
+  return openssl_encrypt('' . $data . '', 'aes-256-cbc', $secretKey);
 }
 
 /**
@@ -80,7 +80,7 @@ function encrypt_string($data)
  */
 function decrypt_string($data)
 {
-  return openssl_decrypt('' . $data . '', 'aes-256-cbc', 'imosec54');
+  return openssl_decrypt('' . $data . '', 'aes-256-cbc', $secretKey);
 }
 
 ?>
