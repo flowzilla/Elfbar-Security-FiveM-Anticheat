@@ -3,10 +3,9 @@ session_start();
 
 // DB 
 include('database.php');
+
 // Login check
-if (!isset($_SESSION['id']) || !isset($_SESSION['group']) || empty($_SESSION['id'] || empty($_SESSION['group']) {
-  error_log($_SESSION['id']);
-  error_log($_SESSION["group"]);
+if (!isset($_SESSION['id']) || !isset($_SESSION['group']) || empty($_SESSION['id']) || empty($_SESSION['group'])) {
   session_destroy();
   header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat/login");
   exit;
@@ -48,13 +47,13 @@ if ($row = $result->fetch_assoc()) {
 }
 
 // Admin check
-
 function isAdmin()
 {
   return $_SESSION["group"] == "admin";
 }
 
 $secretKey = 'imosec4343';
+
 /**
  * Encrypts the given data using OpenSSL and the specified encryption method and key.
  *
@@ -66,6 +65,7 @@ $secretKey = 'imosec4343';
  */
 function encrypt_string($data)
 {
+  global $secretKey;
   return openssl_encrypt('' . $data . '', 'aes-256-cbc', $secretKey);
 }
 
@@ -80,7 +80,6 @@ function encrypt_string($data)
  */
 function decrypt_string($data)
 {
+  global $secretKey;
   return openssl_decrypt('' . $data . '', 'aes-256-cbc', $secretKey);
 }
-
-?>
