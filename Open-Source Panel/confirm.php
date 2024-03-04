@@ -1,18 +1,32 @@
 <?php
+include('database.php');
 
-$pdo = new PDO("mysql:host=localhost;dbname=panel", "root", "");
+$confirmation_code = filter_input(INPUT_GET, 'code', FILTER_SANITIZE_STRING);
 
-$confirmation_code = $_GET['code'];
+$statement = $conn->prepare("SELECT * FROM users WHERE emailcode = ?");
+$statement->bind_param("s", $confirmation_code);
 
-$statement = $pdo->prepare("SELECT * FROM users WHERE emailcode = ?");
-$statement->execute([$confirmation_code]);
-$user = $statement->fetch();
+$statement->execute();
+
+$result = $statement->get_result();
+$user = $result->fetch_assoc();
+
+$statement->close();
+$result->close();
 
 if ($user) {
-  $statement = $pdo->prepare("UPDATE users SET is_emailConfirmed = 1, emailcode = NULL WHERE userid = ?");
-  $statement->execute([$user['userid']]);
-  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin?success=1");
+    $updateStatement = $mysqli->prepare("UPDATE users SET is_emailConfirmed = 1, emailcode = NULL WHERE userid = ?");
+    $updateStatement->bind_param("i", $user['userid']);
+
+    $updateStatement->execute();
+
+    $updateStatement->close();
+
+    header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin?success=1");
+    exit;
 } else {
-  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin?success=0");
+    header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin?error=invalid_code");
+    exit;
 }
-?>
+
+$mysqli->close();
