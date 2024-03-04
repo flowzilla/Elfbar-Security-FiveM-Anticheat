@@ -4,11 +4,11 @@ include('../../../func.php');
 
 // Admin check
 if (!isAdmin()) {
-  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat");
+  header("Location: https://example.com/");
   exit;
 } else {
 }
-	?>
+?>
                     
 <!DOCTYPE html>
 <html lang="en">
@@ -67,8 +67,8 @@ if (!isAdmin()) {
                <div class="media profile-media"><img class="b-r-10" src="<?php echo $avatar ?>" alt="" style="width: 35px; height: 35px;">
                   <div class="media-body"><span>
                   <?php
-                    echo $_SESSION["username"];
-                    ?>
+                  echo $_SESSION["username"];
+                  ?>
                     </span>
                     <p class="mb-0 font-roboto">                  
                     <?php
@@ -78,9 +78,9 @@ if (!isAdmin()) {
                   </div>
                 </div>
                 <ul class="profile-dropdown onhover-show-div">
-                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount"><i data-feather="user"></i><span>Account</span></a></li>
-                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogout.php"> <i data-feather="log-in"> </i><span>Log out</span></a></li>
+                  <li><a href="https://example.com/account"><i data-feather="user"></i><span>Account</span></a></li>
+                  <li><a href="https://example.com/account/"><i data-feather="settings"></i><span>Settings</span></a></li>
+                  <li><a href="https://example.com/logout.php"> <i data-feather="log-in"> </i><span>Log out</span></a></li>
                 </ul>
               </li>
             </ul>
@@ -91,7 +91,7 @@ if (!isAdmin()) {
       <div class="page-body-wrapper">
         <div class="sidebar-wrapper">
           <div>
-            <div class="logo-wrapper"><a href="https://panel.elfbar-security.eu"><img class="img-fluid for-dark" src="https://cdn.discordapp.com/attachments/1021462218904182796/1060162041471586304/Unbenannt-dd1.png" alt=""></a>
+            <div class="logo-wrapper"><a href="https://example.com"><img class="img-fluid for-dark" src="https://cdn.discordapp.com/attachments/1021462218904182796/1060162041471586304/Unbenannt-dd1.png" alt=""></a>
             </div>
             <nav class="sidebar-main">
               <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
@@ -105,7 +105,7 @@ if (!isAdmin()) {
                     </div>
                   </li>
                   <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com" data-bs-original-title="" title="">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                       <span>Home</span>
                     </a>
@@ -116,12 +116,12 @@ if (!isAdmin()) {
                     </div>
                   </li>
                   <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos/" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com/tos/" data-bs-original-title="" title="">
                     <i data-feather="file-text"></i>
                     <span>T.O.S</span>
                     </a>
                     </li><li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatfaq/" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com/faq/" data-bs-original-title="" title="">
                     <i data-feather="help-circle"></i>            
                     <span>FAQ</span>
                     </a>
@@ -133,7 +133,7 @@ if (!isAdmin()) {
                     </a>
                     </li>
                   <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatdiscord" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com/discord" data-bs-original-title="" title="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
                       <span>Discord</span>
                     </a>
@@ -141,40 +141,40 @@ if (!isAdmin()) {
                     
                   
                     <?php
-          if (!($_SESSION["group"] == "admin")) {
-          } else {
-            echo '<li class="sidebar-main-title">';
-            echo '<div>';
-              echo '<h6>Admin</h6>';
-              echo '<p>Admin Panel</p>';
-            echo '</div>';
-          echo '</li>';
-          echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="server"></i><span>Server</span></a>';
-            echo '<ul class="sidebar-submenu">';
-              echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/server/overview/">Overview</a></li>';
-              echo '<li><a href="">Server Table</a></li>';
-            echo '</ul>';
-            echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="terminal"></i><span>Logs</span></a>';
-            echo '<ul class="sidebar-submenu">';
-              echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/authlogs/">Auth Logs</a></li>';
-              echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/serverlogs/">Server Logs</a></li>';
-              echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/panellogs/">Panel Logs</a></li>';
-            echo '</ul>';
-            echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="cloud"></i><span>Auth</span></a>';
-            echo '<ul class="sidebar-submenu">';
-              echo '<li><a href="#">Key Overview</a></li>';
-              echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/auth/keygenerator">Key Creator</a></li>';
-              echo '<li><a href="#">IP Change Requests</a></li>';
-             echo '<li><a href="#">IP Bans</a></li>';
-            echo '</ul>';
-            echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="folder"></i><span>Website</span></a>';
-            echo '<ul class="sidebar-submenu">';
-             echo '<li><a href="#">Settings</a></li>';
-            echo '</ul>';
-          echo '</li>';
-          }
+                    if (!($_SESSION["group"] == "admin")) {
+                    } else {
+                      echo '<li class="sidebar-main-title">';
+                      echo '<div>';
+                      echo '<h6>Admin</h6>';
+                      echo '<p>Admin Panel</p>';
+                      echo '</div>';
+                      echo '</li>';
+                      echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="server"></i><span>Server</span></a>';
+                      echo '<ul class="sidebar-submenu">';
+                      echo '<li><a href="https://example.com/admin/server/overview/">Overview</a></li>';
+                      echo '<li><a href="">Server Table</a></li>';
+                      echo '</ul>';
+                      echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="terminal"></i><span>Logs</span></a>';
+                      echo '<ul class="sidebar-submenu">';
+                      echo '<li><a href="https://example.com/admin/logs/authlogs/">Auth Logs</a></li>';
+                      echo '<li><a href="https://example.com/admin/logs/serverlogs/">Server Logs</a></li>';
+                      echo '<li><a href="https://example.com/admin/logs/panellogs/">Panel Logs</a></li>';
+                      echo '</ul>';
+                      echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="cloud"></i><span>Auth</span></a>';
+                      echo '<ul class="sidebar-submenu">';
+                      echo '<li><a href="#">Key Overview</a></li>';
+                      echo '<li><a href="https://example.com/admin/auth/keygenerator">Key Creator</a></li>';
+                      echo '<li><a href="#">IP Change Requests</a></li>';
+                      echo '<li><a href="#">IP Bans</a></li>';
+                      echo '</ul>';
+                      echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="folder"></i><span>Website</span></a>';
+                      echo '<ul class="sidebar-submenu">';
+                      echo '<li><a href="#">Settings</a></li>';
+                      echo '</ul>';
+                      echo '</li>';
+                    }
 
-?>  
+                    ?>  
             </nav>
           </div>
         </div>
@@ -185,39 +185,40 @@ if (!isAdmin()) {
                 <div class="col-6"></div>
                 <div class="col-6">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="https://panel.elfbar-security.eu"> <i data-feather="home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="https://example.com"> <i data-feather="home"></i></a></li>
                     <li class="breadcrumb-item">Home</li>
                     </ol>
                   </div>
                   </div>
                   <?php
-                  include("../../../database.php");    
-  $tableName = "logs";
-  $columns = ['id','title','text','data','date'];
-  $fetchData = fetch_data($authy, $tableName, $columns);
-  function fetch_data($authy, $tableName, $columns) {
-    if (empty($authy)) {
-    } elseif (empty($columns) || !is_array($columns)) {
-    } elseif (empty($tableName)) {
-    } else {
-      $columnName = implode(", ", $columns);
-      $query = "SELECT * FROM `logs` ORDER by id DESC limit 150";
-      $result = $authy->query($query);
-      if ($result == true) {
-        if ($result->num_rows > 0) {
-          $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-          $msg = $row;
-        } else {
-          $msg = "no current bans";
-        }
-      } else {
-        $msg = "bans not found, contact our Team";
-        $err = mysqli_error($authy);
-      }
-    }
-    return $msg;
-  }
-  ?>
+                  include("../../../database.php");
+                  $tableName = "logs";
+                  $columns = ['id', 'title', 'text', 'data', 'date'];
+                  $fetchData = fetch_data($authy, $tableName, $columns);
+                  function fetch_data($authy, $tableName, $columns)
+                  {
+                    if (empty($authy)) {
+                    } elseif (empty($columns) || !is_array($columns)) {
+                    } elseif (empty($tableName)) {
+                    } else {
+                      $columnName = implode(", ", $columns);
+                      $query = "SELECT * FROM `logs` ORDER by id DESC limit 150";
+                      $result = $authy->query($query);
+                      if ($result == true) {
+                        if ($result->num_rows > 0) {
+                          $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                          $msg = $row;
+                        } else {
+                          $msg = "no current bans";
+                        }
+                      } else {
+                        $msg = "bans not found, contact our Team";
+                        $err = mysqli_error($authy);
+                      }
+                    }
+                    return $msg;
+                  }
+                  ?>
                   <div class="col-sm-12">
                   <div class="card">
                     <div class="card-header">
@@ -237,24 +238,26 @@ if (!isAdmin()) {
                             </thead>
                             <tbody>
                             <?php
-      if(is_array($fetchData)){      
-      $sn=1;
-      foreach($fetchData as $data){
-    ?>
-      <tr>    
-      <td><?php echo $data['title']??''; ?></td>
-      <td><?php echo $data['text']??''; ?></td>
-      <td><?php echo $data['date']??''; ?></td>
-     </tr>
-     <?php
-      $sn++;}}else{ ?>
+                            if (is_array($fetchData)) {
+                              $sn = 1;
+                              foreach ($fetchData as $data) {
+                                ?>
+          <tr>    
+          <td><?php echo $data['title'] ?? ''; ?></td>
+          <td><?php echo $data['text'] ?? ''; ?></td>
+          <td><?php echo $data['date'] ?? ''; ?></td>
+         </tr>
+         <?php
+         $sn++;
+                              }
+                            } else { ?>
+        <tr>
+          <td colspan="8">
+      <?php echo $fetchData; ?>
+    </td>
       <tr>
-        <td colspan="8">
-    <?php echo $fetchData; ?>
-  </td>
-    <tr>
-    <?php
-    }?>
+      <?php
+                            } ?>
                             </tbody>
                           </table>
                         </div>

@@ -2,49 +2,49 @@
 session_start();
 include('../func.php');
 
-if(empty($_SESSION['ip'])) {
+if (empty($_SESSION['ip'])) {
   session_destroy();
-  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin");
+  header("Location: https://example.com/login");
+}
+$result = $conn->query("SELECT server.serverip,users.userid FROM server JOIN users_server ON users_server.serverid = server.serverid JOIN users ON users.userid = users_server.userid");
+$match_found = false;
+while ($row = $result->fetch_assoc()) {
+  if ($row['serverip'] == $_SESSION['ip'] && $row['userid'] == $_SESSION['id']) {
+    $match_found = true;
+    break;
   }
-  $result = $conn->query("SELECT server.serverip,users.userid FROM server JOIN users_server ON users_server.serverid = server.serverid JOIN users ON users.userid = users_server.userid");
-  $match_found = false;
-  while ($row = $result->fetch_assoc()) {
-    if ($row['serverip'] == $_SESSION['ip'] && $row['userid'] == $_SESSION['id']) {
-      $match_found = true;
-      break;
-    }
-  }
-  
-  if ($match_found) {
-  } else {
-    header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat");
-  }
+}
 
-  if (isset($_POST['unban']) && !empty($_POST['banid'])) {
-    $id = $_POST['banid'];
-    include '../database.php';
-    $query = "SELECT redem_license.license FROM users_server 
+if ($match_found) {
+} else {
+  header("Location: https://example.com/");
+}
+
+if (isset($_POST['unban']) && !empty($_POST['banid'])) {
+  $id = $_POST['banid'];
+  include '../database.php';
+  $query = "SELECT redem_license.license FROM users_server 
     JOIN server ON users_server.serverid = server.serverid
     JOIN redem_license ON redem_license.serverid = server.serverid
     WHERE users_server.userid = ? AND server.serverip = ?";
-    $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "ss", $_SESSION["id"], $_SESSION["ip"]);
-    mysqli_stmt_execute($stmt);
-    $resultt = mysqli_stmt_get_result($stmt);
-    $row = mysqli_fetch_row($resultt);
-    $t = $row[0];
-    $sql = "DELETE FROM `$t` WHERE id = ?";
-    $stmt = mysqli_prepare($svbans, $sql);
-    mysqli_stmt_bind_param($stmt, "i", $id);
-    if (mysqli_stmt_execute($stmt)) {
-      echo '<p class="custom-alert-message">Player was unbanned successfully</p>';
-    } else {
-      echo '<h2 class="custom-alert-title">Panel System</h2>';
-      echo '<p class="custom-alert-message">ERROR! Code: [693]</p>';
-    }
-    mysqli_stmt_close($stmt);
-    mysqli_close($svbans);
+  $stmt = mysqli_prepare($conn, $query);
+  mysqli_stmt_bind_param($stmt, "ss", $_SESSION["id"], $_SESSION["ip"]);
+  mysqli_stmt_execute($stmt);
+  $resultt = mysqli_stmt_get_result($stmt);
+  $row = mysqli_fetch_row($resultt);
+  $t = $row[0];
+  $sql = "DELETE FROM `$t` WHERE id = ?";
+  $stmt = mysqli_prepare($svbans, $sql);
+  mysqli_stmt_bind_param($stmt, "i", $id);
+  if (mysqli_stmt_execute($stmt)) {
+    echo '<p class="custom-alert-message">Player was unbanned successfully</p>';
+  } else {
+    echo '<h2 class="custom-alert-title">Panel System</h2>';
+    echo '<p class="custom-alert-message">ERROR! Code: [693]</p>';
   }
+  mysqli_stmt_close($stmt);
+  mysqli_close($svbans);
+}
 ?>
                     
                     
@@ -186,7 +186,7 @@ if(empty($_SESSION['ip'])) {
       <div class="page-header">
         <div class="header-wrapper row m-0"> 
         <div class="header-logo-wrapper col-auto p-0">
-        <div class="logo-wrapper"><a href="https://panel.elfbar-security.eu" data-bs-original-title="" title=""><img class="img-fluid for-dark" src="https://cdn.discordapp.com/attachments/1021462218904182796/1060162041471586304/Unbenannt-dd1.png" alt=""></a>
+        <div class="logo-wrapper"><a href="https://example.com" data-bs-original-title="" title=""><img class="img-fluid for-dark" src="https://cdn.discordapp.com/attachments/1021462218904182796/1060162041471586304/Unbenannt-dd1.png" alt=""></a>
   </div>
             
           </div>
@@ -197,8 +197,8 @@ if(empty($_SESSION['ip'])) {
                <div class="media profile-media"><img class="b-r-10" src="<?php echo $avatar ?>" alt="" style="width: 35px; height: 35px;">
                   <div class="media-body"><span>
                   <?php
-                    echo $_SESSION["username"];
-                    ?>
+                  echo $_SESSION["username"];
+                  ?>
                     </span>
                     <p class="mb-0 font-roboto">                  
                     <?php
@@ -208,10 +208,10 @@ if(empty($_SESSION['ip'])) {
                   </div>
                 </div>
                 <ul class="profile-dropdown onhover-show-div">
-                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount"><i data-feather="user"></i><span>Account</span></a></li>
+                  <li><a href="https://example.com/account"><i data-feather="user"></i><span>Account</span></a></li>
                 
-                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/"><i data-feather="settings"></i><span>Settings</span></a></li>
-                  <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogout.php"> <i data-feather="log-in"> </i><span>Log out</span></a></li>
+                  <li><a href="https://example.com/account/"><i data-feather="settings"></i><span>Settings</span></a></li>
+                  <li><a href="https://example.com/logout.php"> <i data-feather="log-in"> </i><span>Log out</span></a></li>
                 </ul>
               </li>
             </ul>
@@ -222,66 +222,66 @@ if(empty($_SESSION['ip'])) {
       <div class="page-body-wrapper">
         <div class="sidebar-wrapper">
           <div>
-            <div class="logo-wrapper"><a href="https://panel.elfbar-security.eu"><img class="img-fluid for-dark" src="" alt=""></a>
+            <div class="logo-wrapper"><a href="https://example.com"><img class="img-fluid for-dark" src="" alt=""></a>
             </div>
             <nav class="sidebar-main">
               <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
               <div id="sidebar-menu">
                 <ul class="sidebar-links" id="simple-bar">
                   <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com" data-bs-original-title="" title="">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                       <span>Home</span>
                     </a>
                   </li>
                   <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com/manage/" data-bs-original-title="" title="">
                     <i class="fa fa-desktop"></i>
                     <span>Overview</span>
                     </a>
                     </li><li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/banlist.php" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com/manage/banlist.php" data-bs-original-title="" title="">
                     <i class="fa fa-ban"></i>                      
                     <span>Banlist</span>
                     </a>
                     </li>
                     </li><li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/playerlist.php" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com/manage/playerlist.php" data-bs-original-title="" title="">
                     <i class="fa fa-group"></i>
                     <span>Playerlist</span>
                     </a>
                     </li>
                     <li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/config.php" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com/manage/config.php" data-bs-original-title="" title="">
                     <i class="fa fa-edit"></i>                     
                     <span>Config</span>
                     </a>
                     </li>
                     </li><li class="sidebar-list">
-                    <a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/aclogs.php" data-bs-original-title="" title="">
+                    <a class="sidebar-link sidebar-title link-nav" href="https://example.com/manage/aclogs.php" data-bs-original-title="" title="">
                     <i class="fa fa-list-alt"></i>
                     <span>Anticheat Logs</span>
                     </a>
                     
                     <?php
 
-include("../database.php");
-$getbota = "SELECT server.server_id FROM server WHERE serverip =  '" . $_SESSION["ip"] . "'";
-$result = mysqli_query($link, $getbota);
-if ($result && mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_assoc($result);
-    $serverId = $row['server_id'];
-    if (!empty($serverId)) {
-        echo '</li>';
-        echo '</li><li class="sidebar-list">';
-        echo '<a class="sidebar-link sidebar-title link-nav" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatmanage/botlogs.php" data-bs-original-title="" title="">';
-        echo '<i class="fa fa-file-text"></i>';
-        echo '<span>Bot Logs</span>';
-        echo '</a>';
-    }
-}
+                    include("../database.php");
+                    $getbota = "SELECT server.server_id FROM server WHERE serverip =  '" . $_SESSION["ip"] . "'";
+                    $result = mysqli_query($link, $getbota);
+                    if ($result && mysqli_num_rows($result) > 0) {
+                      $row = mysqli_fetch_assoc($result);
+                      $serverId = $row['server_id'];
+                      if (!empty($serverId)) {
+                        echo '</li>';
+                        echo '</li><li class="sidebar-list">';
+                        echo '<a class="sidebar-link sidebar-title link-nav" href="https://example.com/manage/botlogs.php" data-bs-original-title="" title="">';
+                        echo '<i class="fa fa-file-text"></i>';
+                        echo '<span>Bot Logs</span>';
+                        echo '</a>';
+                      }
+                    }
 
-?>
+                    ?>
 
                </li>             
             </nav>
@@ -294,46 +294,47 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <div class="col-6"></div>  
                 <div class="col-6">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="https://panel.elfbar-security.eu"> <i data-feather="home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="https://example.com"> <i data-feather="home"></i></a></li>
                     <li class="breadcrumb-item">Manage</li>
                   </ol>
                 </div>
                 </div>
 
                 <?php
-include("../database.php");
-$getlicense = "SELECT redem_license.license FROM users_server 
+                include("../database.php");
+                $getlicense = "SELECT redem_license.license FROM users_server 
 JOIN server ON users_server.serverid = server.serverid
 JOIN redem_license ON redem_license.serverid = server.serverid
 WHERE users_server.userid = '" . $_SESSION["id"] . "' AND server.serverip = '" . $_SESSION["ip"] . "'";
-$result = mysqli_query($link, $getlicense);
-$row = mysqli_fetch_assoc($result);
-$license = $row['license'];
-$tableName = "logs";
-$columns = ['id','reason','date','ip'];
-$fetchData = fetch_data($logs, $tableName, $columns, $license);
-function fetch_data($logs, $tableName, $columns, $license) {
-    if (empty($logs)) {
-    } elseif (empty($columns) || !is_array($columns)) {
-    } elseif (empty($tableName)) {
-    } else {
-      $columnName = implode(", ", $columns);
-      $query = "SELECT * FROM `logs` WHERE license = '$license' ORDER BY date DESC LIMIT 1000";
-      $result = $logs->query($query);
-      if ($result == true) {
-        if ($result->num_rows > 0) {
-          $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-          $msg = $row;
-        } else {
-          $msg = "no current Anticheat Logs";
-        }
-      } else {
-        $msg = "Anticheat Logs not found, contact our Team";
-        $err = mysqli_error($logs);
-      }
-    }
-    return $msg;
-}
+                $result = mysqli_query($link, $getlicense);
+                $row = mysqli_fetch_assoc($result);
+                $license = $row['license'];
+                $tableName = "logs";
+                $columns = ['id', 'reason', 'date', 'ip'];
+                $fetchData = fetch_data($logs, $tableName, $columns, $license);
+                function fetch_data($logs, $tableName, $columns, $license)
+                {
+                  if (empty($logs)) {
+                  } elseif (empty($columns) || !is_array($columns)) {
+                  } elseif (empty($tableName)) {
+                  } else {
+                    $columnName = implode(", ", $columns);
+                    $query = "SELECT * FROM `logs` WHERE license = '$license' ORDER BY date DESC LIMIT 1000";
+                    $result = $logs->query($query);
+                    if ($result == true) {
+                      if ($result->num_rows > 0) {
+                        $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                        $msg = $row;
+                      } else {
+                        $msg = "no current Anticheat Logs";
+                      }
+                    } else {
+                      $msg = "Anticheat Logs not found, contact our Team";
+                      $err = mysqli_error($logs);
+                    }
+                  }
+                  return $msg;
+                }
                 ?>
                   <div class="col-sm-12">
                   <div class="card">
@@ -361,21 +362,21 @@ function fetch_data($logs, $tableName, $columns, $license) {
                               $sn = 1;
                               foreach ($fetchData as $data) {
                                 ?>
-          <tr>
+              <tr>
           
-          <td><?php echo $data['reason'] ?? ''; ?></td>
-          <td><?php echo $data['date'] ?? ''; ?></td>
-         </tr>
-         <?php
-         $sn++;
+              <td><?php echo $data['reason'] ?? ''; ?></td>
+              <td><?php echo $data['date'] ?? ''; ?></td>
+             </tr>
+             <?php
+             $sn++;
                               }
                             } else { ?>
+          <tr>
+            <td colspan="8">
+        <?php echo $fetchData; ?>
+      </td>
         <tr>
-          <td colspan="8">
-      <?php echo $fetchData; ?>
-    </td>
-      <tr>
-      <?php
+        <?php
                             } ?>
                             </tbody>
                           </table>

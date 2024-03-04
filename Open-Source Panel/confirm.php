@@ -22,10 +22,10 @@ if ($user) {
 
     $updateStatement->close();
 
-    header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin?success=1");
+    header("Location: https://example.com/login?success=1");
     exit;
 } else {
-    header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin?error=invalid_code");
+    header("Location: https://example.com/login?error=invalid_code");
     exit;
 }
 

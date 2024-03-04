@@ -143,7 +143,7 @@ if (isset($_POST['btnRegisters'])) {
           $_SESSION["email"] = $user['email'];
           $_SESSION["username"] = $user['username'];
           $_SESSION["group"] = $user['usergroup'];
-          echo "<script>window.location.href='https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat'</script>";
+          echo "<script>window.location.href='https://example.com/'</script>";
         } else {
           echo '<script>
           Swal.fire({
@@ -169,7 +169,7 @@ if (isset($_POST['btnRegisters'])) {
           $_SESSION["email"] = $user['email'];
           $_SESSION["username"] = $user['username'];
           $_SESSION["group"] = $user['usergroup'];
-          echo "<script>window.location.href='https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat'</script>";
+          echo "<script>window.location.href='https://example.com/'</script>";
         }
 
         $date = date('Y-m-d H:i:s');
@@ -282,8 +282,7 @@ if (isset($_POST['btnRegisters'])) {
       <div class="col-12 p-0">
         <div class="login-card">
           <div>
-            <div><a class="logo" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin/"><img
-                  class="img-fluid for-light"
+            <div><a class="logo" href="https://example.com/login/"><img class="img-fluid for-light"
                   src="https://cdn.discordapp.com/attachments/1021462218904182796/1060162041471586304/Unbenannt-dd1.png"
                   alt="looginpage"><img class="img-fluid for-dark" src="" alt="looginpage"></a></div>
             <div class="login-main">
@@ -316,11 +315,10 @@ if (isset($_POST['btnRegisters'])) {
                   </div>
                 </div>
                 <p class="mt-4 mb-0 text-center">Don't have an account?<a class="ms-2"
-                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatregister">Create Account</a></p>
-                <p class="mt-4 mb-0 text-center"><a class="ms-2"
-                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos">Terms</a> •
-                  <a class="ms-2" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatprivacy">Policy</a>
-                  • <a class="ms-2" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund">Refund</a>
+                    href="https://example.com/register">Create Account</a></p>
+                <p class="mt-4 mb-0 text-center"><a class="ms-2" href="https://example.com/tos">Terms</a> •
+                  <a class="ms-2" href="https://example.com/privacy">Policy</a>
+                  • <a class="ms-2" href="https://example.com/refund">Refund</a>
                 </p>
                 <div class="dmca">
                   <a href="//www.dmca.com/Protection/Status.aspx?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a"

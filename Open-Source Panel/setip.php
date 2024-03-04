@@ -13,11 +13,11 @@ try {
         $_SESSION['ip'] = $newIp;
     } else {
         session_destroy();
-        header('Location: https://panel.elfbar-security.eu');
+        header('Location: https://example.com');
         exit;
     }
 } catch (Exception $e) {
     error_log($e->getMessage());
-    header('Location: https://panel.elfbar-security.eu?error=' . urlencode($e->getMessage()));
+    header('Location: https://example.com?error=' . urlencode($e->getMessage()));
     exit;
 }

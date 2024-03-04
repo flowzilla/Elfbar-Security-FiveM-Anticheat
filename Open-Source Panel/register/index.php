@@ -295,7 +295,7 @@ if (isset($_POST['btnRegister'])) {
                               <p>Thank you for choosing ImoShield</p>
                               <p>Please confirm your email address to help us ensure your account is always protected</p>
                               <p style="text-align: center">
-  <a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatconfirm.php?code=' . $confirmation_code . '" style="padding: 10px; background-color: #7366ff; color: #fff; display: inline-block; border-radius: 4px">
+  <a href="https://example.com/confirm.php?code=' . $confirmation_code . '" style="padding: 10px; background-color: #7366ff; color: #fff; display: inline-block; border-radius: 4px">
     Verify your email
   </a>
 </p>
@@ -310,7 +310,7 @@ if (isset($_POST['btnRegister'])) {
                       <tr>
                           <td>
                               <div class="footer">
-                                  <a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos/">Terms</a> | <a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund/">Refund</a> | <a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatpolicy/">Policy</a><br>
+                                  <a href="https://example.com/tos/">Terms</a> | <a href="https://example.com/refund/">Refund</a> | <a href="https://example.com/policy/">Policy</a><br>
                                   This email was automatically generated. &copy; 2023 ImoShield - FiveM Anticheat.
                               </div>
                           </td>
@@ -348,7 +348,7 @@ if (isset($_POST['btnRegister'])) {
             </script>
             <?php
           }
-          echo "<script>window.location.href='https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin'</script>";
+          echo "<script>window.location.href='https://example.com/login'</script>";
           exit;
         }
       } else {
@@ -425,20 +425,18 @@ if (isset($_POST['btnRegister'])) {
                   <div class="form-group mb-0">
                     <p class="mt-4 mb-0 text-center">
                       <input type="checkbox" id="terms-checkbox">
-                      <label for="terms-checkbox" class="ms-2">I accept the <a
-                          href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos">Terms</a>, <a
-                          href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatprivacy">Policy</a> and <a
-                          href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund">Refund</a></label>
+                      <label for="terms-checkbox" class="ms-2">I accept the <a href="https://example.com/tos">Terms</a>,
+                        <a href="https://example.com/privacy">Policy</a> and <a
+                          href="https://example.com/refund">Refund</a></label>
                     </p>
                     <button class="btn btn-primary btn-block w-100" name="btnRegister" type="submit">Create
                       Account</button>
                   </div>
                   <p class="mt-4 mb-0 text-center">Already have an account?<a class="ms-2"
-                      href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogin">Sign in</a></p>
-                  <p class="mt-4 mb-0 text-center"><a class="ms-2"
-                      href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos">Terms</a> • <a class="ms-2"
-                      href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatprivacy">Policy</a> • <a
-                      class="ms-2" href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund">Refund</a>
+                      href="https://example.com/login">Sign in</a></p>
+                  <p class="mt-4 mb-0 text-center"><a class="ms-2" href="https://example.com/tos">Terms</a> • <a
+                      class="ms-2" href="https://example.com/privacy">Policy</a> • <a class="ms-2"
+                      href="https://example.com/refund">Refund</a>
                   </p>
                   <div class="dmca">
                     <a href="//www.dmca.com/Protection/Status.aspx?ID=9c9de7b3-a4ce-4ec0-9d39-8072e9ad971a"

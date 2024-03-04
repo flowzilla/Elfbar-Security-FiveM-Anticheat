@@ -65,9 +65,8 @@
         <strong>Service</strong> refers to the Website.
       </li>
       <li>
-        <strong>Website</strong> refers to ImoShield ANTICHEAT, accessible from <a
-          href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat" rel="external nofollow noopener"
-          target="_blank">https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat</a>
+        <strong>Website</strong> refers to ImoShield ANTICHEAT, accessible from <a href="https://example.com/"
+          rel="external nofollow noopener" target="_blank">https://example.com/</a>
       </li>
       <li>
         <strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity

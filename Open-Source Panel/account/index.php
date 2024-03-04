@@ -176,13 +176,10 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
                 </div>
               </div>
               <ul class="profile-dropdown onhover-show-div">
-                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount"><i
-                      data-feather="user"></i><span>Account</span></a>
+                <li><a href="https://example.com/account"><i data-feather="user"></i><span>Account</span></a>
                 </li>
-                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/"><i
-                      data-feather="settings"></i><span>Settings</span></a></li>
-                <li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatlogout.php"> <i
-                      data-feather="log-in"> </i><span>Log
+                <li><a href="https://example.com/account/"><i data-feather="settings"></i><span>Settings</span></a></li>
+                <li><a href="https://example.com/logout.php"> <i data-feather="log-in"> </i><span>Log
                       out</span></a></li>
               </ul>
             </li>
@@ -193,7 +190,7 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
     <div class="page-body-wrapper">
       <div class="sidebar-wrapper">
         <div>
-          <div class="logo-wrapper"><a href="https://panel.elfbar-security.eu"><img class="img-fluid for-dark"
+          <div class="logo-wrapper"><a href="https://example.com"><img class="img-fluid for-dark"
                 src="https://cdn.discordapp.com/attachments/1021462218904182796/1060162041471586304/Unbenannt-dd1.png"
                 alt=""></a>
           </div>
@@ -210,7 +207,7 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
                   </div>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://panel.elfbar-security.eu"
+                  <a class="sidebar-link sidebar-title link-nav" href="https://example.com"
                     data-bs-original-title="" title="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -228,7 +225,7 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
                 </li>
                 <script>
                   function openCloseWindow() {
-                    var newWindow = window.open('https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatapi/download');
+                    var newWindow = window.open('https://example.com/api/download');
                     setTimeout(function () {
                       newWindow.close();
                     }, 2000);
@@ -247,26 +244,23 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
                   </div>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav"
-                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheattos/" data-bs-original-title=""
-                    title="">
+                  <a class="sidebar-link sidebar-title link-nav" href="https://example.com/tos/"
+                    data-bs-original-title="" title="">
                     <i data-feather="file-text"></i>
                     <span>T.O.S</span>
                   </a>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav"
-                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatfaq/" data-bs-original-title=""
-                    title="">
+                  <a class="sidebar-link sidebar-title link-nav" href="https://example.com/faq/"
+                    data-bs-original-title="" title="">
                     <i data-feather="help-circle"></i>
                     <span>FAQ</span>
                   </a>
                 </li>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav"
-                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatrefund/" data-bs-original-title=""
-                    title="">
+                  <a class="sidebar-link sidebar-title link-nav" href="https://example.com/refund/"
+                    data-bs-original-title="" title="">
                     <i data-feather="credit-card"></i>
                     <span>Refund</span>
                   </a>
@@ -280,9 +274,8 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
                   </a>
                 </li>
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav"
-                    href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatdiscord" data-bs-original-title=""
-                    title="">
+                  <a class="sidebar-link sidebar-title link-nav" href="https://example.com/discord"
+                    data-bs-original-title="" title="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                       class="feather feather-link">
@@ -304,19 +297,19 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
                   echo '</li>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="server"></i><span>Server</span></a>';
                   echo '<ul class="sidebar-submenu">';
-                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/server/overview/">Overview</a></li>';
+                  echo '<li><a href="https://example.com/admin/server/overview/">Overview</a></li>';
                   echo '<li><a href="">Server Table</a></li>';
                   echo '</ul>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="terminal"></i><span>Logs</span></a>';
                   echo '<ul class="sidebar-submenu">';
-                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/authlogs/">Auth Logs</a></li>';
-                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/serverlogs/">Server Logs</a></li>';
-                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/logs/panellogs/">Panel Logs</a></li>';
+                  echo '<li><a href="https://example.com/admin/logs/authlogs/">Auth Logs</a></li>';
+                  echo '<li><a href="https://example.com/admin/logs/serverlogs/">Server Logs</a></li>';
+                  echo '<li><a href="https://example.com/admin/logs/panellogs/">Panel Logs</a></li>';
                   echo '</ul>';
                   echo '<li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="cloud"></i><span>Auth</span></a>';
                   echo '<ul class="sidebar-submenu">';
                   echo '<li><a href="#">Key Overview</a></li>';
-                  echo '<li><a href="https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatadmin/auth/keygenerator">Key Creator</a></li>';
+                  echo '<li><a href="https://example.com/admin/auth/keygenerator">Key Creator</a></li>';
                   echo '<li><a href="#">IP Change Requests</a></li>';
                   echo '<li><a href="#">IP Bans</a></li>';
                   echo '</ul>';
@@ -337,7 +330,7 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
               <div class="col-6"></div>
               <div class="col-6">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="https://panel.elfbar-security.eu"> <i
+                  <li class="breadcrumb-item"><a href="https://example.com"> <i
                         data-feather="home"></i></a>
                   </li>
                   <li class="breadcrumb-item">Home</li>
@@ -450,11 +443,11 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
                             <?php echo $dc; ?>
                           </label>
                           <button class="btn btn-primary btn-block" type="button"
-                            onclick="location.href='https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatdiscord/link.php'">
+                            onclick="location.href='https://example.com/discord/link.php'">
                             <i class="icon-link"></i> Connect to Discord
                           </button>
                           <button class="btn btn-danger btn-block" type="button"
-                            onclick="location.href='https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatdiscord/unlink.php'">
+                            onclick="location.href='https://example.com/discord/unlink.php'">
                             <i class="icon-unlink"></i> Remove Discord
                           </button>
                           <label for="duration2" style="color:red">Note: Our system takes about a minute to give you or

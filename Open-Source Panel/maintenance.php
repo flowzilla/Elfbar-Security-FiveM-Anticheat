@@ -4,7 +4,7 @@ $stmt = $conn->prepare("SELECT COUNT(*) FROM `system` WHERE `maintenance` = 1");
 $stmt->execute();
 $result = $stmt->get_result();
 if ($result->fetch_row()[0] == 0 && isset($_SESSION['id'])) {
-  header("Location: https://panel.elfbar-security.eu");
+  header("Location: https://example.com");
   exit;
 }
 ?>
@@ -66,7 +66,7 @@ if ($result->fetch_row()[0] == 0 && isset($_SESSION['id'])) {
 </head>
 
 <body>
-  
+
   <div class="page-wrapper">
     <div class="error-wrapper maintenance-bg">
       <div class="container">

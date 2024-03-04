@@ -1,4 +1,4 @@
 Options -Indexes
 
-ErrorDocument 404 https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat
-ErrorDocument 403 https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat
+ErrorDocument 404 https://example.com/
+ErrorDocument 403 https://example.com/

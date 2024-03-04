@@ -7,7 +7,7 @@ include('database.php');
 // Login check
 if (!isset($_SESSION['id']) || !isset($_SESSION['group']) || empty($_SESSION['id']) || empty($_SESSION['group'])) {
   session_destroy();
-  header("Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat/login");
+  header("Location: https://example.com/login");
   exit;
 }
 
@@ -21,7 +21,7 @@ function is_maintenance(): bool
 
 // Maintenance Check
 if (is_maintenance() && !($_SESSION["group"] == "admin")) {
-  header('Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat/maintenance.php');
+  header('Location: https://example.com/maintenance.php');
 }
 
 // Ban Function
@@ -34,7 +34,7 @@ function is_banned(int $user_id): bool
 
 // Ban Check
 if (is_banned($_SESSION["id"])) {
-  header('Location: https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat/banned.php');
+  header('Location: https://example.com/banned.php');
 }
 
 // Avatar 

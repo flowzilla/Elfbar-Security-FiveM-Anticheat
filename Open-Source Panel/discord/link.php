@@ -2,7 +2,7 @@
 include('../func.php');
 $discordClientId = '';
 $discordClientSecret = '';
-$discordRedirectUri = 'https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheatdiscord/link.php';
+$discordRedirectUri = 'https://example.com/discord/link.php';
 $discordScope = 'identify';
 if (!isset($_GET['code'])) {
     $authUrl = 'https://discordapp.com/api/oauth2/authorize?client_id=' . $discordClientId . '&redirect_uri=' . urlencode($discordRedirectUri) . '&response_type=code&scope=' . urlencode($discordScope);
@@ -40,6 +40,6 @@ $stmt = mysqli_prepare($link, $sql);
 mysqli_stmt_bind_param($stmt, "ss", $discordUserId, $useridpanel);
 mysqli_stmt_execute($stmt);
 mysqli_stmt_close($stmt);
-$Url = "https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheataccount/";
+$Url = "https://example.com/account/";
 header('Location: ' . $Url);
 ?>
