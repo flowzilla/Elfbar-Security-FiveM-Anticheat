@@ -1,16 +1,25 @@
 <?php
 require_once '../vendor/autoload.php';
-include('../database.php');
-use PHPGangsta_GoogleAuthenticator;
 
-$ga = new PHPGangsta_GoogleAuthenticator();
+try {
+    require_once '../database.php';
 
-$secret = $ga->createSecret();
+    $ga = new PHPGangsta_GoogleAuthenticator();
 
-$qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
+    // Generate a secret key
+    $secret = $ga->createSecret();
 
+    $qrCodeUrl = $ga->getQRCodeGoogleUrl('YourName', $secret);
 
-echo $secret;
-echo $qrCodeUrl;
-mysqli_close($conn);
-?>
+    $stmt = $conn->prepare("INSERT INTO users (secret_key) VALUES (?)");
+    $stmt->bind_param("s", $secret);
+    $stmt->execute();
+
+    echo $qrCodeUrl;
+
+} catch (Exception $e) {
+    error_log($e->getMessage());
+    echo "An error occurred. Please try again later.";
+} finally {
+    mysqli_close($conn);
+}
