@@ -20,14 +20,15 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `counter`
 --
-
+CREATE DATABASE IF NOT EXISTS counter;
+USE counter;
 -- --------------------------------------------------------
 
 --
 -- Tabellenstruktur für Tabelle `totalauths`
 --
 
-CREATE TABLE `totalauths` (
+CREATE TABLE IF NOT EXISTS `totalauths` (
   `id` int(11) NOT NULL,
   `license` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -38,7 +39,7 @@ CREATE TABLE `totalauths` (
 -- Tabellenstruktur für Tabelle `totalbans`
 --
 
-CREATE TABLE `totalbans` (
+CREATE TABLE IF NOT EXISTS `totalbans` (
   `id` int(11) NOT NULL,
   `license` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -49,7 +50,7 @@ CREATE TABLE `totalbans` (
 -- Tabellenstruktur für Tabelle `totaljoins`
 --
 
-CREATE TABLE `totaljoins` (
+CREATE TABLE IF NOT EXISTS `totaljoins` (
   `id` int(11) NOT NULL,
   `license` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -60,7 +61,7 @@ CREATE TABLE `totaljoins` (
 -- Tabellenstruktur für Tabelle `totalscreenshots`
 --
 
-CREATE TABLE `totalscreenshots` (
+CREATE TABLE IF NOT EXISTS `totalscreenshots` (
   `id` int(11) NOT NULL,
   `license` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

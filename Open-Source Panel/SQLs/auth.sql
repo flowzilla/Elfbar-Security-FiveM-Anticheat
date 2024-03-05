@@ -22,12 +22,13 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+CREATE DATABASE IF NOT EXISTS auth;
+USE auth;
 --
 -- Tabellenstruktur für Tabelle `accounts`
 --
 
-CREATE TABLE `accounts` (
+CREATE TABLE IF NOT EXISTS `accounts` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -45,7 +46,7 @@ CREATE TABLE `accounts` (
 -- Tabellenstruktur für Tabelle `announcements`
 --
 
-CREATE TABLE `announcements` (
+CREATE TABLE IF NOT EXISTS `announcements` (
   `id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `data` longtext DEFAULT NULL,
@@ -60,7 +61,7 @@ CREATE TABLE `announcements` (
 -- Tabellenstruktur für Tabelle `licenses`
 --
 
-CREATE TABLE `licenses` (
+CREATE TABLE IF NOT EXISTS `licenses` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `script` varchar(100) NOT NULL,
@@ -77,7 +78,7 @@ CREATE TABLE `licenses` (
 -- Tabellenstruktur für Tabelle `logs`
 --
 
-CREATE TABLE `logs` (
+CREATE TABLE IF NOT EXISTS `logs` (
   `id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `text` varchar(255) DEFAULT NULL,
@@ -96,7 +97,7 @@ CREATE TABLE `logs` (
 -- Tabellenstruktur für Tabelle `scripts`
 --
 
-CREATE TABLE `scripts` (
+CREATE TABLE IF NOT EXISTS `scripts` (
   `id` int(11) NOT NULL,
   `script` varchar(100) NOT NULL,
   `webhook` longtext NOT NULL,

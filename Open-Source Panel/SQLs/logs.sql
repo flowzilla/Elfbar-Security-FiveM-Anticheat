@@ -20,14 +20,15 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `logs`
 --
-
+CREATE DATABASE IF NOT EXISTS logs;
+USE logs;
 -- --------------------------------------------------------
 
 --
 -- Tabellenstruktur für Tabelle `botlogs`
 --
 
-CREATE TABLE `botlogs` (
+CREATE TABLE IF NOT EXISTS `botlogs` (
   `id` int(11) NOT NULL,
   `command` varchar(200) NOT NULL,
   `banid` varchar(200) NOT NULL,
@@ -44,7 +45,7 @@ CREATE TABLE `botlogs` (
 -- Tabellenstruktur für Tabelle `loginlogs`
 --
 
-CREATE TABLE `loginlogs` (
+CREATE TABLE IF NOT EXISTS `loginlogs` (
   `userid` varchar(200) NOT NULL,
   `date` varchar(200) NOT NULL,
   `id` int(200) NOT NULL
@@ -56,7 +57,7 @@ CREATE TABLE `loginlogs` (
 -- Tabellenstruktur für Tabelle `logs`
 --
 
-CREATE TABLE `logs` (
+CREATE TABLE IF NOT EXISTS `logs` (
   `id` int(11) NOT NULL,
   `license` text NOT NULL,
   `reason` text NOT NULL,

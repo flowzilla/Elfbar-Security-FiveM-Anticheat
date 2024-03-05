@@ -20,14 +20,15 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `panel`
 --
-
+CREATE DATABASE IF NOT EXISTS panel;
+USE panel;
 -- --------------------------------------------------------
 
 --
 -- Tabellenstruktur für Tabelle `globalbanlist`
 --
 
-CREATE TABLE `globalbanlist` (
+CREATE TABLE IF NOT EXISTS `globalbanlist` (
   `id` int(11) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `steam` varchar(50) DEFAULT NULL,
@@ -47,7 +48,7 @@ CREATE TABLE `globalbanlist` (
 -- Tabellenstruktur für Tabelle `ipreset`
 --
 
-CREATE TABLE `ipreset` (
+CREATE TABLE IF NOT EXISTS `ipreset` (
   `id` int(11) NOT NULL,
   `status` varchar(255) DEFAULT NULL,
   `sid` int(11) DEFAULT NULL,
@@ -60,7 +61,7 @@ CREATE TABLE `ipreset` (
 -- Tabellenstruktur für Tabelle `keys`
 --
 
-CREATE TABLE `keys` (
+CREATE TABLE IF NOT EXISTS `keys` (
   `license` varchar(200) NOT NULL,
   `exp` varchar(200) NOT NULL DEFAULT 'ERROR',
   `licenseid` int(11) NOT NULL
@@ -72,7 +73,7 @@ CREATE TABLE `keys` (
 -- Tabellenstruktur für Tabelle `news`
 --
 
-CREATE TABLE `news` (
+CREATE TABLE IF NOT EXISTS `news` (
   `text` varchar(1000) NOT NULL,
   `date` varchar(200) NOT NULL,
   `user` varchar(20) NOT NULL,
@@ -85,7 +86,7 @@ CREATE TABLE `news` (
 -- Tabellenstruktur für Tabelle `notifications`
 --
 
-CREATE TABLE `notifications` (
+CREATE TABLE IF NOT EXISTS `notifications` (
   `text` varchar(1000) NOT NULL,
   `date` varchar(200) NOT NULL,
   `userid` varchar(20) NOT NULL,
@@ -98,7 +99,7 @@ CREATE TABLE `notifications` (
 -- Tabellenstruktur für Tabelle `panelbans`
 --
 
-CREATE TABLE `panelbans` (
+CREATE TABLE IF NOT EXISTS `panelbans` (
   `userid` varchar(40) NOT NULL,
   `reason` varchar(100) NOT NULL DEFAULT 'No reason specified'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -109,7 +110,7 @@ CREATE TABLE `panelbans` (
 -- Tabellenstruktur für Tabelle `playerlist`
 --
 
-CREATE TABLE `playerlist` (
+CREATE TABLE IF NOT EXISTS `playerlist` (
   `id` int(30) DEFAULT NULL,
   `reason` text DEFAULT NULL,
   `ip` text DEFAULT NULL,
@@ -122,7 +123,7 @@ CREATE TABLE `playerlist` (
 -- Tabellenstruktur für Tabelle `redem_license`
 --
 
-CREATE TABLE `redem_license` (
+CREATE TABLE IF NOT EXISTS `redem_license` (
   `licenseid` int(11) NOT NULL,
   `license` varchar(50) NOT NULL,
   `expires` varchar(255) NOT NULL,
@@ -138,7 +139,7 @@ CREATE TABLE `redem_license` (
 -- Tabellenstruktur für Tabelle `server`
 --
 
-CREATE TABLE `server` (
+CREATE TABLE IF NOT EXISTS `server` (
   `serverid` int(11) NOT NULL,
   `serverip` varchar(25) NOT NULL,
   `name` longtext NOT NULL,
@@ -159,7 +160,7 @@ CREATE TABLE `server` (
 -- Tabellenstruktur für Tabelle `serverconfigs`
 --
 
-CREATE TABLE `serverconfigs` (
+CREATE TABLE IF NOT EXISTS `serverconfigs` (
   `serverid` int(11) NOT NULL,
   `json` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -170,7 +171,7 @@ CREATE TABLE `serverconfigs` (
 -- Tabellenstruktur für Tabelle `system`
 --
 
-CREATE TABLE `system` (
+CREATE TABLE IF NOT EXISTS `system` (
   `maintenance` int(11) NOT NULL,
   `auth_maintenance` int(11) NOT NULL,
   `downloadlink` varchar(200) NOT NULL,
@@ -184,7 +185,7 @@ CREATE TABLE `system` (
 -- Tabellenstruktur für Tabelle `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `userid` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -205,7 +206,7 @@ CREATE TABLE `users` (
 -- Tabellenstruktur für Tabelle `users_server`
 --
 
-CREATE TABLE `users_server` (
+CREATE TABLE IF NOT EXISTS `users_server` (
   `userid` int(11) NOT NULL,
   `serverid` int(11) NOT NULL,
   `is_owner` tinyint(1) NOT NULL DEFAULT 0
