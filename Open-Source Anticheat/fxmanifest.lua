@@ -11,7 +11,7 @@ client_scripts {
 }
 
 server_script {
-    'config/Config.lua',
+    'config/config.lua',
     'server/server.lua'
 }
 
@@ -19,7 +19,6 @@ files {
 	'hashes.json',
 	'stream/*.gfx',
 	'html/index.html',
-	'html/reset.css',
 	'html/*.css',
 	'html/index.js',
 	'html/**/*',
