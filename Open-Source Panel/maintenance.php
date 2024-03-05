@@ -11,7 +11,6 @@ if ($result->fetch_row()[0] == 0 && isset($_SESSION['id'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
   <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
