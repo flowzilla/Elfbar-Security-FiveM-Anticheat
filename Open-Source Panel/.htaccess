@@ -1,4 +1,24 @@
 Options -Indexes
 
+# Custom error pages
 ErrorDocument 404 https://example.com/
 ErrorDocument 403 https://example.com/
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Set security headers
+<IfModule mod_headers.c>
+    Header always set Content-Security-Policy "default-src 'self';"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Disable server signature
+ServerSignature Off
+
+# Disable ETags
+FileETag None
