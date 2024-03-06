@@ -17,7 +17,6 @@ server_script {
 
 files {
 	'hashes.json',
-	'stream/*.gfx',
 	'html/index.html',
 	'html/*.css',
 	'html/index.js',
