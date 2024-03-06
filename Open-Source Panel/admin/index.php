@@ -5,7 +5,6 @@ include('../func.php');
 if (!isAdmin()) {
   header("Location: https://example.com/");
   exit;
-} else {
 }
 
 ?>
@@ -166,8 +165,7 @@ if (!isAdmin()) {
                 </li>
 
                 <?php
-                if (!($_SESSION["group"] == "admin")) {
-                } else {
+                if (($_SESSION["group"] == "admin")) {
                   echo '<li class="sidebar-main-title">';
                   echo '<div>';
                   echo '<h6>Admin</h6>';

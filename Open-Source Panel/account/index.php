@@ -290,9 +290,7 @@ $qrCodeUrl = $ga->getQRCodeGoogleUrl('EXAMPLE', $secret);
                   </a>
                 </li>
                 <?php
-                if (!($_SESSION["group"] == "admin")) {
-
-                } else {
+                if (($_SESSION["group"] == "admin")) {
                   echo '<li class="sidebar-main-title">';
                   echo '<div>';
                   echo '<h6>Admin</h6>';
