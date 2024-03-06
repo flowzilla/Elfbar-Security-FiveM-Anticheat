@@ -128,7 +128,7 @@ if (isset($_POST['btnRegisters'])) {
   } else {
     include('../database.php');
     $username = $_POST['username'];
-    $password = base64_encode($_POST['password']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $sql = mysqli_query($conn, "SELECT * FROM `users` WHERE `password` = '$password' and username = '$username'");
     if (mysqli_num_rows($sql) > 0) {
       $keysc = mysqli_fetch_array($sql);

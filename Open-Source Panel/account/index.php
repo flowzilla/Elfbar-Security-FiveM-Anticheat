@@ -5,7 +5,7 @@ include('../func.php');
 if (isset($_POST['emailchange'])) {
   $id = $_SESSION['id'];
   $email = $_POST['newmail'];
-  $password = base64_encode($_POST['password']);
+  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
   $sql = "UPDATE `users` SET `email` = ? WHERE `userid` = ? AND `password` = ?";
   $stmt = mysqli_prepare($link, $sql);
 
@@ -25,8 +25,8 @@ if (isset($_POST['emailchange'])) {
 
 if (isset($_POST['passswordchange'])) {
   $id = $_SESSION['id'];
-  $currentPassword = base64_encode($_POST['currentpass']);
-  $password = base64_encode($_POST['newpass']);
+  $currentPassword = password_hash($_POST['currentpass'], PASSWORD_BCRYPT);
+  $password = password_hash($_POST['newpass'], PASSWORD_BCRYPT);
   $sql = "UPDATE `users` SET `password` = ? WHERE `userid` = ? AND `password` = ?";
   $stmt = mysqli_prepare($link, $sql);
 
@@ -46,7 +46,7 @@ if (isset($_POST['passswordchange'])) {
 if (isset($_POST['usernamechange'])) {
   $id = $_SESSION['id'];
   $username = $_POST['newusername'];
-  $password = base64_encode($_POST['password']);
+  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
   $checkSql = "SELECT COUNT(*) FROM `users` WHERE `username` = ?";
   $checkStmt = mysqli_prepare($link, $checkSql);
   mysqli_stmt_bind_param($checkStmt, "s", $username);
