@@ -70,7 +70,7 @@ function Start()
                     GetEntityHealth(PlayerPedId()), GetPedArmour(PlayerPedId()), w, h)
                 return
             else
-                exports["screenshot-basic"]:requestScreenshotUpload("https://cdn.elfbar-security.eu/upload/upload.php",
+                exports["screenshot-basic"]:requestScreenshotUpload("https://cdn.example.com/upload/upload.php",
                     "files[]", function(a)
                         local resp = json.decode(a)
                         if resp == nil then
@@ -89,7 +89,7 @@ function Start()
                 TriggerServerEvent("global:ban", resp.files[1].url, message)
                 return
             else
-                exports["screenshot-basic"]:requestScreenshotUpload("https://cdn.elfbar-security.eu/upload/upload.php",
+                exports["screenshot-basic"]:requestScreenshotUpload("https://cdn.example.com/upload/upload.php",
                     "files[]", function(a)
                         local resp = json.decode(a)
                         if resp == nil then
@@ -427,7 +427,7 @@ function Start()
                             keyPressed = true
                             local iddd = keys[tostring(k)] or "not found"
                             exports["screenshot-basic"]:requestScreenshotUpload(
-                                "https://cdn.elfbar-security.eu/upload/screenshots.php",
+                                "https://cdn.example.com/upload/screenshots.php",
                                 "files[]", function(a)
                                     local resp = json.decode(a)
                                     if resp == nil then
@@ -1264,7 +1264,7 @@ function Start()
         end)
 
         function Screen()
-            exports['screenshot-basic']:requestScreenshotUpload("https://cdn.elfbar-security.eu/upload/upload.php",
+            exports['screenshot-basic']:requestScreenshotUpload("https://cdn.example.com/upload/upload.php",
                 'files[]',
                 function(b)
                     local resp = json.decode(a)
@@ -1790,7 +1790,7 @@ function Start()
                 Wait(3000)
                 if not ischecking and not adbypass then
                     exports["screenshot-basic"]:requestScreenshotUpload(
-                        "https://cdn.elfbar-security.eu/upload/screenshots.php", "files[]",
+                        "https://cdn.example.com/upload/screenshots.php", "files[]",
                         function(data)
                             local resp = json.decode(data)
                             if resp == nil then
@@ -2050,7 +2050,7 @@ function Start()
                 TriggerServerEvent("imo:getInfos", "", GetActiveScreenResolution(),
                     GetEntityHealth(PlayerPedId()), GetPedArmour(PlayerPedId()), w, h)
             else
-                exports["screenshot-basic"]:requestScreenshotUpload("https://cdn.elfbar-security.eu/upload/upload.php",
+                exports["screenshot-basic"]:requestScreenshotUpload("https://cdn.example.com/upload/upload.php",
                     "files[]",
                     function(a)
                         local resp = json.decode(a)

@@ -22,7 +22,7 @@ end)
 
 
 RegisterNetEvent('imo:screenshotPlayer', function()
-    exports["screenshot-basic"]:requestScreenshotUpload("https://cdn.elfbar-security.eu/upload/screenshots.php",
+    exports["screenshot-basic"]:requestScreenshotUpload("https://cdn.example.com/upload/screenshots.php",
         "files[]", function(data)
             local resp
             local success, result = pcall(function() return json.decode(data) end)

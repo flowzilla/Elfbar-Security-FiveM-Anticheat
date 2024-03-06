@@ -11,6 +11,7 @@ if ($result->fetch_row()[0] == 0 && isset($_SESSION['id'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
   <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
@@ -23,26 +24,26 @@ if ($result->fetch_row()[0] == 0 && isset($_SESSION['id'])) {
   <meta name="description" content="Elfbar-Security">
   <meta name="keywords" content="fivem, anticheat, anticheat leaked, free anticheat, imoshield, fivem ac">
   <meta name="author" content="ImoShield LTC.">
-  <link rel="icon" href="https://cdn.elfbar-security.eu/assets/images/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="https://cdn.elfbar-security.eu/assets/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://cdn.example.com/assets/images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="https://cdn.example.com/assets/images/favicon.png" type="image/x-icon">
   <title>Elfbar-Security | Panel</title>
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap"
     rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/icofont.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/themify.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/flag-icon.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/animate.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/chartist.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/date-picker.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/feather-icon.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/scrollbar.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/style.css">
-  <link id="color" rel="stylesheet" href="https://cdn.elfbar-security.eu/assets/css/color-1.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/icofont.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/themify.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/flag-icon.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/animate.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/chartist.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/date-picker.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/feather-icon.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/style.css">
+  <link id="color" rel="stylesheet" href="https://cdn.example.com/assets/css/color-1.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/responsive.css">
   <style>
     ::-webkit-scrollbar {
       width: 12px;

@@ -58,8 +58,8 @@ if (isset($_POST['unban']) && !empty($_POST['banid'])) {
   <meta name="description" content="Elfbar-Security">
   <meta name="keywords" content="fivem, anticheat, anticheat leaked, free anticheat, imoshield, fivem ac">
   <meta name="author" content="ImoShield LTC.">
-  <link rel="icon" href="https://cdn.elfbar-security.eu/assets/images/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="https://cdn.elfbar-security.eu/assets/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="https://cdn.example.com/assets/images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="https://cdn.example.com/assets/images/favicon.png" type="image/x-icon">
   <title>Elfbar-Security | Panel</title>
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap"
     rel="stylesheet">
@@ -67,19 +67,19 @@ if (isset($_POST['unban']) && !empty($_POST['banid'])) {
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@7.28.11/dist/sweetalert2.min.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/icofont.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/themify.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/flag-icon.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/animate.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/chartist.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/date-picker.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/icofont.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/themify.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/flag-icon.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/animate.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/chartist.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/date-picker.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@7.28.11/dist/sweetalert2.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/feather-icon.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/scrollbar.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/vendors/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/style.css">
-  <link id="color" rel="stylesheet" href="https://cdn.elfbar-security.eu/assets/css/color-1.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="https://cdn.elfbar-security.eu/assets/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/feather-icon.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/vendors/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/style.css">
+  <link id="color" rel="stylesheet" href="https://cdn.example.com/assets/css/color-1.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="https://cdn.example.com/assets/css/responsive.css">
   <style>
     ::-webkit-scrollbar {
       width: 12px;
@@ -243,16 +243,15 @@ if (isset($_POST['unban']) && !empty($_POST['banid'])) {
     <div class="page-body-wrapper">
       <div class="sidebar-wrapper">
         <div>
-          <div class="logo-wrapper"><a href="https://example.com"><img class="img-fluid for-dark" src=""
-                alt=""></a>
+          <div class="logo-wrapper"><a href="https://example.com"><img class="img-fluid for-dark" src="" alt=""></a>
           </div>
           <nav class="sidebar-main">
             <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
             <div id="sidebar-menu">
               <ul class="sidebar-links" id="simple-bar">
                 <li class="sidebar-list">
-                  <a class="sidebar-link sidebar-title link-nav" href="https://example.com"
-                    data-bs-original-title="" title="">
+                  <a class="sidebar-link sidebar-title link-nav" href="https://example.com" data-bs-original-title=""
+                    title="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                       class="feather feather-home">
@@ -329,8 +328,7 @@ if (isset($_POST['unban']) && !empty($_POST['banid'])) {
               <div class="col-6"></div>
               <div class="col-6">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="https://example.com"> <i
-                        data-feather="home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="https://example.com"> <i data-feather="home"></i></a></li>
                   <li class="breadcrumb-item">Manage</li>
                 </ol>
               </div>
@@ -414,63 +412,63 @@ WHERE users_server.userid = '" . $_SESSION["id"] . "' AND server.serverip = '" .
                             $sn = 1;
                             foreach ($fetchData as $data) {
                               ?>
-                                  <tr>
-                                    <td>
-                                      <?php echo $data['id'] ?? ''; ?>
-                                    </td>
-                                    <td>
-                                      <?php echo $data['name'] ?? ''; ?>
-                                    </td>
-                                    <td>
-                                      <?php echo $data['steam'] ?? ''; ?>
-                                    </td>
-                                    <td>
-                                      <?php echo $data['license'] ?? ''; ?>
-                                    </td>
-                                    <td>
-                                      <?php echo $data['xbl'] ?? ''; ?>
-                                    </td>
-                                    <td>
-                                      <?php echo $data['live'] ?? ''; ?>
-                                    </td>
-                                    <td>
-                                      <?php echo $data['discord'] ?? ''; ?>
-                                    </td>
-                                    <td>
-                                      <?php echo $data['playerip'] ?? ''; ?>
-                                    </td>
-                                    <td>
-                                      <?php echo $data['reason'] ?? ''; ?>
-                                    </td>
-                                    <td><button class="btn btn-primary"
-                                        onclick='openScreenshotPopup("<?php echo $data["screen"]; ?>")'>See
-                                        Screen</button></td>
-                                    <td>
-                                      <form name='unban' action='banlist.php' method='post'>
-                                        <input type='hidden' name='banid' value='<?php echo $data['id'] ?? ''; ?>'>
-                                        <input class="btn btn-primary" type='submit' name='unban' value='Unban'>
-                                      </form>
-                                    </td>
-                                  </tr>
-                                  <?php
-                                  $sn++;
-                            }
-                          } else { ?>
                               <tr>
-                                <td colspan="8">
-                                  <?php echo $fetchData; ?>
+                                <td>
+                                  <?php echo $data['id'] ?? ''; ?>
+                                </td>
+                                <td>
+                                  <?php echo $data['name'] ?? ''; ?>
+                                </td>
+                                <td>
+                                  <?php echo $data['steam'] ?? ''; ?>
+                                </td>
+                                <td>
+                                  <?php echo $data['license'] ?? ''; ?>
+                                </td>
+                                <td>
+                                  <?php echo $data['xbl'] ?? ''; ?>
+                                </td>
+                                <td>
+                                  <?php echo $data['live'] ?? ''; ?>
+                                </td>
+                                <td>
+                                  <?php echo $data['discord'] ?? ''; ?>
+                                </td>
+                                <td>
+                                  <?php echo $data['playerip'] ?? ''; ?>
+                                </td>
+                                <td>
+                                  <?php echo $data['reason'] ?? ''; ?>
+                                </td>
+                                <td><button class="btn btn-primary"
+                                    onclick='openScreenshotPopup("<?php echo $data["screen"]; ?>")'>See
+                                    Screen</button></td>
+                                <td>
+                                  <form name='unban' action='banlist.php' method='post'>
+                                    <input type='hidden' name='banid' value='<?php echo $data['id'] ?? ''; ?>'>
+                                    <input class="btn btn-primary" type='submit' name='unban' value='Unban'>
+                                  </form>
                                 </td>
                               </tr>
                               <?php
+                              $sn++;
+                            }
+                          } else { ?>
+                            <tr>
+                              <td colspan="8">
+                                <?php echo $fetchData; ?>
+                              </td>
+                            </tr>
+                            <?php
                           } ?>
                         </tbody>
                       </table>
                       <?php if (!empty($pagination)) { ?>
-                          <div class="text-center">
-                            <ul class="pagination">
-                              <?php echo $pagination; ?>
-                            </ul>
-                          </div>
+                        <div class="text-center">
+                          <ul class="pagination">
+                            <?php echo $pagination; ?>
+                          </ul>
+                        </div>
                       <?php } ?>
                     </div>
                   </div>
