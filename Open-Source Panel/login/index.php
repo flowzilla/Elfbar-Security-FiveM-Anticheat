@@ -154,22 +154,51 @@ if (isset($_POST['btnRegisters'])) {
       </script>';
         }
       } else {
-        $sql = mysqli_query($conn, "SELECT userid, email, username, usergroup, is_emailConfirmed FROM `users` WHERE `password` = '$password' and username = '$username'");
-        $user = mysqli_fetch_array($sql);
-        if ($user['is_emailConfirmed'] == 0) {
-          echo '<script>
-          Swal.fire({
-              icon: "error",
-              title: "Information",
-              text: "Your email is not confirmed. Please check your email inbox and spam folder."
-          })
-          </script>';
+        $query = "SELECT userid, email, username, usergroup, is_emailConfirmed FROM users WHERE password = ? AND username = ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "ss", $password, $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result) {
+          $user = mysqli_fetch_assoc($result);
+
+          if ($user) {
+
+            if ($user['is_emailConfirmed'] == 0) {
+
+              echo '<script>
+              Swal.fire({
+                  icon: "error",
+                  title: "Information",
+                  text: "Your email is not confirmed. Please check your email inbox and spam folder."
+              })
+              </script>';
+            } else {
+
+              $_SESSION["id"] = $user['userid'];
+              $_SESSION["email"] = $user['email'];
+              $_SESSION["username"] = $user['username'];
+              $_SESSION["group"] = $user['usergroup'];
+              echo "<script>window.location.href='https://example.com/'</script>";
+            }
+          } else {
+            echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Invalid username or password."
+            })
+            </script>';
+          }
         } else {
-          $_SESSION["id"] = $user['userid'];
-          $_SESSION["email"] = $user['email'];
-          $_SESSION["username"] = $user['username'];
-          $_SESSION["group"] = $user['usergroup'];
-          echo "<script>window.location.href='https://example.com/'</script>";
+          echo '<script>
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "An error occurred while processing your request."
+        })
+        </script>';
         }
 
         $date = date('Y-m-d H:i:s');

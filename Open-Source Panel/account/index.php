@@ -47,6 +47,7 @@ if (isset($_POST['usernamechange'])) {
   $id = $_SESSION['id'];
   $username = $_POST['newusername'];
   $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
   $checkSql = "SELECT COUNT(*) FROM `users` WHERE `username` = ?";
   $checkStmt = mysqli_prepare($link, $checkSql);
   mysqli_stmt_bind_param($checkStmt, "s", $username);
@@ -54,33 +55,36 @@ if (isset($_POST['usernamechange'])) {
   mysqli_stmt_bind_result($checkStmt, $count);
   mysqli_stmt_fetch($checkStmt);
   mysqli_stmt_close($checkStmt);
+
   $sql = "UPDATE `users` SET `username` = ? WHERE `userid` = ? AND `password` = ?";
   $stmt = mysqli_prepare($link, $sql);
-
   mysqli_stmt_bind_param($stmt, "sis", $username, $id, $password);
-  if (mysqli_stmt_execute($stmt) and !$count > 0) {
-    echo '<script type="text/javascript">';
-    echo 'setTimeout(function () { sweetAlert("<b>Panel System","Username changed successfully</b>","success");';
-    echo '}, 500);</script>';
-    $_SESSION["username"] = $username;
-  } else if (!mysqli_stmt_execute($stmt) and !$count > 0) {
-    echo '<script type="text/javascript">';
-    echo 'setTimeout(function () { sweetAlert("<b>Panel System","ERROR! Current password wrong</b>","error");';
-    echo '}, 500);</script>';
+
+  if (mysqli_stmt_execute($stmt) && $count === 0) {
+      echo '<script type="text/javascript">';
+      echo 'setTimeout(function () { sweetAlert("<b>Panel System","Username changed successfully</b>","success");';
+      echo '}, 500);</script>';
+      $_SESSION["username"] = $username;
   } else {
-    echo '<script type="text/javascript">';
-    echo 'setTimeout(function () { sweetAlert("<b>Panel System","ERROR! Username already exists!</b>","error");';
-    echo '}, 500);</script>';
+      echo '<script type="text/javascript">';
+      if ($count > 0) {
+          echo 'setTimeout(function () { sweetAlert("<b>Panel System","ERROR! Username already exists!</b>","error");';
+      } else {
+          echo 'setTimeout(function () { sweetAlert("<b>Panel System","ERROR! Current password wrong</b>","error");';
+      }
+      echo '}, 500);</script>';
   }
+
   mysqli_stmt_close($stmt);
 }
+
 
 require_once '../vendor/autoload.php';
 use PHPGangsta_GoogleAuthenticator;
 
 $ga = new PHPGangsta_GoogleAuthenticator();
 $secret = $ga->createSecret();
-$qrCodeUrl = $ga->getQRCodeGoogleUrl('ImoShield', $secret);
+$qrCodeUrl = $ga->getQRCodeGoogleUrl('EXAMPLE', $secret);
 ?>
 
 <!DOCTYPE html>
