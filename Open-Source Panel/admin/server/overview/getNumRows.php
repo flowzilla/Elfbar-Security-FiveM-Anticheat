@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isAdmin()) {
+  header("Location: https://example.com/");
+  exit;
+}
 $tableName = $_GET['id'];
 $row = '';
 if ($tableName == "cpu") {
@@ -39,4 +44,3 @@ if ($tableName == "cpu") {
   $row .= " MB";
 }
 echo $row;
-?>
