@@ -29,4 +29,3 @@ if ($user) {
     exit;
 }
 
-$mysqli->close();
