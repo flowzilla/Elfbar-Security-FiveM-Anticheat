@@ -242,7 +242,7 @@ if (!isAdmin()) {
                   }
                   if (!$cancel) {
                     for ($i = 0; $i < $amount; $i++) {
-                      $key = "IMOSHIELD_";
+                      $key = "EXAMPLE_";
                       for ($j = 0; $j < $key_length; $j++) {
                         $key .= $chars[rand(0, strlen($chars) - 1)];
                       }

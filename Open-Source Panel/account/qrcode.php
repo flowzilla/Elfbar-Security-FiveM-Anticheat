@@ -9,7 +9,7 @@ try {
     // Generate a secret key
     $secret = $ga->createSecret();
 
-    $qrCodeUrl = $ga->getQRCodeGoogleUrl('YourName', $secret);
+    $qrCodeUrl = $ga->getQRCodeGoogleUrl('EXAMPLE', $secret);
 
     $stmt = $conn->prepare("INSERT INTO users (secret_key) VALUES (?)");
     $stmt->bind_param("s", $secret);
