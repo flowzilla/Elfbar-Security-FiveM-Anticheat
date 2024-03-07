@@ -48,16 +48,16 @@ CreateThread(function()
     end
 end)
 
-local config;
+local config
 
 CreateThread(function()
-    repeat Wait(0) until NetworkIsSessionStarted();
-    TriggerServerEvent(GetCurrentResourceName() .. ":getconfig");
+    repeat Wait(0) until NetworkIsSessionStarted()
+    TriggerServerEvent(GetCurrentResourceName() .. ":getconfig")
     RegisterNetEvent(GetCurrentResourceName() .. ":getconfig", function(data)
-        config = data;
+        config = data
         Start()
-    end);
-end);
+    end)
+end)
 
 
 function Start()

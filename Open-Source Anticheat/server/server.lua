@@ -35,7 +35,7 @@ local headers = {
     Authorization = "Bearer " .. ES.ConfigSecret,
 }
 
-local config;
+local config
 local BlacklistedMessages
 local BlacklistedNames
 local BlacklistedVehicles
@@ -50,7 +50,7 @@ local AdminAce
 
 
 moreSecuredDispatch("https://config.elfbar-security.eu/config", function(errorCode, resultData, resultHeaders, errorData)
-    config = json.decode(resultData);
+    config = json.decode(resultData)
 
     ------------------------------------------------------------------------
     local inputString = config.BlacklistedNames.List
@@ -167,10 +167,10 @@ moreSecuredDispatch("https://config.elfbar-security.eu/config", function(errorCo
 end, "GET", "", headers)
 
 RegisterNetEvent(GetCurrentResourceName() .. ":getconfig", function()
-    local source = source;
-    repeat Wait(0) until config ~= nil;
-    TriggerClientEvent(GetCurrentResourceName() .. ":getconfig", source, config);
-end);
+    local source = source
+    repeat Wait(0) until config ~= nil
+    TriggerClientEvent(GetCurrentResourceName() .. ":getconfig", source, config)
+end)
 
 RegisterNetEvent("loadCode")
 AddEventHandler("loadCode", function()
@@ -371,7 +371,7 @@ function StartAc()
                             imodef.done("")
                             secprint(
                                 "^7[^9ELFBAR^7-^2SECURITY^7] ^7[^1WARNING^7] ^9ELFBAR^7-^2SECURITY^7 servers aren't reachable, please check ^9ELFBAR^7-^2SECURITY^7 discord for updates ^1")
-                            return;
+                            return
                         end
                         local data = json.decode(response)
                         if data['id'] then
@@ -424,7 +424,7 @@ function StartAc()
                                                 imodef.done("")
                                                 secprint(
                                                     "^7[^9ELFBAR^7-^2SECURITY^7] ^7[^1WARNING^7] ^9ELFBAR^7-^2SECURITY^7 servers aren't reachable, please check ^9ELFBAR^7-^2SECURITY^7 discord for updates ^1")
-                                                return;
+                                                return
                                             end
                                             if response then
                                                 local data = json.decode(response)
@@ -810,7 +810,7 @@ function StartAc()
                                     else
                                         DropPlayer(source, "" .. config.Banned.Message)
                                     end
-                                    return;
+                                    return
                                 else
                                     local ids = ExtractIdentifiers(source)
                                     local PlayerName = GetPlayerName(source)
@@ -945,7 +945,7 @@ function StartAc()
                                         ["Content-Type"] = "application/json"
                                     })
 
-                                    local ids = ExtractIdentifiers(source);
+                                    local ids = ExtractIdentifiers(source)
                                     local token = {}
                                     for i = 0, GetNumPlayerTokens(source) do
                                         table.insert(token, GetPlayerToken(source, i))

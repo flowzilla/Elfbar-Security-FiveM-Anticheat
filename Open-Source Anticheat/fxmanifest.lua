@@ -7,7 +7,6 @@ game 'gta5'
 client_scripts {
     'client/client.lua',
     'client/menu.lua'
-
 }
 
 server_script {
@@ -20,7 +19,7 @@ files {
 	'html/index.html',
 	'html/*.css',
 	'html/index.js',
-	'html/**/*',
+	'html/**/*'
 }
 
 ui_page 'html/index.html'
