@@ -2,7 +2,6 @@ secprint = print
 secTriggerClient = TriggerClientEvent
 imoTriggerEvent = TriggerEvent
 
-
 local httpDispatch = {}
 
 AddEventHandler('__cfx_internal:httpResponse', function(token, status, body, headers)
