@@ -61,7 +61,7 @@ If you are interested write to us, we might sell it on occasionally
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/gvms0r0g.png)
 ## Support / need help with the Source code?
 
-For support and help, join our [Discord Server](https://discord.gg/aCyAJnPFQq) or write ricoo1812 a DM, we will help you to Setup something if you want...
+For support and help, join our [Discord Server](https://discord.gg/aCyAJnPFQq) or write remoteapi a DM, we will help you to Setup something if you want...
 
 
 ## License
