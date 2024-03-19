@@ -29,8 +29,8 @@ I will add more skid Screenshots soon hehe
 - and much more!
 
 ## Anticheat Features
-For the Anticheat Features you can check our Config-Panel by [Clicking here](https://config.elfbar-security.eu)
-If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://config.elfbar-security.eu) into Config.lua, otherwise you will not be able to use the anticheat
+For the Anticheat Features you can check our Config-Panel by [Clicking here](https://discord.gg/nUxqnQ9ek9)
+If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/nUxqnQ9ek9) into Config.lua, otherwise you will not be able to use the anticheat
 
 ## Some Customer Bot Features
 - Clear Props / Vehicles / Peds / All Command
@@ -47,7 +47,7 @@ If you want to use the anticheat without pasting, you must insert our Config Sec
 ## Info
 You have to write your own backend so that everything works properly. ( Panel: Banlist, Auth, Logs | Ac: Ban System, API and more )
 We have not made our backend open source, because we dont want every skid Anticheat to have a panel & bot etc soon
-If you are interested write to us, we might sell it on occasionally
+If you are interested write to us, we might sell it on occasionally ( Not below 80-100€ )
 
 ## Screenshots of our Project
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
@@ -61,14 +61,14 @@ If you are interested write to us, we might sell it on occasionally
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/gvms0r0g.png)
 ## Support / need help with the Source code?
 
-For support and help, join our [Discord Server](https://discord.gg/aCyAJnPFQq) or write remoteapi a DM, we will help you to Setup something if you want...
+For support and help, join our [Discord Server](https://discord.gg/nUxqnQ9ek9) we will help you to Setup something if you want...
 
 
 ## License
 
-[MIT License](https://choosealicense.com/licenses/mit/)
+[MIT License](https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat/blob/main/LICENSE)
 
-Copyright (c) 2021-2024
+Copyright (c) 2023-2024
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -89,5 +89,5 @@ SOFTWARE.
 
 ## Authors / Creator
 
-- [@ricoo1812 / V01D](https://www.github.com/flowzilla)
+- [@remoteapi / V01D](https://www.github.com/flowzilla)
 - [@remoteshell / H04X](https://www.github.com/H04X-Hoax)
