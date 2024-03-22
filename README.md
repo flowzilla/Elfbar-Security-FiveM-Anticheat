@@ -29,7 +29,7 @@ I will add more skid Screenshots soon hehe
 - and much more!
 
 ## Anticheat Features
-For the Anticheat Features you can check our Config-Panel by [Clicking here](https://discord.gg/nUxqnQ9ek9)
+For the Anticheat Features you can check our Config-Panel by [clicking here](https://discord.gg/nUxqnQ9ek9)
 If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/nUxqnQ9ek9) into Config.lua, otherwise you will not be able to use the anticheat
 
 ## Some Customer Bot Features
