@@ -7,6 +7,10 @@ The Elfbar-Security Team (formerly ImoShield) has decided to make the panel and 
 Why did we decide to do this?
 One of our former team members claims to have the source code and wants to leak and resell it, so you can download the source code here, officially from the owner of the code.
 But note the licence below
+
+## Backend System
+To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our Discord server and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi
+
 ## Screenshots of the old Skid Team Member
 
 ![Skid](https://cdn.discordapp.com/attachments/1113208749973307392/1213650005198639114/image.png?ex=65f63ea5&is=65e3c9a5&hm=5d371a501493d5527ee47033300c67c2dcf5dac818d4d19f7bff6815e88b7876&)
