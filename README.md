@@ -9,7 +9,7 @@ One of our former team members claims to have the source code and wants to leak 
 But note the licence below
 
 ## Backend System
-To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/nUxqnQ9ek9) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
+To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/aGmFzGNCmP) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
 
 
 ### Kusinka's deleted ticket messages after asking him why he resells another anticheat.
@@ -241,8 +241,8 @@ I will add more skid Screenshots soon hehe
 - and much more!
 
 ## Anticheat Features
-For the Anticheat Features you can check our Config-Panel by [clicking here](https://discord.gg/nUxqnQ9ek9)
-If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/nUxqnQ9ek9) into Config.lua, otherwise you will not be able to use the anticheat
+For the Anticheat Features you can check our Config-Panel by [clicking here](https://discord.gg/aGmFzGNCmP)
+If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/aGmFzGNCmP) into Config.lua, otherwise you will not be able to use the anticheat
 
 ## Some Customer Bot Features
 - Clear Props / Vehicles / Peds / All Command
@@ -273,7 +273,7 @@ If you are interested write to us, we might sell it on occasionally ( Not below 
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/gvms0r0g.png)
 ## Support / need help with the Source code?
 
-For support and help, join our [Discord Server](https://discord.gg/nUxqnQ9ek9) we will help you to Setup something if you want...
+For support and help, join our [Discord Server](https://discord.gg/aGmFzGNCmP) we will help you to Setup something if you want...
 
 
 ## License
