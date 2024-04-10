@@ -9,15 +9,8 @@ One of our former team members claims to have the source code and wants to leak 
 But note the licence below
 
 ## Backend System
-To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/nUxqnQ9ek9) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi
+To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/nUxqnQ9ek9) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
 
-## Screenshots of the old Skid Team Member
-
-![Skid](https://cdn.discordapp.com/attachments/1113208749973307392/1213650005198639114/image.png?ex=65f63ea5&is=65e3c9a5&hm=5d371a501493d5527ee47033300c67c2dcf5dac818d4d19f7bff6815e88b7876&)
-
-![Skid](https://cdn.discordapp.com/attachments/1113208749973307392/1213650328545927198/image.png?ex=65f63ef2&is=65e3c9f2&hm=4339d9def30aa05b869e8bb920e3ad1d76f89409e94be519d1af0af77d7489e2&)
-
-![Skid](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/33wqns5e.png)
 
 ### Kusinka's deleted ticket messages after asking him why he resells another anticheat.
 > Context: Kusinka bought open source of [WX AntiCheat](https://anticheat.0wx.space/), which he then began to resell as his, replaced every string containing "WX" with "Anty" ('his' product) aswell as all logos, implemented 'his' (also skidded) licenensing system and began selling it on his tebex for 3x the price. He was so fucking stupid that he posted a showcase video where the detection screenshots were stolen from WX AntiCheat's discord. Few weeks later, he created a ticket on WX's discord server asking why he doesn't have access to the open source releases channel and started begging WX to send him the latest version because he's a customer. After providing him all the screenshots where he's reselling WX's product, he started saying shit like "it's not 1:1", "I only used some parts". After banning him, his friend joined the discord and started saying the same shit.
