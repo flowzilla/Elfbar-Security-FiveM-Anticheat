@@ -8,9 +8,56 @@ Why did we decide to do this?
 One of our former team members claims to have the source code and wants to leak and resell it, so you can download the source code here, officially from the owner of the code.
 But note the licence below
 
+## Some Panel Features
+- Login & Register System with License Key
+- Manage Server System ( Key Informations, Ac Logs, Banlist, Playerlist and more)
+- Settings page ( Change Username, Mail, Password and more)
+- Maintenance Mode System
+- Panel Ban System
+- Register & Login Logs
+- Discord Webhook Logs
+- Live Counter
+- Admin Options ( Key, News and User Management, Logs and more)
+- and much more!
+
+## Anticheat Features
+For the Anticheat Features you can check our Config-Panel by [clicking here](https://discord.gg/aGmFzGNCmP)
+If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/aGmFzGNCmP) into Config.lua, otherwise you will not be able to use the anticheat
+
+## Some Customer Bot Features
+- Clear Props / Vehicles / Peds / All Command
+- Ban & Kick Command for the Anticheat
+- Checkban Command to check ban IDs
+- Reload Anticheat config Command
+- Admin bypass via Discord Roles
+- Restart FiveM Server Command
+- Help Command with all Commands
+- Unban Command to unban users from the Anticheat
+- Logs System via Discord Channels
+- and more!
+
+## Screenshots of our Project
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/rypq4vt2.png)
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/fto5xut1.png)
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/12v20rbv.png)
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/lqql272h.png)
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/r79un2j3.png)
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/719ubodd.png)
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6wy0o8oe.png)
+![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/gvms0r0g.png)
+
+## Support / need help with the Source code?
+
+For support and help, join our [Discord Server](https://discord.gg/aGmFzGNCmP) we will help you to Setup something if you want...
+
+## Info
+You have to write your own backend so that everything works properly. ( Panel: Banlist, Auth, Logs | Ac: Ban System, API and more )
+We have not made our backend open source, because we dont want every skid Anticheat to have a panel & bot etc soon
+If you are interested write to us, we might sell it on occasionally
+
 ## Backend System
 To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/aGmFzGNCmP) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
-
 
 ### Kusinka's deleted ticket messages after asking him why he resells another anticheat.
 > Context: Kusinka bought open source of [WX AntiCheat](https://anticheat.0wx.space/), which he then began to resell as his, replaced every string containing "WX" with "Anty" ('his' product) aswell as all logos, implemented 'his' (also skidded) licenensing system and began selling it on his tebex for 3x the price. He was so fucking stupid that he posted a showcase video where the detection screenshots were stolen from WX AntiCheat's discord. Few weeks later, he created a ticket on WX's discord server asking why he doesn't have access to the open source releases channel and started begging WX to send him the latest version because he's a customer. After providing him all the screenshots where he's reselling WX's product, he started saying shit like "it's not 1:1", "I only used some parts". After banning him, his friend joined the discord and started saying the same shit.
@@ -226,55 +273,6 @@ https://opengraph.githubassets.com/91c9f84c25d327c53bd8f65d8f51a4312740e16dec5be
 [24/12/2023 - 12:15] KurdY#9244 (1128260338018689034): bruh they arent the same
 ```
 ![Anty Proof](./assets//antyproof.png)
-
-I will add more skid Screenshots soon hehe
-## Some Panel Features
-- Login & Register System with License Key
-- Manage Server System ( Key Informations, Ac Logs, Banlist, Playerlist and more)
-- Settings page ( Change Username, Mail, Password and more)
-- Maintenance Mode System
-- Panel Ban System
-- Register & Login Logs
-- Discord Webhook Logs
-- Live Counter
-- Admin Options ( Key, News and User Management, Logs and more)
-- and much more!
-
-## Anticheat Features
-For the Anticheat Features you can check our Config-Panel by [clicking here](https://discord.gg/aGmFzGNCmP)
-If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/aGmFzGNCmP) into Config.lua, otherwise you will not be able to use the anticheat
-
-## Some Customer Bot Features
-- Clear Props / Vehicles / Peds / All Command
-- Ban & Kick Command for the Anticheat
-- Checkban Command to check ban IDs
-- Reload Anticheat config Command
-- Admin bypass via Discord Roles
-- Restart FiveM Server Command
-- Help Command with all Commands
-- Unban Command to unban users from the Anticheat
-- Logs System via Discord Channels
-- and more!
-
-## Info
-You have to write your own backend so that everything works properly. ( Panel: Banlist, Auth, Logs | Ac: Ban System, API and more )
-We have not made our backend open source, because we dont want every skid Anticheat to have a panel & bot etc soon
-If you are interested write to us, we might sell it on occasionally ( Not below 80-100€ )
-
-## Screenshots of our Project
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/rypq4vt2.png)
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/fto5xut1.png)
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/12v20rbv.png)
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/lqql272h.png)
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/r79un2j3.png)
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/719ubodd.png)
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6wy0o8oe.png)
-![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/gvms0r0g.png)
-## Support / need help with the Source code?
-
-For support and help, join our [Discord Server](https://discord.gg/aGmFzGNCmP) we will help you to Setup something if you want...
-
 
 ## License
 
