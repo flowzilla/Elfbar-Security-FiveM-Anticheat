@@ -21,8 +21,8 @@ But note the licence below
 - and much more!
 
 ## Anticheat Features
-For the Anticheat Features you can check our Config-Panel by [clicking here](https://discord.gg/aGmFzGNCmP)
-If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/aGmFzGNCmP) into Config.lua, otherwise you will not be able to use the anticheat
+For the Anticheat Features you can check our Config-Panel by [clicking here](https://discord.gg/7atCNVngTR)
+If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/7atCNVngTR) into Config.lua, otherwise you will not be able to use the anticheat
 
 ## Some Customer Bot Features
 - Clear Props / Vehicles / Peds / All Command
@@ -49,7 +49,7 @@ If you want to use the anticheat without pasting, you must insert our Config Sec
 
 ## Support / need help with the Source code?
 
-For support and help, join our [Discord Server](https://discord.gg/aGmFzGNCmP) we will help you to Setup something if you want...
+For support and help, join our [Discord Server](https://discord.gg/7atCNVngTR) we will help you to Setup something if you want...
 
 ## Info
 You have to write your own backend so that everything works properly. ( Panel: Banlist, Auth, Logs | Ac: Ban System, API and more )
@@ -57,7 +57,7 @@ We have not made our backend open source, because we dont want every skid Antich
 If you are interested write to us, we might sell it on occasionally
 
 ## Backend System
-To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/aGmFzGNCmP) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
+To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/7atCNVngTR) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
 
 ### Kusinka's deleted ticket messages after asking him why he resells another anticheat.
 > Context: Kusinka bought open source of [WX AntiCheat](https://anticheat.0wx.space/), which he then began to resell as his, replaced every string containing "WX" with "Anty" ('his' product) aswell as all logos, implemented 'his' (also skidded) licenensing system and began selling it on his tebex for 3x the price. He was so fucking stupid that he posted a showcase video where the detection screenshots were stolen from WX AntiCheat's discord. Few weeks later, he created a ticket on WX's discord server asking why he doesn't have access to the open source releases channel and started begging WX to send him the latest version because he's a customer. After providing him all the screenshots where he's reselling WX's product, he started saying shit like "it's not 1:1", "I only used some parts". After banning him, his friend joined the discord and started saying the same shit.
