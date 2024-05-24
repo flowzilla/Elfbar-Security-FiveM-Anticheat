@@ -36,6 +36,9 @@ If you want to use the anticheat without pasting, you must insert our Config Sec
 - Logs System via Discord Channels
 - and more!
 
+## Backend System
+To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/7atCNVngTR) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
+
 ## Screenshots of our Project
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/rypq4vt2.png)
@@ -55,9 +58,6 @@ For support and help, join our [Discord Server](https://discord.gg/7atCNVngTR) w
 You have to write your own backend so that everything works properly. ( Panel: Banlist, Auth, Logs | Ac: Ban System, API and more )
 We have not made our backend open source, because we dont want every skid Anticheat to have a panel & bot etc soon
 If you are interested write to us, we might sell it on occasionally
-
-## Backend System
-To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/7atCNVngTR) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
 
 ### Kusinka's deleted ticket messages after asking him why he resells another anticheat.
 > Context: Kusinka bought open source of [WX AntiCheat](https://anticheat.0wx.space/), which he then began to resell as his, replaced every string containing "WX" with "Anty" ('his' product) aswell as all logos, implemented 'his' (also skidded) licenensing system and began selling it on his tebex for 3x the price. He was so fucking stupid that he posted a showcase video where the detection screenshots were stolen from WX AntiCheat's discord. Few weeks later, he created a ticket on WX's discord server asking why he doesn't have access to the open source releases channel and started begging WX to send him the latest version because he's a customer. After providing him all the screenshots where he's reselling WX's product, he started saying shit like "it's not 1:1", "I only used some parts". After banning him, his friend joined the discord and started saying the same shit.
