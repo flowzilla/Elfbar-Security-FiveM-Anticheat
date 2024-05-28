@@ -39,6 +39,9 @@ If you want to use the anticheat without pasting, you must insert our Config Sec
 ## Backend System
 To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
 
+## Contact 
+Telegram: https://t.me/remoteapi
+
 ## Screenshots of our Project
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/rypq4vt2.png)
