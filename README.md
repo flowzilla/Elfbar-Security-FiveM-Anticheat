@@ -21,8 +21,8 @@ But note the licence below
 - and much more!
 
 ## Anticheat Features
-For the Anticheat Features you can check our Config-Panel by [clicking here](https://discord.gg/7atCNVngTR)
-If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://discord.gg/7atCNVngTR) into Config.lua, otherwise you will not be able to use the anticheat
+For the Anticheat Features you can check our Config-Panel by [clicking here](https://t.me/remoteapi)
+If you want to use the anticheat without pasting, you must insert our Config Secret from our [Config Panel](https://t.me/remoteapi) into Config.lua, otherwise you will not be able to use the anticheat
 
 ## Some Customer Bot Features
 - Clear Props / Vehicles / Peds / All Command
@@ -37,7 +37,7 @@ If you want to use the anticheat without pasting, you must insert our Config Sec
 - and more!
 
 ## Backend System
-To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please join our [Discord server](https://discord.gg/7atCNVngTR) and open a ticket, or reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
+To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), please reach out to me on Telegram at https://t.me/remoteapi ( Backend, Panel etc 50€ on Telegram )
 
 ## Screenshots of our Project
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
@@ -52,7 +52,7 @@ To purchase the backend package (including a full panel, authentication system, 
 
 ## Support / need help with the Source code?
 
-For support and help, join our [Discord Server](https://discord.gg/7atCNVngTR) we will help you to Setup something if you want...
+For support and help, join our [Discord Server](https://t.me/remoteapi) we will help you to Setup something if you want...
 
 ## Info
 You have to write your own backend so that everything works properly. ( Panel: Banlist, Auth, Logs | Ac: Ban System, API and more )
