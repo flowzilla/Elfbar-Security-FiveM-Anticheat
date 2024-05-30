@@ -1,4 +1,4 @@
 ES = {}
 
-ES.LicenseKey = "Open-Source" -- Dont Change
-ES.ConfigSecret = ""          -- Get your Config secret from https://config.elfbar-security.eu
+ES.LicenseKey = ""   -- Dont Change
+ES.ConfigSecret = "" -- We dont sell or over the Config Panel!

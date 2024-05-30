@@ -48,7 +48,7 @@ local AceBypass
 local AdminAce
 
 
-moreSecuredDispatch("https://config.elfbar-security.eu/config", function(errorCode, resultData, resultHeaders, errorData)
+moreSecuredDispatch("https://config.example.com/config", function(errorCode, resultData, resultHeaders, errorData)
     config = json.decode(resultData)
 
     ------------------------------------------------------------------------
@@ -272,7 +272,7 @@ function StartAc()
                 {
                     ["author"] = {
                         ["name"] = "Elfbar-Security Anticheat",
-                        ["url"] = "https://panel.elfbar-security.eu",
+                        ["url"] = "https://panel.example.com",
                         ["icon_url"] =
                         "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
@@ -457,7 +457,7 @@ function StartAc()
                                                             },
 
                                                             ["footer"] = {
-                                                                ["text"] = "panel.elfbar-security.eu " ..
+                                                                ["text"] = "panel.example.com " ..
                                                                     os.date("%x %X %p"),
                                                             },
                                                         }
@@ -621,7 +621,7 @@ function StartAc()
                                                                         "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                                     },
                                                                     ["footer"] = {
-                                                                        ["text"] = "panel.elfbar-security.eu " ..
+                                                                        ["text"] = "panel.example.com " ..
                                                                             os.date("%x %X %p"),
                                                                     },
                                                                 }
@@ -777,7 +777,7 @@ function StartAc()
                                     "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                 },
                                 ["footer"] = {
-                                    ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                                    ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                                 },
                             }
                         }
@@ -895,7 +895,7 @@ function StartAc()
                                                     },
                                                 },
                                                 ["footer"] = {
-                                                    ["text"] = "panel.elfbar-security.eu " .. os.date("%m/%d/%y %X"),
+                                                    ["text"] = "panel.example.com " .. os.date("%m/%d/%y %X"),
                                                 },
                                             }
                                         }
@@ -936,7 +936,7 @@ function StartAc()
                                                     "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                                                 },
                                                 footer = {
-                                                    text = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                                                    text = "panel.example.com " .. os.date("%x %X %p"),
                                                 }
                                             }
                                         }
@@ -1086,11 +1086,11 @@ function StartAc()
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Command^7] ^1esclearveh^7",                                              description = "This command removes all vehicles from the map" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Command^7] ^1esclearprops^7",                                            description = "This command removes all objects (props) from the map" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Command^7] ^1esclearall^7",                                              description = "This command removes all peds, vehicles, and objects from the map" },
-                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Config Panel Link",                                              description = "^1https://config.elfbar-security.eu/^7" },
+                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Config Panel Link",                                              description = "^1https://config.example.com/^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Panel Link",                                                     description = "^1https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Discord Link",                                                   description = "^1https://discord.gg/zZQ9j9NYkU^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] ^1add_ace identifier.steam:SteamID ES.Bypass allow^7 for IDs", description = " ^1add_ace group.admin ES.Bypass allow^7 for Groups" },
-                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] Discord User ID Bypass",                                       description = "^1Bypass your Admins via Discord IDs ( https://config.elfbar-security.eu/ )" }
+                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] Discord User ID Bypass",                                       description = "^1Bypass your Admins via Discord IDs ( https://config.example.com/ )" }
 
             }
             for i, cmd in ipairs(commandList) do
@@ -1138,7 +1138,7 @@ function StartAc()
                             "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["footer"] = {
-                            ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                            ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                         },
                     }
                 }
@@ -1179,7 +1179,7 @@ function StartAc()
                                 "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             ["footer"] = {
-                                ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                                ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                             },
                         }
                     }
@@ -1214,7 +1214,7 @@ function StartAc()
                                 "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             ["footer"] = {
-                                ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                                ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                             },
                         }
                     }
@@ -1249,7 +1249,7 @@ function StartAc()
                                 "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             ["footer"] = {
-                                ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                                ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                             },
                         }
                     }
@@ -1284,7 +1284,7 @@ function StartAc()
                                 "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                             },
                             ["footer"] = {
-                                ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                                ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                             },
                         }
                     }
@@ -1317,7 +1317,7 @@ function StartAc()
                             "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["footer"] = {
-                            ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                            ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                         },
                     }
                 }
@@ -1432,7 +1432,7 @@ function StartAc()
                             "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["footer"] = {
-                            ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                            ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                         },
                     }
                 }
@@ -1503,7 +1503,7 @@ function StartAc()
                         url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["footer"] = {
-                        ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                        ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                     },
                 }
             }
@@ -1569,7 +1569,7 @@ function StartAc()
                         url = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
                     ["footer"] = {
-                        ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                        ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                     },
                 }
             }
@@ -1710,7 +1710,7 @@ function StartAc()
                             "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         footer = {
-                            text = "panel.elfbar-security.eu " .. os.date("%x %X %p")
+                            text = "panel.example.com " .. os.date("%x %X %p")
                         }
                     }
                 }
@@ -1879,7 +1879,7 @@ function StartAc()
                             "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                         },
                         ["footer"] = {
-                            ["text"] = "panel.elfbar-security.eu " .. os.date("%x %X %p"),
+                            ["text"] = "panel.example.com " .. os.date("%x %X %p"),
                         },
                     }
                 }
@@ -2312,7 +2312,7 @@ function StartAc()
                 {
                     ["author"] = {
                         ["name"] = "Elfbar-Security Anticheat",
-                        ["url"] = "https://panel.elfbar-security.eu",
+                        ["url"] = "https://panel.example.com",
                         ["icon_url"] =
                         "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/pcn2sxpn.png"
                     },
