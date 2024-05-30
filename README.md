@@ -10,7 +10,7 @@ But note the licence below
 
 ## AD for our Shop
 
-If you want to start your own FiveM Anticheat project, check out our [Shop](https://soundflow.tebex.io/category/fivem). There you will also find my contact information for questions
+If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/FWThk29dgZ). There you will also find my contact information for questions
 
 ## Some Panel Features
 - Login & Register System with License Key
@@ -23,7 +23,7 @@ If you want to start your own FiveM Anticheat project, check out our [Shop](http
 - Live Counter
 - Admin Options ( Key, News and User Management, Logs and more)
 - and much more!
-Visit our [Shop](https://soundflow.tebex.io/category/fivem) for the Full and Working Source with Auth System
+Visit our [Discord](https://discord.gg/FWThk29dgZ) for the Full and Working Source with Auth System
 
 
 ## Anticheat Features
@@ -43,7 +43,7 @@ For the Anticheat Features you need to check the Source Code
 - and more!
 
 ## Backend System
-To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), check our [Shop](https://soundflow.tebex.io/category/fivem)
+To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), check our [Discord](https://discord.gg/FWThk29dgZ)
 
 
 ## Screenshots of our Project
@@ -59,7 +59,7 @@ To purchase the backend package (including a full panel, authentication system, 
 
 ## Support / need help with the Source code?
 
-For support and help, check the [Shop](https://soundflow.tebex.io/category/fivem) for my Contact Infos, but actually I only give customer support.
+For support and help, check the [Discord](https://discord.gg/FWThk29dgZ)
 
 
 ## License
