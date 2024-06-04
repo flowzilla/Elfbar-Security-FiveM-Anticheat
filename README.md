@@ -10,8 +10,9 @@ But note the licence below
 
 ## Start your own FiveM Anticheat
 
-If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/FWThk29dgZ). There you will also find my contact information for questions
-All Codes to start your own FiveM Anticheat project ( Backend, Full Panel, Privat System Bot, Full Anticheat so it works with the Pane and more ) for just 35€ ( 40€ If you want me to install it for you via SSH )
+If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/FWThk29dgZ). There you will also find my contact information for questions!
+
+All Codes to start your own FiveM Anticheat project ( Backend, Auth, Full Panel, Privat System Bot, Full Anticheat so it works with the Panel and more ) for just 35€ ( 40€ If you want me to install it for you via SSH )
 
 ## Some Panel Features
 - Login & Register System with License Key
