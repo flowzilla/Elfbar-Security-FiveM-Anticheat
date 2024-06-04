@@ -8,9 +8,10 @@ Why did we decide to do this?
 One of our former team members claims to have the source code and wants to leak and resell it, so you can download the source code here, officially from the owner of the code.
 But note the licence below
 
-## AD for our Shop
+## Start your own FiveM Anticheat
 
 If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/FWThk29dgZ). There you will also find my contact information for questions
+All Codes to start your own FiveM Anticheat project ( Backend, Full Panel, Privat System Bot, Full Anticheat so it works with the Pane and more ) for just 35€ ( 40€ If you want me to install it for you via SSH )
 
 ## Some Panel Features
 - Login & Register System with License Key
