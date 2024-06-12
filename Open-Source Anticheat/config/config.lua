@@ -1,4 +1,6 @@
 ES = {}
 
-ES.LicenseKey = ""   -- Dont Change
-ES.ConfigSecret = "" -- We dont sell or over the Config Panel!
+-- Full version on our Discord https://discord.gg/FWThk29dgZ
+
+ES.LicenseKey = ""
+ES.ConfigSecret = ""

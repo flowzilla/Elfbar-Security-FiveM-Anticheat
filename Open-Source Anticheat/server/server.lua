@@ -180,30 +180,24 @@ end)
 
 function StartAc()
     if config then
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
-        print("Anticheat Started - https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
 
         local bypassAdmin = {}
         function searchTable(table, value)
@@ -216,8 +210,8 @@ function StartAc()
         end
 
         function refreshPermsDiscord2()
-            moreSecuredDispatch("https://ac.flow-services.de/imo/shield/backend/aconline/bypass/discord.php", -- For Discord Bypass via Server Roles
-                function(err, text, headers)                                                                  -- You need to write your own api for that
+            moreSecuredDispatch("https://ac.flow-services.de/imo/shield/backend/aconline/bypass/discord.php", -- For Ingame Bypass via Discord Roles
+                function(err, text, headers)                                                                  -- You need to buy our backend for that https://discord.gg/FWThk29dgZ
                     if text ~= nil and text ~= "n" then
                         local responseTable = json.decode(text)
                         for _, value in ipairs(responseTable) do
@@ -364,7 +358,7 @@ function StartAc()
             if not license then
                 imodef.done("Your license was not found")
             else
-                moreSecuredDispatch("https://api.myrabot.de/imo/shield/backend/ban/global/globalcheckban.php",
+                moreSecuredDispatch("https://api.example.com/imo/shield/backend/ban/global/globalcheckban.php",
                     function(err, response, headers)
                         if not response then
                             imodef.done("")
@@ -413,11 +407,11 @@ function StartAc()
                         end
 
                         if not banned1 then
-                            moreSecuredDispatch("https://api.myrabot.de/imo/shield/backend/aconline/ip.php",
+                            moreSecuredDispatch("https://api.example.com/imo/shield/backend/aconline/ip.php",
                                 function(err, text, headers)
                                     local ip = text
                                     moreSecuredDispatch(
-                                        "https://api.myrabot.de/imo/shield/backend/ban/server/servercheckban.php",
+                                        "https://api.example.com/imo/shield/backend/ban/server/servercheckban.php",
                                         function(err, response, headers)
                                             if not response then
                                                 imodef.done("")
@@ -541,7 +535,7 @@ function StartAc()
                                                             {
                                                                 "type": "Action.OpenUrl",
                                                                 "title": "Protected by Elfbar-Security",
-                                                                "url": "https://discord.gg/zZQ9j9NYkU"
+                                                                "url": "https://discord.gg/FWThk29dgZ"
                                                             },
                                                             {
                                                                 "type": "Action.OpenUrl",
@@ -640,7 +634,7 @@ function StartAc()
                                             end
                                             if not banned1 then
                                                 moreSecuredDispatch(
-                                                    "https://api.myrabot.de/imo/shield/backend/aconline/ip-api.php?ip=" .. -- You need to write your own api for that
+                                                    "https://api.example.com/imo/shield/backend/aconline/ip-api.php?ip=" .. -- You need to buy our backend https://discord.gg/FWThk29dgZ
                                                     ipIdentifier,
                                                     function(err, text, headers)
                                                         if tonumber(err) == 200 then
@@ -722,7 +716,7 @@ function StartAc()
                 if (a == nil) then
                     a = "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                 end
-                moreSecuredDispatch("https://api.myrabot.de/imo/shield/backend/ban/global/globaladdban.php",
+                moreSecuredDispatch("https://api.example.com/imo/shield/backend/ban/global/globaladdban.php",
                     function(err, response, headers)
                     end, 'POST', json.encode({
                         reason = arg,
@@ -795,7 +789,7 @@ function StartAc()
                 else
                     local identifier = json.encode(GetPlayerIdentifiers(source))
                     moreSecuredDispatch(
-                        "https://api.myrabot.de/imo/shield/backend/ban/server/servercheckban.php",
+                        "https://api.example.com/imo/shield/backend/ban/server/servercheckban.php",
                         function(err, response, headers)
                             if response == nil then
                                 DropPlayer(source, "" .. config.Banned.Message)
@@ -956,7 +950,7 @@ function StartAc()
                                         "https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/ui06900b.png"
                                     end
                                     moreSecuredDispatch(
-                                        "https://api.myrabot.de/imo/shield/backend/ban/server/serveraddban.php",
+                                        "https://api.example.com/imo/shield/backend/ban/server/serveraddban.php",
                                         function(err, response, headers)
                                         end, 'POST',
                                         json.encode({
@@ -975,7 +969,7 @@ function StartAc()
                                         }), { ['Content-Type'] = 'application/json' })
 
                                     moreSecuredDispatch(
-                                        "https://api.myrabot.de/imo/shield/backend/counter/totalcounter/bancounter.php",
+                                        "https://api.example.com/imo/shield/backend/counter/totalcounter/bancounter.php",
                                         function(err, response, headers)
                                         end, 'POST', json.encode({ license = ES.LicenseKey }),
                                         { ['Content-Type'] = 'application/json' })
@@ -1088,7 +1082,7 @@ function StartAc()
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Command^7] ^1esclearall^7",                                              description = "This command removes all peds, vehicles, and objects from the map" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Config Panel Link",                                              description = "^1https://config.example.com/^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Panel Link",                                                     description = "^1https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat^7" },
-                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Discord Link",                                                   description = "^1https://discord.gg/zZQ9j9NYkU^7" },
+                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Discord Link",                                                   description = "^1https://discord.gg/FWThk29dgZ^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] ^1add_ace identifier.steam:SteamID ES.Bypass allow^7 for IDs", description = " ^1add_ace group.admin ES.Bypass allow^7 for Groups" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] Discord User ID Bypass",                                       description = "^1Bypass your Admins via Discord IDs ( https://config.example.com/ )" }
 
@@ -1113,7 +1107,7 @@ function StartAc()
         function siteunban(source, args)
             if args[1] then
                 local id = args[1]
-                moreSecuredDispatch("https://api.myrabot.de/imo/shield/backend/ban/unban/serverunban.php",
+                moreSecuredDispatch("https://api.example.com/imo/shield/backend/ban/unban/serverunban.php",
                     function(err, response, headers)
                         if (response) then
                             secprint("^7[^9ELFBAR^7-^2SECURITY^7] [^3Info^7] " .. response)

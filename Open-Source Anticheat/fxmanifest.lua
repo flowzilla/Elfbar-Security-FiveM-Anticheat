@@ -1,6 +1,6 @@
 fx_version 'adamant'
 lua54 'yes'
-author 'Elfbar-Security by remoteshell. and remoteshell'
+author 'Elfbar-Security by @remoteapi'
 description 'Made to Protect and Secure'
 game 'gta5'
 
