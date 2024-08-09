@@ -1,4 +1,3 @@
-
 # Elfbar-Security - FiveM Anticheat ( Open Source Project )
 
 Hello dear FiveM Community!
@@ -28,7 +27,6 @@ All Codes to start your own FiveM Anticheat project ( Backend, Auth, Full Panel,
 - Admin Options ( Key, News and User Management, Logs and more)
 - and much more!
 Visit our [Discord](https://discord.gg/FWThk29dgZ) for the Full and Working Source with Auth System
-
 
 ## Anticheat Features
 For the Anticheat Features you need to check the Source Code
