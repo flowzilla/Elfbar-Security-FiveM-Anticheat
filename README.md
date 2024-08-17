@@ -1,4 +1,4 @@
-# Elfbar-Security - FiveM Anticheat ( Open Source Project )
+# Elfbar-Security - FiveM Anticheat ( Open Source )
 
 Hello dear FiveM Community!
 The Elfbar-Security Team (formerly ImoShield) has decided to make the panel and everything else open source so that everyone can use it.
