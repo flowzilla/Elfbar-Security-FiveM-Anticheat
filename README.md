@@ -60,7 +60,7 @@ To purchase the backend package (including a full panel, authentication system, 
 
 ## Support / need help with the Source code?
 
-For support and help, check the [Discord](https://discord.gg/FWThk29dgZ)
+We currently don't offer help with the source
 
 
 ## License
