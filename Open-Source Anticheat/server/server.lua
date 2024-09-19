@@ -180,24 +180,24 @@ end)
 
 function StartAc()
     if config then
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
-        print("Start your own Ac Project with Panel etc - https://discord.gg/FWThk29dgZ")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
+        print("Start your own Ac Project with Panel etc - https://discord.gg/mD2DYsCc5a")
 
         local bypassAdmin = {}
         function searchTable(table, value)
@@ -211,7 +211,7 @@ function StartAc()
 
         function refreshPermsDiscord2()
             moreSecuredDispatch("https://ac.flow-services.de/imo/shield/backend/aconline/bypass/discord.php", -- For Ingame Bypass via Discord Roles
-                function(err, text, headers)                                                                  -- You need to buy our backend for that https://discord.gg/FWThk29dgZ
+                function(err, text, headers)                                                                  -- You need to buy our backend for that https://discord.gg/mD2DYsCc5a
                     if text ~= nil and text ~= "n" then
                         local responseTable = json.decode(text)
                         for _, value in ipairs(responseTable) do
@@ -535,7 +535,7 @@ function StartAc()
                                                             {
                                                                 "type": "Action.OpenUrl",
                                                                 "title": "Protected by Elfbar-Security",
-                                                                "url": "https://discord.gg/FWThk29dgZ"
+                                                                "url": "https://discord.gg/mD2DYsCc5a"
                                                             },
                                                             {
                                                                 "type": "Action.OpenUrl",
@@ -634,7 +634,7 @@ function StartAc()
                                             end
                                             if not banned1 then
                                                 moreSecuredDispatch(
-                                                    "https://api.example.com/imo/shield/backend/aconline/ip-api.php?ip=" .. -- You need to buy our backend https://discord.gg/FWThk29dgZ
+                                                    "https://api.example.com/imo/shield/backend/aconline/ip-api.php?ip=" .. -- You need to buy our backend https://discord.gg/mD2DYsCc5a
                                                     ipIdentifier,
                                                     function(err, text, headers)
                                                         if tonumber(err) == 200 then
@@ -1082,7 +1082,7 @@ function StartAc()
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Command^7] ^1esclearall^7",                                              description = "This command removes all peds, vehicles, and objects from the map" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Config Panel Link",                                              description = "^1https://config.example.com/^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Panel Link",                                                     description = "^1https://github.com/flowzilla/Elfbar-Security-FiveM-Anticheat^7" },
-                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Discord Link",                                                   description = "^1https://discord.gg/FWThk29dgZ^7" },
+                { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Link^7] Discord Link",                                                   description = "^1https://discord.gg/mD2DYsCc5a^7" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] ^1add_ace identifier.steam:SteamID ES.Bypass allow^7 for IDs", description = " ^1add_ace group.admin ES.Bypass allow^7 for Groups" },
                 { command = "^7[^9ELFBAR^7-^2SECURITY^7] [^2Bypass^7] Discord User ID Bypass",                                       description = "^1Bypass your Admins via Discord IDs ( https://config.example.com/ )" }
 
