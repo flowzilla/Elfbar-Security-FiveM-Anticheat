@@ -9,7 +9,7 @@ But note the licence below
 
 ## Start your own FiveM Anticheat
 
-If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/FWThk29dgZ). There you will also find my contact information for questions!
+If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/mD2DYsCc5a). There you will also find my contact information for questions!
 
 All Codes to start your own FiveM Anticheat project ( Backend, Auth, Full Panel, Privat System Bot, Full Anticheat so it works with the Panel and more ) for just 20€ + I install it via SSH + A Install Tutorial ( Already have 30+ Customers ) So start now your project
 
@@ -26,7 +26,7 @@ All Codes to start your own FiveM Anticheat project ( Backend, Auth, Full Panel,
 - Live Counter
 - Admin Options ( Key, News and User Management, Logs and more)
 - and much more!
-Visit our [Discord](https://discord.gg/FWThk29dgZ) for the Full and Working Source with Auth System
+Visit our [Discord](https://discord.gg/mD2DYsCc5a) for the Full and Working Source with Auth System
 
 ## Anticheat Features
 For the Anticheat Features you need to check the Source Code
@@ -45,7 +45,7 @@ For the Anticheat Features you need to check the Source Code
 - and more!
 
 ## Backend System
-To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), check our [Discord](https://discord.gg/FWThk29dgZ)
+To purchase the backend package (including a full panel, authentication system, etc., allowing you to fully create your own service), check our [Discord](https://discord.gg/mD2DYsCc5a)
 
 ## Screenshots of our Project
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
