@@ -31,7 +31,6 @@ Visit our [Discord](https://discord.gg/mD2DYsCc5a) for the Full and Working Sour
 ## Anticheat Features
 For the Anticheat Features you need to check the Source Code
 
-
 ## Some Customer Bot Features
 - Clear Props / Vehicles / Peds / All Command
 - Ban & Kick Command for the Anticheat
@@ -61,7 +60,6 @@ To purchase the backend package (including a full panel, authentication system, 
 ## Support / need help with the Source code?
 
 We currently don't offer help with the source
-
 
 ## License
 
