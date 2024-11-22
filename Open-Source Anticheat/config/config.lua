@@ -1,6 +1,6 @@
 ES = {}
 
--- Full version on our Discord https://discord.gg/authify
+-- Full version on our Discord https://discord.gg/8cwwavkBD6
 
 ES.LicenseKey = ""
-ES.ConfigSecret = ""
+ES.ConfigSecret = "" -- You can find a version with Lua Config Files on our discord

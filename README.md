@@ -67,5 +67,5 @@ This work is licensed under the Creative Commons Attribution-NonCommercial-NoDer
 
 ## Authors / Creator
 
-- [@remoteapi / V01D](https://www.github.com/flowzilla)
+- [@.authorization / V01D / Auth](https://www.github.com/flowzilla)
 - [@remoteshell / H04X](https://www.github.com/H04X-Hoax)
