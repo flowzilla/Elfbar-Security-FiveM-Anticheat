@@ -8,6 +8,8 @@ One of our former team members claims to have the source code and wants to leak 
 But note the licence below
 
 ## Start your own FiveM Anticheat
+## This is perfect to start your own Anticheat Project!
+But note that you need to buy our Backend System, found here [Discord](https://e-z.bio/auth) ( Its cheap )
 
 If you want to start your own FiveM Anticheat project, check out our [Discord](https://e-z.bio/auth). There you will also find my contact information for questions!
 
