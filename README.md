@@ -9,9 +9,9 @@ But note the licence below
 
 ## Start your own FiveM Anticheat
 ## This is perfect to start your own Anticheat Project!
-But note that you need to buy our Backend System, found here [Discord](https://e-z.bio/auth) ( Its cheap )
+But note that you need to buy our Backend System, found here [Discord](https://discord.gg/boostora) ( Its cheap )
 
-If you want to start your own FiveM Anticheat project, check out our [Discord](https://e-z.bio/auth). There you will also find my contact information for questions!
+If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/boostora). There you will also find my contact information for questions!
 
 All Codes to start your own FiveM Anticheat project ( Free Updates, Backend, Auth, Full Panel, Website, Privat System Bot, Full Anticheat so it works with the Panel and more ) for just 15€ + I install it via SSH + A Install Tutorial ( Already have 80+ Customers ) So start now your project
 
@@ -28,7 +28,7 @@ All Codes to start your own FiveM Anticheat project ( Free Updates, Backend, Aut
 - Live Counter
 - Admin Options ( Key, News and User Management, Logs and more)
 - and much more!
-Visit our [Discord](https://e-z.bio/auth) for the Full and Working Source with Auth System
+Visit our [Discord](https://discord.gg/boostora) for the Full and Working Source with Auth System
 
 ## Anticheat Features
 For the Anticheat Features you need to check the Source Code
@@ -46,7 +46,7 @@ For the Anticheat Features you need to check the Source Code
 - and more!
 
 ## Backend System
-To purchase the backend package (including a full panel, authentication system, discord bots, website code, etc., allowing you to fully create your own service), check our [Discord](https://e-z.bio/auth)
+To purchase the backend package (including a full panel, authentication system, discord bots, website code, etc., allowing you to fully create your own service), check our [Discord](https://discord.gg/boostora)
 
 ## Screenshots of our Project
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
