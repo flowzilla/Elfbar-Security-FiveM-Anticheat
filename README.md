@@ -13,7 +13,7 @@ But note that you need to buy our Backend System, found here [Discord](https://d
 
 If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/boostora). There you will also find my contact information for questions!
 
-All Codes to start your own FiveM Anticheat project ( Free Updates, Backend, Auth, Full Panel, Website, Privat System Bot, Full Anticheat so it works with the Panel and more ) for just 15€ + I install it via SSH + A Install Tutorial ( Already have 80+ Customers ) So start now your project
+All Codes to start your own FiveM Anticheat project ( Free Updates, Backend, Auth, Full Panel, Website, Privat System Bot, Full Anticheat so it works with the Panel and more ) for just 15€ +  A Install Tutorial ( Already have 80+ Customers ) So start now your project
 
 ![Ad](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/dypombi9.png)
 
@@ -31,7 +31,7 @@ All Codes to start your own FiveM Anticheat project ( Free Updates, Backend, Aut
 Visit our [Discord](https://discord.gg/boostora) for the Full and Working Source with Auth System
 
 ## Anticheat Features
-For the Anticheat Features you need to check the Source Code
+For the Anticheat Features you need to check the Source Code - the paid one have more
 
 ## Some Customer Bot Features
 - Clear Props / Vehicles / Peds / All Command
