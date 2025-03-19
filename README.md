@@ -7,13 +7,33 @@ Why did we decide to do this?
 One of our former team members claims to have the source code and wants to leak and resell it, so you can download the source code here, officially from the owner of the code.
 But note the licence below
 
-## Start your own FiveM Anticheat
-## This is perfect to start your own Anticheat Project!
-But note that you need to buy our Backend System, found here [Discord](https://discord.gg/boostora) ( Its cheap )
+# Start Your Own FiveM Anticheat Project!  
 
-If you want to start your own FiveM Anticheat project, check out our [Discord](https://discord.gg/boostora). There you will also find my contact information for questions!
+Want to create your own **FiveM Anticheat**? This is the perfect solution for you!  
 
-All Codes to start your own FiveM Anticheat project ( Free Updates, Backend, Auth, Full Panel, Website, Privat System Bot, Full Anticheat so it works with the Panel and more ) for just 15€ +  A Install Tutorial ( Already have 80+ Customers ) So start now your project
+## Features  
+✔️ All necessary code to build your own Anticheat  
+✔️ **Free updates**  
+✔️ **Backend, authentication system & full panel**  
+✔️ Dedicated **website & private system bot**  
+✔️ **Complete Anticheat**, fully integrated with the panel  
+✔️ **Easy installation** with a detailed tutorial  
+
+## More Than Just an Anticheat!  
+We also offer **additional high-quality panels and systems** for FiveM!  
+Join our [Discord](https://discord.gg/boostora) to explore our full range of products.  
+
+## Important Notice  
+To use the Anticheat, you need our **Backend System**, which can be purchased here:  
+**[Discord Server](https://discord.gg/boostora)**  
+Use the discount code **"github"** for **20% off**!  
+
+## Get Started Now!  
+Join our [Discord](https://discord.gg/boostora) to learn more or contact me directly.  
+Already **80+ satisfied customers** – be one of them!  
+
+### Price: **Only 20€** – Start your project today!
+
 
 ![Ad](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/dypombi9.png)
 

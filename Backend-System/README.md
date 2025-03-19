@@ -1,2 +1,10 @@
-## Backend System
-All Codes to start your own FiveM Anticheat project ( Free Updates, Website Code, Backend, Auth, Full Panel, Privat System Bot, Full Anticheat so it works with the Panel and more ) for just 15€ on our [Discord](https://discord.gg/boostora)
+## Backend System  
+Get **all the necessary code** to start your own FiveM Anticheat project, including:  
+✔ **Free updates**  
+✔ **Website code**  
+✔ **Backend & authentication system**  
+✔ **Full panel integration**  
+✔ **Private system bot**  
+✔ **Complete Anticheat**, fully compatible with the panel  
+
+**Price:** Only **20€** – Available on our [Discord](https://discord.gg/boostora)

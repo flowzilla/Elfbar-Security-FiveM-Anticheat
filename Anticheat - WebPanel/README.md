@@ -1,2 +1,12 @@
-## Anticheat - WebPanel
-All Codes to start your own FiveM Anticheat project ( Free Updates, Website Code, Backend, Auth, Full Panel, Privat System Bot, Full Anticheat so it works with the Panel and more ) for just 15€ on our [Discord](https://discord.gg/boostora)
+## Anticheat - WebPanel  
+Get **everything you need** to launch your own FiveM Anticheat, including:  
+✔ **Free updates**  
+✔ **Website code**  
+✔ **Backend & authentication system**  
+✔ **Full-featured web panel**  
+✔ **Private system bot**  
+✔ **Complete Anticheat**, fully integrated with the panel  
+
+**New!** We now offer **two additional panels** for even more functionality! Check them out on our [Discord](https://discord.gg/boostora)
+
+**Price:** Only **20€** – Available now!  
