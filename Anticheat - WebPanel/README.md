@@ -7,6 +7,6 @@ Get **everything you need** to launch your own FiveM Anticheat, including:
 ✔ **Private system bot**  
 ✔ **Complete Anticheat**, fully integrated with the panel  
 
-**New!** We now offer **two additional panels** for even more functionality! Check them out on our [Discord](https://discord.gg/boostora)
+**New!** We now offer **two additional panels** for even more functionality! Check them out on our [Discord](https://discord.gg/dtFHQ7skrk)
 
 **Price:** Only **20€** – Available now!  

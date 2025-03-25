@@ -7,4 +7,4 @@ Get **all the necessary code** to start your own FiveM Anticheat project, includ
 ✔ **Private system bot**  
 ✔ **Complete Anticheat**, fully compatible with the panel  
 
-**Price:** Only **20€** – Available on our [Discord](https://discord.gg/boostora)
+**Price:** Only **20€** – Available on our [Discord](https://discord.gg/dtFHQ7skrk)
