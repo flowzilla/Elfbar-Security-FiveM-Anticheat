@@ -21,15 +21,15 @@ Want to create your own **FiveM Anticheat**? This is the perfect solution for yo
 
 ## More Than Just an Anticheat!  
 We also offer **additional high-quality panels and systems** for FiveM!  
-Join our [Discord](https://discord.gg/dtFHQ7skrk) to explore our full range of products.  
+Join our [Discord](https://discord.gg/auth-solutions) to explore our full range of products.  
 
 ## Important Notice  
 To use the Anticheat, you need our **Backend System**, which can be purchased here:  
-**[Discord Server](https://discord.gg/dtFHQ7skrk)**  
+**[Discord Server](https://discord.gg/auth-solutions)**  
 Use the discount code **"github"** for **20% off**!  
 
 ## Get Started Now!  
-Join our [Discord](https://discord.gg/dtFHQ7skrk) to learn more or contact me directly.  
+Join our [Discord](https://discord.gg/auth-solutions) to learn more or contact me directly.  
 Already **80+ satisfied customers** – be one of them!  
 
 ### Price: **Only 20€** – Start your project today!
@@ -48,7 +48,7 @@ Already **80+ satisfied customers** – be one of them!
 - Live Counter
 - Admin Options ( Key, News and User Management, Logs and more)
 - and much more!
-Visit our [Discord](https://discord.gg/dtFHQ7skrk) for the Full and Working Source with Auth System
+Visit our [Discord](https://discord.gg/auth-solutions) for the Full and Working Source with Auth System
 
 ## Anticheat Features
 For the Anticheat Features you need to check the Source Code - the paid one have more
@@ -66,7 +66,7 @@ For the Anticheat Features you need to check the Source Code - the paid one have
 - and more!
 
 ## Backend System
-To purchase the backend package (including a full panel, authentication system, discord bots, website code, etc., allowing you to fully create your own service), check our [Discord](https://discord.gg/dtFHQ7skrk)
+To purchase the backend package (including a full panel, authentication system, discord bots, website code, etc., allowing you to fully create your own service), check our [Discord](https://discord.gg/auth-solutions)
 
 ## Screenshots of our Project
 ![Panel](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/6qu1sh1l.png)
