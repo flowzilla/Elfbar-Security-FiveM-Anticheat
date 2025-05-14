@@ -9,4 +9,4 @@ Get **everything you need** to launch your own FiveM Anticheat, including:
 
 **New!** We now offer **two additional panels** for even more functionality! Check them out on our [Discord](https://discord.gg/auth-solutions)
 
-**Price:** Only **20€** – Available now!  
+**Price:** Only **25€** – Available now!  

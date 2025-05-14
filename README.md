@@ -1,12 +1,3 @@
-# Elfbar-Security - FiveM Anticheat ( Open Source )
-
-Hello dear FiveM Community!
-The Elfbar-Security Team (formerly ImoShield) has decided to make the panel and everything else open source so that everyone can use it.
-
-Why did we decide to do this?
-One of our former team members claims to have the source code and wants to leak and resell it, so you can download the source code here, officially from the owner of the code.
-But note the licence below
-
 # Start Your Own FiveM Anticheat Project!  
 
 Want to create your own **FiveM Anticheat**? This is the perfect solution for you!  
@@ -30,9 +21,9 @@ Use the discount code **"github"** for **20% off**!
 
 ## Get Started Now!  
 Join our [Discord](https://discord.gg/auth-solutions) to learn more or contact me directly.  
-Already **80+ satisfied customers** – be one of them!  
+Already **130+ satisfied customers** – be one of them!  
 
-### Price: **Only 20€** – Start your project today!
+### Price: **Only 25€** – Start your project today!
 
 
 ![Ad](https://r2.e-z.host/95b6da2b-7f6b-488b-826a-4e09878259ec/dypombi9.png)
@@ -89,5 +80,5 @@ This work is licensed under the Creative Commons Attribution-NonCommercial-NoDer
 
 ## Authors / Creator
 
-- [@.authorization / V01D / Auth](https://www.github.com/flowzilla)
+- [@.auth.solutions / V01D / Auth](https://www.github.com/flowzilla)
 - [@remoteshell / H04X](https://www.github.com/H04X-Hoax)
